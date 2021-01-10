@@ -6,6 +6,7 @@
         <div :class="color">
           <slot></slot>
         </div>
+
       </div>
       <div>
         <h3 class="font-extrabold text-white font-extrabold text-3xl mt-4">{{ value }}</h3>

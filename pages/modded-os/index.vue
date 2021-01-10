@@ -40,19 +40,9 @@
       <div
         class="grid grid-cols-2 gap-y-12 gap-x-4 md:grid-cols-2 lg:grid-cols-4 text-white font-sans text-center justify-center"
       >
-        <CounterComponent value="450,000 +" heading="Downloads">
-
+        <CounterComponent v-for="meta in metadata" :value="meta.value" :heading="meta.param" :color="meta.color">
+          <div v-html="meta.icon"></div>
         </CounterComponent>
-        <CounterComponent value="70000 +" heading="Purchases">
-
-        </CounterComponent>
-        <CounterComponent value="750 TB +" heading="Bandwidth">
-
-        </CounterComponent>
-        <CounterComponent value="35000 +" heading="Community">
-
-        </CounterComponent>
-
       </div>
     </div>
 
@@ -126,7 +116,7 @@
             <div class="images grid grid-cols-1 md:grid-cols-2 gap-8 justify-around items-center"
                  v-viewer="{movable: false}"
             >
-              <div class="w-full rounded-lg justify-self-stretch" v-for="url in ubuntuXfceImagesArray">
+              <div class="w-full rounded-lg justify-self-stretch" v-for="url in imagesArray[this.UBUNTU_XFCE]">
                 <img class="object-cover " :src="url"
                      alt=""
                 >
@@ -150,7 +140,7 @@
             <div class="images grid grid-cols-1 md:grid-cols-2 gap-8 justify-around items-center"
                  v-viewer="{movable: false}"
             >
-              <div class="w-full rounded-lg justify-self-stretch" v-for="url in debianXfceImagesArray">
+              <div class="w-full rounded-lg justify-self-stretch" v-for="url in imagesArray[this.DEBIAN_XFCE]">
                 <img class="object-cover " :src="url"
                      alt=""
                 >
@@ -174,7 +164,7 @@
             <div class="images grid grid-cols-1 md:grid-cols-2 gap-8 justify-around items-center"
                  v-viewer="{movable: false}"
             >
-              <div class="w-full rounded-lg justify-self-stretch" v-for="url in manjaroXfceImagesArray">
+              <div class="w-full rounded-lg justify-self-stretch" v-for="url in imagesArray[this.MANJARO_XFCE]">
                 <img class="object-cover " :src="url"
                      alt=""
                 >
@@ -198,7 +188,7 @@
             <div class="images grid grid-cols-1 md:grid-cols-2 gap-8 justify-around items-center"
                  v-viewer="{movable: false}"
             >
-              <div class="w-full rounded-lg justify-self-stretch" v-for="url in ubuntuKdeImagesArray">
+              <div class="w-full rounded-lg justify-self-stretch" v-for="url in imagesArray[this.UBUNTU_KDE]">
                 <img class="object-cover " :src="url"
                      alt=""
                 >
@@ -220,8 +210,15 @@ const DEBIAN_XFCE_DOC = 'debian_xfce_modded'
 const UBUNTU_KDE_DOC = 'ubuntu_kde_modded'
 const MANJARO_XFCE_DOC = 'manjaro_xfce_modded'
 
-export default {
+import metadata from '../../static/Data/misc/app-performance-metadata.json'
 
+export default {
+  created () {
+    this.UBUNTU_XFCE = UBUNTU_XFCE_DOC
+    this.DEBIAN_XFCE = DEBIAN_XFCE_DOC
+    this.MANJARO_XFCE = MANJARO_XFCE_DOC
+    this.UBUNTU_KDE = UBUNTU_KDE_DOC
+  },
   mounted () {
     this.$fetch()
   },
@@ -229,23 +226,14 @@ export default {
     let refArray = [UBUNTU_XFCE_DOC, MANJARO_XFCE_DOC, UBUNTU_KDE_DOC, DEBIAN_XFCE_DOC]
 
     for (let i = 0; i < refArray.length; ++i) {
+      let ref = refArray[i]
       this.$fire.firestore.collection('osImages')
-        .doc(refArray[i])
+        .doc(ref)
         .get().then((doc) => {
         if (doc.exists) {
-          let ref = refArray[i]
-          if (ref === UBUNTU_XFCE_DOC) {
-            this.ubuntuXfceImagesArray = doc.data().images
-          } else if (ref === UBUNTU_KDE_DOC) {
-            this.ubuntuKdeImagesArray = doc.data().images
-          } else if (ref === DEBIAN_XFCE_DOC) {
-            this.debianXfceImagesArray = doc.data().images
-          } else if (ref === MANJARO_XFCE_DOC) {
-            this.manjaroXfceImagesArray = doc.data().images
-          }
-
+          this.$set(this.imagesArray, ref, doc.data().images)
         } else {
-          console.log(`NOT_FOUND ${refArray[i]}`)
+          console.log(`NOT_FOUND ${ref}`)
         }
       }).catch((error) => {
         console.log(error)
@@ -257,14 +245,18 @@ export default {
       moddedOsFeaturesData: moddedOsFeatures.features,
       moddedOsTestimonials: moddedOsTestimonials.testimonials,
       imagesArray: {},
+      metadata: metadata.metadata
     }
   },
   watch: {
-    ubuntuXfceImagesArray: function (val) {
-      console.log(val)
-    }
-  },
-  name: 'index'
+    imagesArray: {
+      handler (val) {
+        console.log(val)
+      },
+      deep: true
+    },
+    name: 'index',
+  }
 }
 </script>
 
