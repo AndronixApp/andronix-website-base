@@ -1,0 +1,28 @@
+{
+  "features": [
+    {
+      "title": "Run Linux",
+      "sub_title": "Run distributions like Ubuntu, Manjaro, Kali and a lot more with all major desktop environments.",
+      "icon": "<svg class=\"w-10 text-primary-400 stroke-current\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z\"/></svg>",
+      "color": "bg-primary-400"
+    },
+    {
+      "title": "Sync Commands",
+      "sub_title": "Sync your commands from the app and access them from anywhere in the world with our web app.",
+      "icon": "<svg class=\"w-10 stroke-current text-blue-400\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z\"/></svg>",
+      "color": "bg-blue-400"
+    },
+    {
+      "title": "Software Support",
+      "sub_title": "You can use almost all the major software and tools that support ARM based processor.",
+      "icon": "<svg class=\"w-10  stroke-current text-purple-400\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z\"/></svg>",
+      "color": "bg-purple-400"
+    },
+    {
+      "title": "Software Support",
+      "sub_title": "You can use almost all the major software and tools that support ARM based processor.",
+      "icon": "<svg class=\"w-10 stroke-current text-green-400\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z\"/></svg>",
+      "color": "bg-green-400"
+    }
+  ]
+}

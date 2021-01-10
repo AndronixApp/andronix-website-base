@@ -1,0 +1,24 @@
+{
+  "testimonials": [
+    {
+      "name": "Lorem ipsum.",
+      "quote": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias blanditiis corporis incidunt labore, nam praesentium!",
+      "title": "Lorem ipsum dolor."
+    },
+    {
+      "name": "Lorem ipsum.",
+      "quote": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias blanditiis corporis incidunt labore, nam praesentium!",
+      "title": "Lorem ipsum dolor."
+    },
+    {
+      "name": "Lorem ipsum.",
+      "quote": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias blanditiis corporis incidunt labore, nam praesentium!",
+      "title": "Lorem ipsum dolor."
+    },
+    {
+      "name": "Lorem ipsum.",
+      "quote": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias blanditiis corporis incidunt labore, nam praesentium!",
+      "title": "Lorem ipsum dolor."
+    }
+  ]
+}

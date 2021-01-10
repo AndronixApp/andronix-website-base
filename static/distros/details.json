@@ -1,0 +1,8 @@
+{
+  "ubuntu": {
+    "name": "Ubuntu",
+    "origin": "Canonical",
+    "imageSrc": "/static_images/distro/ubuntu.svg",
+    "version": "20.04 & 19.04"
+  }
+}
