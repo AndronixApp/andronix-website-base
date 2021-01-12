@@ -115,6 +115,13 @@ body {
   @apply mt-12 md:mt-24 lg:mt-36 mx-10
 }
 
+
+/* Typography */
+
+
+
+
+
 .gray {
   filter: grayscale(0) contrast(40%);
 }

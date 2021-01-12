@@ -10,7 +10,7 @@
         sub_heading="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, eaque iure minus pariatur quas unde!"
       />
 
-      <div class="-mt-6 rounded px-8 py-3 bg-primary-500 text-white font-extrabold text-lg">GET NOW</div>
+      <div class="-mt-6 button-1">GET NOW</div>
     </div>
 
     <!--  Features   -->
@@ -202,15 +202,15 @@
   </div>
 </template>
 <script>
-import moddedOsFeatures from 'static/Data/features/modded-os-features.json'
-import moddedOsTestimonials from '../../static/Data/testimonials/modded-os-testimonials.json'
+import moddedOsFeatures from '~/static/Data/features/modded-os-features.json'
+import moddedOsTestimonials from 'static/Data/testimonials/modded-os-testimonials.json'
 
 const UBUNTU_XFCE_DOC = 'ubuntu_xfce_modded'
 const DEBIAN_XFCE_DOC = 'debian_xfce_modded'
 const UBUNTU_KDE_DOC = 'ubuntu_kde_modded'
 const MANJARO_XFCE_DOC = 'manjaro_xfce_modded'
 
-import metadata from '../../static/Data/misc/app-performance-metadata.json'
+import metadata from 'static/Data/misc/app-performance-metadata.json'
 
 export default {
   created () {

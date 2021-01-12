@@ -1,6 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;0,800;1,400;1,600&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;0,800;1,400;1,600&display=swap');*/
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+
+  .deco-heading {
+    @apply font-extrabold text-center text-primary-500 text-lg md:text-xl lg:text-2xl
+  }
+
+  .heading {
+    @apply font-extrabold text-center text-6xl md:text-7xl text-white text-center
+  }
+
+  .sub-heading {
+    @apply font-medium text-center text-base md:text-xl text-center text-gray-300
+  }
+
+  .input {
+    @apply appearance-none block w-full py-3 px-4 leading-tight bg-card_background text-gray-100 focus:bg-card_background_accent border font-sans border-gray-600 focus:border-primary-500 rounded focus:outline-none
+  }
+
+  .button-1 {
+    @apply rounded px-8 py-3 bg-primary-500 text-white font-extrabold text-lg text-center
+  }
+
+  .button-2 {
+    @apply rounded px-8 py-2 bg-primary-500 text-white font-extrabold text-lg text-center
+  }
+}

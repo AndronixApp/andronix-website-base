@@ -23,7 +23,10 @@
     "postcss": "^7.0.35",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
     "v-viewer": "^1.5.1",
-    "vue-animejs": "^2.1.1"
+    "vue-animejs": "^2.1.1",
+    "vue-burger": "^1.1.0",
+    "vue-loading-overlay": "^3.4.2",
+    "vue-tasty-burgers": "1.1.8"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.5",

@@ -18,11 +18,15 @@ module.exports = {
           500: '#ff973b',
           600: '#ff8b25',
         },
-        background: '#0F1535',
+        gradient1: '#fc4a1a',
+        gradient2: '#f7b733',
+        gradient3: '#F27121',
+        background: '#0c112b',
         background2: '#1F2345',
         violet: '#801354',
         violet2: '#9B0ABF',
         card_background: '#303653',
+        card_background_accent: '#454a64',
         card_background2: '#3E3F64'
       },
       backgroundImage: () => ({
@@ -33,7 +37,8 @@ module.exports = {
         'ubuntu-xfce-modded': 'url(\'~assets/images/screenshots/ubuntu_xfce.png\')'
       }),
       fontFamily: {
-        'sans': ['Open Sans']
+        'sans': ['Manrope'],
+        'head': ['Manrope']
       }
     }
   }

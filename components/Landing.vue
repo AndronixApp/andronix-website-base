@@ -1,11 +1,13 @@
 <template>
-  <div class="relative bg-background w-full bg-landing-pattern bg-top px-10 md:px-20 lg:px-30">
+  <div class="relative bg-background w-full bg-landing-pattern bg-top px-10 md:px-20 lg:px-30 font-sans">
     <div class="flex-col items-center justify-center cont">
-      <div class="text-4xl md:text-6xl">
+      <div class="text-5xl md:text-6xl lg:text-7xl tracking-tight">
         <h1 class="text-white font-bold xyz-in" xyz="fade flip-up flip-left ease-out-back duration-15">The power of</h1>
-        <h1 class=" text-white font-extrabold font-sans text-7xl md:text-8xl my-3  xyz-in" xyz="fade up big delay-2">
+        <h1 class=" text-white font-extrabold font-sans text-7xl md:text-8xl lg:text-9xl my-3 xyz-in"
+            xyz="fade up big delay-2"
+        >
         <span
-          class="bg-clip-text text-transparent bg-gradient-to-r from-violet to-primary-600"
+          class="bg-clip-text tracking-tighter  text-transparent bg-gradient-to-r from-gradient1 to-gradient2"
         >
             Linux
           </span>
@@ -41,13 +43,13 @@
           </div>
         </div>
       </div>
-      <div class="lg:inline-flex hidden mt-24">
+<!--      <div class="lg:inline-flex hidden mt-24">
         <DistroCard class="mr-4" :distro-data="details"/>
         <DistroCard class="mr-4" :distro-data="details"/>
         <DistroCard class="mr-4" :distro-data="details"/>
         <DistroCard class="mr-4" :distro-data="details"/>
         <DistroCard class="mr-4" :distro-data="details"/>
-      </div>
+      </div>-->
     </div>
   </div>
 </template>

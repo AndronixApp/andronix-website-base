@@ -40,6 +40,11 @@ export default {
     {
       src: '~/plugins/viewer.js',
     },
+    '~/plugins/firebase.js',
+    {
+      src: '~/plugins/hamburger.js',
+      mode: 'client'
+    },
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -57,33 +62,11 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    ['@nuxtjs/firebase',
-      {
-        config: {
-          apiKey: 'AIzaSyBvHOXLIFJZZsFdVCjxP3XLP_tw6n5BdW8',
-          authDomain: 'andronix-techriz.firebaseapp.com',
-          databaseURL: 'https://andronix-techriz.firebaseio.com',
-          projectId: 'andronix-techriz',
-          storageBucket: 'andronix-techriz.appspot.com',
-          messagingSenderId: '83697300023',
-          appId: '1:83697300023:web:1e5962e3c087affb9a45b2',
-          measurementId: 'G-J4235J74QY'
-        },
-        services: {
-          auth: true,
-          database: true,
-          performance: true,
-          analytics: true,
-          remoteConfig: true,
-          firestore: true
-        }
-      }
-    ]
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {}
+  build: {},
 }
