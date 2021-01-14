@@ -22,7 +22,7 @@ module.exports = {
         gradient2: '#f7b733',
         gradient3: '#F27121',
         background: '#0c112b',
-        background2: '#1F2345',
+        background2: '#1e214a',
         violet: '#801354',
         violet2: '#9B0ABF',
         card_background: '#303653',

@@ -2,19 +2,23 @@
   <div>
 
     <div class="flex-col justify-between">
-      <div class="rounded-t md:rounded-t-lg bg-card_background pb-6 pt-3 px-6">
+      <div class="rounded-t-lg md:rounded-t-lg bg-card_background pb-6 pt-3 px-6">
         <div class="flex justify-start items-start my-4">
           <slot></slot>
         </div>
         <div class="text-white font-sans text-left">
-          <h2 class="font-bold text-lg mb-4">
+          <h2 class="font-bold text-lg mb-4" :class="disabled?'text-card_background2':''">
             {{ title }}
           </h2>
-          <p class="text-sm">{{ desc }}</p>
+          <p v-if="!singleLine" class="text-sm " :class="disabled?'text-card_background2':''">
+            {{ disabled ? 'Not \n Purchased' : desc }}</p>
+          <p v-if="singleLine" class="text-sm overflow-ellipsis " :class="disabled?'text-card_background2':''">
+            {{ disabled ? 'Not \n Purchased' : desc }}</p>
         </div>
       </div>
-      <div class="h-1.5 rounded-b md:rounded-b-lg" :class="color ? color : 'bg-primary'">
+      <div class="h-1.5 rounded-b-lg " v-if="!disabled" :class="color ? color : 'bg-primary'">
       </div>
+      <div class="h-1.5 rounded-b-lg bg-card_background2" v-if="disabled"/>
     </div>
   </div>
 
@@ -40,6 +44,13 @@ export default {
     },
     color: {
       type: String
+    },
+    /*This is profile purchases specific*/
+    disabled: {
+      type: Boolean
+    },
+    singleLine: {
+      type: Boolean
     }
   },
   name: 'FeatureCard',

@@ -51,42 +51,14 @@
       <Heading heading="What people say!" sub_heading="Listen to what our users say about us all around the internet."
                deco_heading="ANDRONIX"
       />
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-3 md:gap-8">
-        <TestimonialModdedOsCard :name="moddedOsTestimonials[0].name" :title="moddedOsTestimonials[0].title"
-                                 :quote="moddedOsTestimonials[0].quote"
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-3 md:gap-8"
+      >
+        <TestimonialModdedOsCard v-for="testimonial in moddedOsTestimonials" :name="testimonial.name"
+                                 :title="testimonial.title"
+                                 :quote="testimonial.quote"
         >
-          <svg class="w-5 text-white opacity-40 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path
-              d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
-            />
-          </svg>
-        </TestimonialModdedOsCard>
-        <TestimonialModdedOsCard :name="moddedOsTestimonials[1].name" :title="moddedOsTestimonials[1].title"
-                                 :quote="moddedOsTestimonials[1].quote"
-        >
-          <svg class="w-5 text-white opacity-40 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path
-              d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
-            />
-          </svg>
-        </TestimonialModdedOsCard>
-        <TestimonialModdedOsCard :name="moddedOsTestimonials[2].name" :title="moddedOsTestimonials[2].title"
-                                 :quote="moddedOsTestimonials[2].quote"
-        >
-          <svg class="w-5 text-white opacity-40 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path
-              d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
-            />
-          </svg>
-        </TestimonialModdedOsCard>
-        <TestimonialModdedOsCard :name="moddedOsTestimonials[3].name" :title="moddedOsTestimonials[3].title"
-                                 :quote="moddedOsTestimonials[3].quote"
-        >
-          <svg class="w-5 text-white opacity-40 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path
-              d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
-            />
-          </svg>
+          <div v-html="testimonial.icon"></div>
         </TestimonialModdedOsCard>
       </div>
     </div>
@@ -210,7 +182,7 @@ const DEBIAN_XFCE_DOC = 'debian_xfce_modded'
 const UBUNTU_KDE_DOC = 'ubuntu_kde_modded'
 const MANJARO_XFCE_DOC = 'manjaro_xfce_modded'
 
-import metadata from 'static/Data/misc/app-performance-metadata.json'
+import metadata from '~/static/Data/misc/modded-os-metric.json'
 
 export default {
   created () {

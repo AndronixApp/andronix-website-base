@@ -26,7 +26,7 @@
               />
             </div>-->
 
-      <div @click="$store.commit('drawer/toggleDrawer')" class="ml-5">
+      <div @click="$store.commit('drawer/toggleDrawer')" class="cursor-pointer ml-5">
         <svg class="stroke-current text-white w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
              stroke="currentColor"
         >

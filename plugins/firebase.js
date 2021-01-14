@@ -17,4 +17,5 @@ app = firebase.apps.length
   : firebase.initializeApp(config)
 
 export const firestore = app.firestore()
+export const functions = app.functions()
 export const auth = app.auth()

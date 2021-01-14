@@ -11,7 +11,7 @@
       <Overlay v-show="$store.state.drawer.isDrawerOpen"/>
     </transition>
     <div
-      class="bg-card_background p-8 rounded-r-lg transform top-0 left-0 w-64 md:w-80 fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30"
+      class="bg-background2 p-8 rounded-r-lg transform top-0 left-0 w-64 md:w-80 fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30"
       :class="this.$store.state.drawer.isDrawerOpen ? 'translate-x-0' : '-translate-x-full'"
     >
       <div class="flex justify-between mb-10">
@@ -26,7 +26,7 @@
 
       <!--  Account Details    -->
       <div v-if="isLoggedIn" class="my-10 text-white">
-        <div class="flex-col bg-card_background2 px-4 py-4 rounded justify-center items-center">
+        <div class="flex-col bg-card_background px-4 py-4 rounded justify-center items-center">
           <div class="rounded-full mx-auto overflow-hidden w-8 h-8">
             <img class="object-cover"
                  :src="userData.photo_url ? userData.photo_url : 'https://images.unsplash.com/photo-1610376541408-0deb8c3f1183?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80'"
@@ -43,15 +43,15 @@
 
       <!--  Menu    -->
       <div
-        class="text-white font-medium flex-col  space-y-5 mt-6"
+        class="text-white font-medium flex-col space-y-5 mt-6"
       >
         <div v-for="(items, index) in menu" :key="items.color">
-          <hr v-if="index !== 0" class="border-dashed border-t-1 mr-3 my-4 border-opacity-70 border-gray-600">
-          <div class="flex space-x-6 items-center">
+          <hr v-if="index !== 0" class="border-dashed border-t-1 mr-3 my-4 border-opacity-50 border-gray-700">
+          <div class="flex space-x-6 items-center" @click="$store.commit('drawer/toggleDrawer')">
             <div>
               <div v-html="items.icon"></div>
             </div>
-            <NuxtLink :to="items.to">{{ items.title }}</NuxtLink>
+            <NuxtLink :class="`hover:${items.color}`" :to="items.to">{{ items.title }}</NuxtLink>
           </div>
         </div>
       </div>
