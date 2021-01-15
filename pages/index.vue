@@ -119,9 +119,6 @@ body {
 /* Typography */
 
 
-
-
-
 .gray {
   filter: grayscale(0) contrast(40%);
 }

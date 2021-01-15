@@ -1,3 +1,4 @@
+const colors = require('tailwindcss/colors')
 module.exports = {
   purge: {
     options: {
@@ -10,6 +11,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        teal: {
+          100: '#CCFBF1',
+          200: '#99F6E4',
+          300: '#5EEAD4',
+          400: '#2DD4BF',
+          500: '#14B8A6',
+          600: '#0D9488',
+          700: '#0F766E',
+        },
         primary: {
           100: '#ffc592',
           200: '#ffb97c',
@@ -33,8 +43,7 @@ module.exports = {
         'landing-pattern': 'url(\'~assets/images/background/landing_bg.svg\')',
         'triangle-pattern': 'url(\'~assets/images/background/triangle_background.svg\')',
         'circle-pattern': 'url(\'~assets/images/background/circle_background.svg\')',
-        'rect-pattern': 'url(\'~assets/images/background/reactangle_background.svg\')',
-        'ubuntu-xfce-modded': 'url(\'~assets/images/screenshots/ubuntu_xfce.png\')'
+        'rect-pattern': 'url(\'~assets/images/background/square_background.svg\')',
       }),
       fontFamily: {
         'sans': ['Manrope'],

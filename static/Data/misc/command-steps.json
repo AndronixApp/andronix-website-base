@@ -1,0 +1,32 @@
+{
+  "steps": [
+    {
+      "title": "Add",
+      "sub_title": "Provide the command and a description for it.",
+      "icon": "<svg class=\"text-white fill-current w-8\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\" fill=\"currentColor\">\n  <path fill-rule=\"evenodd\" d=\"M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z\" clip-rule=\"evenodd\" />\n</svg>",
+      "color": "bg-red-400",
+      "step": 1
+    },
+    {
+      "title": "Colorize",
+      "sub_title": "Select a color for the command and save it.",
+      "icon": "<svg class=\"text-white fill-current w-8\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\" fill=\"currentColor\">\n  <path fill-rule=\"evenodd\" d=\"M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z\" clip-rule=\"evenodd\" />\n</svg>",
+      "color": "bg-pink-400",
+      "step": 2
+    },
+    {
+      "title": "Saved",
+      "sub_title": "The command is now saved successfully on our servers.",
+      "icon": "<svg class=\"text-white fill-current w-8\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\" fill=\"currentColor\">\n  <path d=\"M5.5 16a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 16h-8z\" />\n</svg>",
+      "color": "bg-indigo-400",
+      "step": 3
+    },
+    {
+      "title": "Get it back!",
+      "sub_title": "You can now access it anywhere in the world.",
+      "icon": "<svg class=\"text-white fill-current w-8\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\" fill=\"currentColor\">\n  <path fill-rule=\"evenodd\" d=\"M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z\" clip-rule=\"evenodd\" />\n</svg>",
+      "color": "bg-green-400",
+      "step": 4
+    }
+  ]
+}

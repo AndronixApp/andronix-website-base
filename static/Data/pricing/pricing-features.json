@@ -1,5 +1,8 @@
 {
   "premium": [
+
+  ],
+  "modded_os": [
     "Discounts on Modded OS",
     "Andronix Commands",
     "Offline Installation",
@@ -12,12 +15,5 @@
     "Modded Debian XFCE included",
     "Modded Manjaro XFCE included",
     "Modded Ubuntu KDE included"
-  ],
-  "modded_os": [
-    "",
-    "",
-    "",
-    "",
-    ""
   ]
 }

@@ -1,0 +1,66 @@
+{
+  "products": [
+    {
+      "id": "modded_os",
+      "heading": "Modded OS",
+      "deco_heading": "ANDRONIX",
+      "price": "$ 1.99",
+      "slashedPrice": "$ 6.99",
+      "color": "bg-purple-600",
+      "features": [
+        "Discounts on Modded OS",
+        "Andronix Commands",
+        "Offline Installation",
+        "Internal Integration",
+        "You help sustain the project"
+      ]
+    },
+    {
+      "id": "premium",
+      "heading": "Premium",
+      "deco_heading": "ANDRONIX",
+      "price": "$ 1.99",
+      "slashedPrice": "$ 4.99",
+      "color": "bg-primary-600",
+      "features": [
+        "Discounts on Modded OS",
+        "Andronix Commands",
+        "Offline Installation",
+        "Internal Integration",
+        "You help sustain the project"
+      ]
+    }
+  ],
+  "bundles": [
+    {
+      "id": "modded_os_bundle_premium",
+      "heading": "Modded OS Bundle & Premium",
+      "deco_heading": "ANDRONIX",
+      "price": "$ 11.99",
+      "slashedPrice": "$ 28.99",
+      "color": "bg-green-600",
+      "features": [
+        "Discounts on Modded OS",
+        "Andronix Commands",
+        "Offline Installation",
+        "Internal Integration",
+        "You help sustain the project"
+      ]
+    },
+    {
+      "id": "modded_os_bundle",
+      "heading": "Modded OS Bundle",
+      "deco_heading": "ANDRONIX",
+      "price": "$ 9.99",
+      "slashedPrice": "$ 6.99",
+      "color": "bg-blue-600",
+      "features": [
+        "Discounts on Modded OS",
+        "Andronix Commands",
+        "Offline Installation",
+        "Internal Integration",
+        "You help sustain the project"
+      ]
+    }
+  ]
+}

@@ -16,7 +16,7 @@
     </div>
 
     <!--  Features   -->
-    <div class="mt-24 mb-24 lg:mb-48 lg:mt-48 px-12 md:p-24">
+    <div class="mt-24 lg:mt-48 px-12 md:p-24">
       <Heading heading="What can you do with this?"
                sub_heading="Genuine question but this cannot be answered without writing a book. There are infinite uses for Andronix. To keep it in understandable terms, you can almost do 70% of the things that you can do on an actual Linux machine."
                deco_heading="ANDRONIX"
@@ -32,9 +32,9 @@
       </div>
     </div>
     <!-- Metrics -->
-    <div class="mt-24 mb-24 lg:mb-48 lg:mt-48 px-12 md:p-24 lg:mx-24">
+    <div class="mt-24  lg:mt-48 px-12 md:p-24 lg:mx-24">
       <Heading
-        heading="Modded OS Metrics"
+        heading="Premium Metrics"
         sub_heading="Take a look at where our Modded OS Stands."
         deco_heading="METRICS"
       />
@@ -49,7 +49,7 @@
     </div>
 
     <!-- Testimonials   -->
-    <div class="mt-24 mb-24 lg:mb-48 lg:mt-48 px-12 md:p-24">
+    <div class="mt-24 pb-28 lg:mt-48 px-12 md:p-24">
       <Heading heading="What people say!" sub_heading="Listen to what our users say about us all around the internet."
                deco_heading="ANDRONIX"
       />

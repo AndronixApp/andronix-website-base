@@ -1,14 +1,14 @@
 <template>
   <div>
     <div class="bg-card_background rounded flex relative">
-      <div class="w-1/3 rounded-l flex justify-center items-center px-4 py-2" :class="color">
+      <div class="w-1/4 rounded-l flex justify-center items-center px-4 py-2" :class="color">
         <slot></slot>
       </div>
-      <div class="text-white font-sans px-4 py-2 ">
+      <div class="text-white w-3/4 font-sans px-4 py-2 ">
         <h2 class="font-bold mb-2 pr-16">
           {{ title }}
         </h2>
-        <p class="text-sm">{{ description }}</p>
+        <p class="text-sm break-normal">{{ description }}</p>
       </div>
       <div
         class="absolute bg-opacity-60 text-white -top-3 -right-3 rounded-full py-1 px-3 flex items-center justify-center"

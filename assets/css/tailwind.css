@@ -16,6 +16,10 @@
     @apply font-extrabold text-center text-6xl md:text-7xl text-white text-center
   }
 
+  .heading-2 {
+    @apply font-bold text-center text-3xl md:text-4xl text-white text-center
+  }
+
   .sub-heading {
     @apply font-medium text-center text-base md:text-xl text-center text-gray-300
   }

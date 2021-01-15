@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <div class="flex-col justify-between">
       <div class="rounded-t-lg md:rounded-t-lg bg-card_background pb-6 pt-3 px-6">
         <div class="flex justify-start items-start my-4">
