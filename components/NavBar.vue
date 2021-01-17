@@ -6,18 +6,20 @@
         <span class="text-primary-500 font-bold text-lg">.app</span>
       </div>
 
-      <div class="text-white font-medium hidden md:hidden lg:block flex space-x-6 pr-6">
-        <NuxtLink to="/">Modded OS</NuxtLink>
-        <NuxtLink to="/">Premium</NuxtLink>
-        <NuxtLink to="/">Docs</NuxtLink>
-        <NuxtLink to="/">Help</NuxtLink>
-        <NuxtLink to="/">Commands</NuxtLink>
-        <NuxtLink to="/">About</NuxtLink>
-        <NuxtLink class="text-primary" to="/login">Login</NuxtLink>
-      </div>
       <!--  Download Button    -->
-      <button class="rounded hidden md:hidden lg:block text-lg bg-primary text-white font-bold px-3 py-1">Download
-      </button>
+      <div
+        class="invisible md:invisible lg:visible cursor-pointer px-3 py-1 bg-primary-500 flex items-center space-x-5 justify-center rounded hover:bg-primary-600 hover:scale-105 transition transform duration-300"
+      >
+        <svg class="text-white fill-current w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+             fill="currentColor"
+        >
+          <path fill-rule="evenodd"
+                d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z"
+                clip-rule="evenodd"
+          />
+        </svg>
+        <a href="https://play.andronix.app" class="text-white font-bold">Download</a>
+      </div>
 
       <!--
             <div class="px-4 pt-3">

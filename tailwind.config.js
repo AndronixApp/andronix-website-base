@@ -1,12 +1,15 @@
 const colors = require('tailwindcss/colors')
 module.exports = {
   purge: {
-    options: {
+    content: [
+      './static/Data/*.json',
+    ],
+    /*options: {
       safelist: [
         'bg-primary-400', 'bg-blue-400', 'bg-purple-400', 'bg-green-400', 'bg-indigo-400', 'bg-pink-400', 'bg-red-400', 'w-10', 'w-6', 'stroke-current',
         'text-primary-400', 'text-blue-400', 'text-purple-400', 'text-green-400', 'text-indigo-400', 'text-pink-400', 'text-red-400'
       ]
-    }
+    }*/
   },
   theme: {
     extend: {

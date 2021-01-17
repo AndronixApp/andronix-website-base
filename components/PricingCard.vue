@@ -13,16 +13,18 @@
       <div class="mt-5">
         <ul class="w-2/3 mx-auto">
           <li v-for="feature in features">
-            <div class="flex items-center justify-start text-white text-left ml-4">
-              <svg class="text-white fill-current w-5 mr-4 my-2" xmlns="http://www.w3.org/2000/svg"
-                   viewBox="0 0 20 20" fill="currentColor"
-              >
-                <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"
-                />
-              </svg>
-              {{ feature }}
+            <div class="flex flex-wrap items-center justify-start text-white text-left ml-4">
+              <div class="w-1/4">
+                <svg class="text-white fill-current w-5 mr-4 my-2" xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 20 20" fill="currentColor"
+                >
+                  <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <p class="w-3/4">{{ feature }}</p>
             </div>
           </li>
         </ul>

@@ -13,7 +13,7 @@
   }
 
   .heading {
-    @apply font-extrabold text-center text-6xl md:text-7xl text-white text-center
+    @apply font-extrabold text-center text-5xl md:text-6xl lg:text-7xl text-white text-center
   }
 
   .heading-2 {

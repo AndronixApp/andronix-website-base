@@ -61,8 +61,6 @@
 </template>
 
 <script>
-import features from '~/static/Data/features/commands-feature.json'
-import steps from '~/static/Data/misc/command-steps.json'
 
 export default {
   name: 'index',
