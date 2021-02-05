@@ -1,5 +1,5 @@
 <template>
-  <XyzTransition appear duration="auto">
+  <XyzTransition :appear-visible="true" duration="auto">
     <div class="bg-background w-full bg-landing-pattern bg-top">
       <div
         class="h-screen m-0 bg-background w-full bg-landing-pattern bg-top flex items-center justify-center flex-col"
@@ -43,7 +43,7 @@
 
 
       <!-- Team -->
-      <div class="mt-24 lg:mt-48 px-12 md:p-24">
+      <div class="mt-24 px-12 md:p-24">
         <Heading
           heading="Our Team"
           deco_heading="ABOUT"
@@ -61,7 +61,7 @@
         </div>
 
         <!--   Support Team     -->
-        <XyzTransition appear duration="auto">
+        <XyzTransition :appear-visible="true" duration="auto">
           <div class="px-5 py-5 mt-16 pb-16">
             <div class="flex-col space-y-4" xyz="fade flip-down duration-10 delay-2 stagger ease-out-back">
               <h2 class="heading-2 xyz-nested">
@@ -80,7 +80,7 @@
 
 
         <!-- Special mentions -->
-        <XyzTransition appear duration="auto">
+        <XyzTransition :appear-visible="true" duration="auto">
           <div class="px-5 py-5 mt-16 pb-16">
             <div class="flex-col space-y-4" xyz="fade flip-down duration-10 delay-2 stagger ease-out-back">
               <h2 class="heading-2 xyz-nested">

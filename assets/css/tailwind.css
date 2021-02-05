@@ -29,10 +29,33 @@
   }
 
   .button-1 {
-    @apply rounded px-8 py-3 bg-primary-500 text-white font-extrabold text-lg text-center
+    @apply rounded px-8 py-3 bg-primary-500 text-white font-extrabold text-lg text-center transition transform hover:scale-105 hover:bg-primary-600 duration-100 cursor-pointer
   }
 
   .button-2 {
     @apply rounded px-8 py-2 bg-primary-500 text-white font-extrabold text-lg text-center
   }
+
+
+  /*  INPUT  */
+  .formulate-input-class {
+    @apply rounded border border-gray-700 text-white text-sm box-border w-full px-3 py-2 w-full bg-card_background focus:border-primary-500 outline-none leading-none
+  }
+
+  .formulate-label-class {
+    @apply text-white text-sm font-bold mb-4
+  }
+
+  .formulate-placeholder-class {
+    @apply text-sm mb-4 text-gray-700
+  }
+
+  .formulate-error-class {
+    @apply text-xs mt-0.5 text-red-600
+  }
+
+  .formulate-help-class {
+    @apply text-xs mt-0.5 text-gray-500
+  }
+
 }

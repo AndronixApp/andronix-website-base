@@ -15,7 +15,7 @@
       :class="this.$store.state.drawer.isDrawerOpen ? 'translate-x-0' : '-translate-x-full'"
     >
       <div class="flex justify-between mb-10">
-        <h2 @click="log" class="font-extrabold text-primary-500">ANDRONIX</h2>
+        <h2 class="font-extrabold text-primary-500">ANDRONIX</h2>
         <svg @click="$store.commit('drawer/toggleDrawer')" class="stroke-current text-white w-5"
              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
              stroke="currentColor"
@@ -78,11 +78,34 @@
         </div>
       </div>
 
+      <!--  Logout Button    -->
+
+      <div v-if="isLoggedIn" class="mt-10">
+        <div @click="logout"
+             class="cursor-pointer px-3 -mt-4 py-2 bg-card_background flex items-center space-x-5 justify-center rounded hover:bg-background hover:scale-105 transition transform duration-300"
+        >
+          <svg class="text-white stroke-current w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+               stroke="currentColor"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+            />
+          </svg>
+          <p class="text-white font-bold">Logout</p>
+        </div>
+      </div>
+
 
       <!--  Account Action    -->
       <div v-if="!isLoggedIn" class="flex flex-wrap space-x-3 mt-8 justify-center items-center text-white">
-        <div class="rounded bg-primary-600 text-center px-4 py-2">Register</div>
-        <div class="rounded bg-card_background2 text-center px-4 py-2">Login</div>
+        <div
+          class="rounded bg-primary-600 text-center px-4 py-2 hover:scale-105 transition transform duration-300 cursor-pointer"
+        >Register
+        </div>
+        <div @click="$router.push('/auth/login')"
+             class="rounded bg-card_background2 text-center px-4 py-2 hover:scale-105 transition transform duration-300 cursor-pointer"
+        >Login
+        </div>
       </div>
     </div>
   </div>
@@ -106,8 +129,8 @@ export default {
     }
   },
   methods: {
-    log: function () {
-      console.log(this.isLoggedIn)
+    logout: function () {
+      return this.$store.dispatch('auth/logoutUser')
     }
   },
   name: 'MenuDropdown'

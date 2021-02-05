@@ -1,11 +1,11 @@
 <template>
-  <div class="bg-background">
+  <div class="h-screen bg-background">
     <loading :active.sync="isLoading"
              background-color="#0F1535"
              color="#ff8b25"
              :is-full-page="true"
     />
-    <div class="flex justify-center items-center top-section">
+    <div class="mt-32 lg:mt-24 px-12 md:p-24 flex bg-background justify-center items-center top-section">
       <div>
         <h1 class="heading tracking-tight">Welcome!</h1>
         <div>

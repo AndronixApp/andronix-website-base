@@ -16,7 +16,7 @@
     </div>
 
     <!--  Features   -->
-    <div class="mt-24 lg:mt-48 px-12 md:p-24">
+    <div class="mt-24 px-12 md:p-24">
       <Heading heading="What can you do with this?"
                sub_heading="Genuine question but this cannot be answered without writing a book. There are infinite uses for Andronix. To keep it in understandable terms, you can almost do 70% of the things that you can do on an actual Linux machine."
                deco_heading="ANDRONIX"

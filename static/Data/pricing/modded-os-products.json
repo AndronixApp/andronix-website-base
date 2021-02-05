@@ -1,0 +1,36 @@
+{
+  "modded-os": [
+    {
+      "name": "Ubuntu XFCE",
+      "color_text": "text-primary-400",
+      "color_bg": "bg-primary-400",
+      "logo_text": "UX",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, rerum!",
+      "id": "ubuntu_xfce"
+    },
+    {
+      "name": "Debian XFCE",
+      "logo_text": "DX",
+      "color_text": "text-pink-400",
+      "color_bg": "bg-pink-400",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, rerum!",
+      "id": "debian_xfce"
+    },
+    {
+      "name": "Manjaro XFCE",
+      "logo_text": "MX",
+      "color_text": "text-green-400",
+      "color_bg": "bg-green-400",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, rerum!",
+      "id": "manjaro_xfce"
+    },
+    {
+      "name": "Ubuntu KDE",
+      "logo_text": "UK",
+      "color_text": "text-blue-400",
+      "color_bg": "bg-blue-400",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, rerum!",
+      "id": "ubuntu_kde"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 <template>
-  <XyzTransition appear duration="auto">
+  <XyzTransition :appear-visible="true" duration="auto">
     <div class="bg-background w-full bg-landing-pattern bg-top">
       <div
         class="h-screen m-0 bg-background w-full bg-landing-pattern bg-top flex items-center justify-center flex-col"
@@ -11,11 +11,11 @@
           sub_heading="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, eaque iure minus pariatur quas unde!"
         />
 
-        <div class="-mt-6 button-1">GET NOW</div>
+        <div @click="$router.push('/pricing')" class="-mt-6 button-1">GET NOW</div>
       </div>
 
       <!--  Features   -->
-      <div class="mt-24 lg:mt-48 px-12 md:p-24">
+      <div class="mt-24 px-12 md:p-24">
         <Heading heading="What can you do with this?"
                  sub_heading="Genuine question but this cannot be answered without writing a book. There are infinite uses for Andronix. To keep it in understandable terms, you can almost do 70% of the things that you can do on an actual Linux machine."
                  deco_heading="ANDRONIX"
@@ -65,104 +65,61 @@
       </div>
 
       <!--  Previews  -->
-      <div class="mt-24 lg:mt-48 px-12 md:p-24">
+      <div class="mt-24 px-12 md:px-24">
         <Heading
           heading="Take a look"
           sub_heading="Have a sneak peak on our Modded OS."
           deco_heading="Modded OS "
         />
 
-        <div class="space-x-8 space-y-20 md:space-y-24">
-          <div>
-            <div class="mb-8 md:mb-12">
-              <h2
-                class="font-extrabold text-white font-sans text-center text-xl sm:text-2xl lg:text-3xl"
-              >Ubuntu XFCE</h2>
-              <h2 class="font-medium text-base text-center  mt-4 text-gray-400 space">Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit. Aperiam aut, nam. Ipsam placeat qui repellendus?</h2>
-            </div>
+        <div class="mt-10">
+          <div v-for="os in moddedOsInfo" class="pb-5 md:pb-8 lg:pb-16">
 
             <div
-              class="flex-col text-white font-sans text-center text-xl sm:text-2xl lg:text-3xl space-y-3
- bg-card_background p-8 rounded-lg border-dotted border-4 border-primary"
+              class="grid grid-col-1 grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 gap-4 justify-center lg:justify-between pb-24 items-center"
             >
-              <div class="images grid grid-cols-1 md:grid-cols-2 gap-8 justify-around items-center"
-                   v-viewer="{movable: false}"
-              >
-                <div class="w-full rounded-lg justify-self-stretch" v-for="url in imagesArray[this.UBUNTU_XFCE]">
-                  <img class="object-cover " :src="url"
-                       alt=""
+
+              <div class="text-white text-center lg:text-left">
+                <h3 class="font-extrabold text-2xl md:text-4xl my-3" :class="`text-${os.color}`">{{ os.logo_text }}</h3>
+                <h3 class="font-extrabold text-xl md:text-2xl mb-3">{{ os.name }}</h3>
+                <h3 class="max-w-md mx-auto lg:mx-1">{{ os.description }}</h3>
+                <ul class="text-white my-8">
+                  <li v-for="feature in os.features">
+                    <div class="inline-flex space-x-3 text-center">
+                      <svg class="w-5 text-green-400 fill-current" xmlns="http://www.w3.org/2000/svg"
+                           viewBox="0 0 20 20"
+                           fill="currentColor"
+                      >
+                        <path fill-rule="evenodd"
+                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                              clip-rule="evenodd"
+                        />
+                      </svg>
+                      <p class="text-sm">{{ feature }}</p>
+                    </div>
+                  </li>
+                </ul>
+                <div class="mt-10">
+                  <div @click="purchase(os.id)"
+                       class="w-1/2 mx-auto lg:mx-1 cursor-pointer px-3 py-2 bg-primary-500 flex items-center space-x-5 justify-center rounded hover:bg-primary-600 hover:scale-105 transition transform duration-300"
                   >
+                    <svg class="text-white fill-current w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                         fill="currentColor"
+                    >
+                      <path
+                        d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"
+                      />
+                    </svg>
+                    <p class="text-white font-bold">Buy
+                      Now!
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div>
-            <div class="mb-8 md:mb-12">
-              <h2
-                class="font-extrabold text-white font-sans text-center text-xl sm:text-2xl lg:text-3xl"
-              >Debian XFCE</h2>
-              <h2 class="font-medium text-base text-center  mt-4 text-gray-400 space">Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit. Aperiam aut, nam. Ipsam placeat qui repellendus?</h2>
-            </div>
-
-            <div
-              class="flex-col text-white font-sans text-center text-xl sm:text-2xl lg:text-3xl space-y-3
- bg-card_background p-8 rounded-lg border-dotted border-4 border-pink-800"
-            >
-              <div class="images grid grid-cols-1 md:grid-cols-2 gap-8 justify-around items-center"
-                   v-viewer="{movable: false}"
-              >
-                <div class="w-full rounded-lg justify-self-stretch" v-for="url in imagesArray[this.DEBIAN_XFCE]">
-                  <img class="object-cover " :src="url"
-                       alt=""
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="mb-8 md:mb-12">
-              <h2
-                class="font-extrabold text-white font-sans text-center text-xl sm:text-2xl lg:text-3xl"
-              >Manjaro XFCE</h2>
-              <h2 class="font-medium text-base text-center  mt-4 text-gray-400 space">Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit. Aperiam aut, nam. Ipsam placeat qui repellendus?</h2>
-            </div>
-
-            <div
-              class="flex-col text-white font-sans text-center text-xl sm:text-2xl lg:text-3xl space-y-3
- bg-card_background p-8 rounded-lg border-dotted border-4 border-green-600"
-            >
-              <div class="images grid grid-cols-1 md:grid-cols-2 gap-8 justify-around items-center"
-                   v-viewer="{movable: false}"
-              >
-                <div class="w-full rounded-lg justify-self-stretch" v-for="url in imagesArray[this.MANJARO_XFCE]">
-                  <img class="object-cover " :src="url"
-                       alt=""
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="mb-8 md:mb-12">
-              <h2
-                class="font-extrabold text-white font-sans text-center text-xl sm:text-2xl lg:text-3xl"
-              >Ubuntu KDE</h2>
-              <h2 class="font-medium text-base text-center  mt-4 text-gray-400 space">Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit. Aperiam aut, nam. Ipsam placeat qui repellendus?</h2>
-            </div>
-
-            <div
-              class="flex-col text-white font-sans text-center text-xl sm:text-2xl lg:text-3xl space-y-3
- bg-card_background p-8 rounded-lg border-dotted border-4 border-blue-600"
-            >
-              <div class="images grid grid-cols-1 md:grid-cols-2 gap-8 justify-around items-center"
-                   v-viewer="{movable: false}"
-              >
-                <div class="w-full rounded-lg justify-self-stretch" v-for="url in imagesArray[this.UBUNTU_KDE]">
-                  <img class="object-cover " :src="url"
+              <div class="images grid-rows-2 grid grid-cols-2 gap-4">
+                <div v-for="image in imagesArray[os.id]" v-viewer class="images"
+                >
+                  <img class="object-cover " :src="image"
                        alt=""
                   >
                 </div>
@@ -171,8 +128,8 @@
           </div>
         </div>
       </div>
-
     </div>
+
   </XyzTransition>
 </template>
 <script>
@@ -186,6 +143,7 @@ const UBUNTU_KDE_DOC = 'ubuntu_kde_modded'
 const MANJARO_XFCE_DOC = 'manjaro_xfce_modded'
 
 import metadata from '~/static/Data/misc/modded-os-metric.json'
+import moddedOsInfo from '~/static/Data/products/modded-os-info.json'
 
 export default {
   created () {
@@ -194,29 +152,41 @@ export default {
     this.MANJARO_XFCE = MANJARO_XFCE_DOC
     this.UBUNTU_KDE = UBUNTU_KDE_DOC
   },
-  mounted () {
-    this.$fetch()
+  async mounted () {
+    await this.fetchImages()
   },
-  fetch () {
-    let refArray = [UBUNTU_XFCE_DOC, MANJARO_XFCE_DOC, UBUNTU_KDE_DOC, DEBIAN_XFCE_DOC]
-
-    for (let i = 0; i < refArray.length; ++i) {
-      let ref = refArray[i]
-      firestore.collection('osImages')
-        .doc(ref)
-        .get().then((doc) => {
-        if (doc.exists) {
-          this.$set(this.imagesArray, ref, doc.data().images)
-        } else {
-          console.log(`NOT_FOUND ${ref}`)
+  methods: {
+    purchase: function (id) {
+      if (this.$store.getters['auth/isUserLoggedIn']) {
+        this.$router.push(`/checkout/buy/${(id).replace('_modded', '')}`)
+      } else {
+        this.$router.push('/auth/login')
+      }
+    },
+    async fetchImages () {
+      console.log('Called')
+      let refArray = [UBUNTU_XFCE_DOC, MANJARO_XFCE_DOC, DEBIAN_XFCE_DOC, UBUNTU_KDE_DOC]
+      try {
+        for (let i = 0; i < refArray.length; ++i) {
+          let ref = refArray[i]
+          let doc = await firestore.collection('osImages')
+            .doc(ref)
+            .get()
+          if (doc.exists) {
+            console.log(doc.data())
+            this.$set(this.imagesArray, ref, doc.data().images)
+          } else {
+            console.log(`NOT_FOUND ${ref}`)
+          }
         }
-      }).catch((error) => {
+      } catch (e) {
         console.log(error)
-      })
+      }
     }
   },
   data: () => {
     return {
+      moddedOsInfo: moddedOsInfo.info,
       moddedOsFeaturesData: moddedOsFeatures.features,
       moddedOsTestimonials: moddedOsTestimonials.testimonials,
       imagesArray: {},

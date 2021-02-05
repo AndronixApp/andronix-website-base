@@ -1,0 +1,459 @@
+<template>
+
+  <div
+    class="flex-col bg-background mt-24 px-12 md:px-24 pb-10 items-center"
+  >
+    <loading :active.sync="isLoading"
+             background-color="#0F1535"
+             color="#ff8b25"
+             :is-full-page="true"
+    />
+    <XyzTransition appear-visible xyz="fade right-100%">
+      <div v-if="currentStep === this.PRODUCT_SELECTION" class="top-section mx-10 md:mx-20">
+        <Heading heading="Product Selection"
+                 sub_heading="Please select the product you want to purchase."
+                 deco_heading="CHECKOUT"
+        />
+        <div class="mt-12 mb-8 text-center">
+          <h3 class="text-white font-bold text-2xl">Andronix Premium</h3>
+          <h3 class="text-white mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, impedit. Learn
+            more
+            <NuxtLink class="text-primary-400" to="/products/premium">here.</NuxtLink>
+          </h3>
+        </div>
+
+        <div @click="setSelectedProduct('premium')"
+             class="cursor-pointer hover:scale-105 transition transform duration-300 flex-col justify-between max-w-screen-sm mx-auto"
+        >
+          <div class="rounded-t-lg md:rounded-t-lg bg-card_background text-white py-3 px-5 ">
+            <h1 class="font-extrabold text-4xl py-3 text-purple-400">PR</h1>
+            <h2 class="text-lg font-bold pb-2">Andronix Premium</h2>
+            <p class="pb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus atque cupiditate
+              ducimus
+              ea eos fugiat neque quam quo unde.</p>
+          </div>
+          <div class="h-1.5 rounded-b-lg bg-purple-400">
+          </div>
+        </div>
+
+        <hr class="border-dashed border-t-1 mr-3 my-10 border-opacity-70 border-gray-600">
+
+        <div class="mt-12 mb-8 text-center">
+          <h3 class="text-white font-bold text-2xl">Andronix Modded OS</h3>
+          <h3 class="text-white mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, impedit. Learn
+            more
+            <NuxtLink class="text-primary-400" to="/products/modded-os">here.</NuxtLink>
+          </h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 pb-16 md:pb-24 lg:grid-cols-4 justify-center items-center gap-5">
+          <div v-for="os in moddedProducts">
+            <div @click="setSelectedProduct(os.id)"
+                 class="cursor-pointer hover:scale-105 transition transform duration-300 flex-col justify-between"
+            >
+              <div class="rounded-t-lg md:rounded-t-lg bg-card_background text-white py-3 px-5">
+                <h1 class="font-extrabold text-4xl py-3" :class="os.color_text">{{ os.logo_text }}</h1>
+                <h2 class="text-lg font-bold pb-2">{{ os.name }}</h2>
+                <p class="pb-2">{{ os.description }}</p>
+              </div>
+              <div class="h-1.5 rounded-b-lg" :class="os.color_bg">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </XyzTransition>
+    <!--   Details   -->
+    <XyzTransition appear-visible xyz="fade left-100% delay-5">
+      <div v-if="currentStep === this.DETAILS">
+        <h3 class="heading-2 md:text-left mt-16 mb-10 md:mb-16 md:mt-20">Billing Information</h3>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-24 gap-y-8">
+
+          <!--   Form     -->
+          <div>
+            <FormulateForm
+              class="login-form"
+              ref="form"
+              @submit="submitForm"
+              #default="{ hasErrors }"
+            >
+              <div class="lg:max-w-screen-md">
+                <div class="grid gap-x-5 gap-y-2 grid-cols-1 md:grid-cols-2">
+                  <!--   Name       -->
+                  <FormulateInput
+                    type="text"
+                    name="first_name"
+                    label="First Name"
+                    placeholder="Your cool name goes here..."
+                    input-class="formulate-input-class"
+                    label-class="formulate-label-class"
+                    error-class="formulate-error-class"
+                    outer-class="mb-4"
+                    help-class="formulate-help-class"
+                    validation="required"
+                  />
+                  <FormulateInput
+                    type="text"
+                    name="last_name"
+                    label="Last Name"
+                    input-class="formulate-input-class"
+                    label-class="formulate-label-class"
+                    placeholder="Surname too!"
+                    error-class="formulate-error-class"
+                    outer-class="mb-4"
+                    help-class="formulate-help-class"
+                    validation="required"
+                  />
+                  <FormulateInput
+                    type="email"
+                    name="email"
+                    v-model="get_email_of_user"
+                    disable="true"
+                    label="Email"
+                    input-class="formulate-input-class"
+                    label-class="formulate-label-class"
+                    error-class="formulate-error-class"
+                    outer-class="mb-4"
+                    help-class="formulate-help-class"
+                    validation="^required|email"
+                  />
+                  <FormulateInput
+                    type="number"
+                    name="postal_code"
+                    label="Postal Code"
+                    input-class="formulate-input-class"
+                    label-class="formulate-label-class"
+                    error-class="formulate-error-class"
+                    placeholder="If we ever needed to write you letters"
+                    outer-class="mb-4"
+                    help-class="formulate-help-class"
+                    validation="^required|number"
+                  />
+
+                  <FormulateInput
+                    type="text"
+                    name="address"
+                    label="Address"
+                    input-class="formulate-input-class"
+                    placeholder="Your address"
+                    label-class="formulate-label-class"
+                    error-class="formulate-error-class"
+                    outer-class="mb-4"
+                    help-class="formulate-help-class"
+                    validation="required"
+                  />
+                  <FormulateInput
+                    type="select"
+                    name="country"
+                    label="Country"
+                    v-model="selectedCountry"
+                    :options="country_list"
+                    input-class="formulate-input-class"
+                    placeholder="Select your country"
+                    label-class="formulate-label-class"
+                    error-class="formulate-error-class"
+                    outer-class="mb-4"
+                    help-class="formulate-help-class"
+                    validation="required"
+                  />
+                  <FormulateInput
+                    type="select"
+                    name="state"
+                    label="State"
+                    :options="getStateListOfSelectedCountry(selectedCountry)"
+                    input-class="formulate-input-class"
+                    label-class="formulate-label-class"
+                    placeholder="Select your state"
+                    error-class="formulate-error-class"
+                    outer-class="mb-4"
+                    help-class="formulate--class"
+                    validation="required"
+                  />
+                  <!--          </div>-->
+                </div>
+                <recaptcha/>
+                <FormulateInput
+                  type="submit"
+                  :input-class="`w-full rounded font-bold py-3 px-3 mt-4 text-white transition transform duration-300 ${!hasErrors ?'bg-primary-500 opacity-1':'bg-gray-600 opacity-50'}`"
+                  :disabled="hasErrors"
+                  :label="isLoading ? 'Loading...' : 'Proceed'"
+                />
+              </div>
+            </FormulateForm>
+          </div>
+
+          <!--  Billing Invoice kinda    -->
+          <div class="pb-16 md:pb-24 max-w-md">
+            <div class="bg-card_background rounded px-4 py-3">
+              <div class="flex-col text-white">
+                <div class="flex justify-between">
+                  <div>
+                    <h2 class="font-bold text-lg">Selected Product</h2>
+                    <h2 class="mb-2 mt-1 opacity-70 text-sm" ref="selected_product_text">Ubuntu XFCE</h2>
+                  </div>
+                  <svg @click="deleteSelectedProduct"
+                       class="text-red-600 cursor-pointer mr-3 stroke-current w-5 hover:scale-105 transform transition duration-100 ease-in-out"
+                       xmlns="http://www.w3.org/2000/svg"
+                       fill="none"
+                       viewBox="0 0 24 24"
+                       stroke="currentColor"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                    />
+                  </svg>
+                </div>
+                <hr class="border-dashed border-t-1 mr-3 my-4 border-opacity-70 border-gray-600">
+                <div class="flex justify-between">
+                  <p class="">Sales tax</p>
+                  <p class="text-sm opacity-60" ref="product_tax_text">$ 0.30</p>
+                </div>
+                <div class="flex justify-between">
+                  <p>Product price</p>
+                  <p class="text-sm opacity-60" ref="product_price_text">$ 2.70</p>
+                </div>
+                <div class="flex justify-between mt-3">
+                  <p class="font-bold text-2xl">Total</p>
+                  <h2 class="font-bold opacity-70 text-xl" ref="product_total_text">$ 3.00</h2>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </XyzTransition>
+
+
+    <!--  Payment awaiting...  -->
+    <XyzTransition appear-visible xyz="fade left-100% delay-5">
+      <div v-if="currentStep === this.PAYING"
+           class="flex-col h-screen space-y-10 justify-center items-center pt-10"
+      >
+        <div class="text-white text-center font-extrabold opacity-50 text-4xl md:text-5xl lg:text-7xl">
+          {{ get_payment_status }}
+        </div>
+        <svg class="mx-auto text-primary-400 opacity-50 stroke-current w-10 md:w-16 mt-10 md:mt-20 animate-spin"
+             xmlns="http://www.w3.org/2000/svg"
+             fill="none"
+             viewBox="0 0 24 24" stroke="currentColor"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+          />
+        </svg>
+      </div>
+    </XyzTransition>
+
+  </div>
+
+</template>
+
+<script>
+import countryList from '~/static/Data/misc/country.json'
+import stateList from '~/static/Data/misc/state.json'
+import axios from 'axios'
+import Loading from 'vue-loading-overlay'
+import 'vue-loading-overlay/dist/vue-loading.css'
+import moddedOs from '~/static/Data/pricing/modded-os-products.json'
+import { getProductNameWithId } from '~/assets/js/productHelper'
+import {
+  generateOrderId,
+  getCountryName,
+  getPricesTaxes,
+  ProductIdArray,
+  verifyPurchase
+} from '~/lib/checkout/checkoutHelper'
+
+const PRODUCT_SELECTION = 'product_selection'
+const DETAILS = 'details'
+const PAYING = 'paying'
+const SUCCESS = 'success'
+const FAILED = 'failed'
+
+export default {
+  async asyncData ({ params }) {
+    const product_id = params.product_id
+    return { product_id }
+  },
+  created () {
+    if (this.$store.getters['auth/getUserData'].uid !== 'ycdFvHlr4iXIPmt0gFB9PwbINe73') {
+      console.log('Access denied!')
+      this.$router.push('/')
+    }
+    if (this.product_id && ProductIdArray.includes(this.product_id)) {
+      this.setSelectedProduct(this.product_id)
+    }
+    this.PRODUCT_SELECTION = PRODUCT_SELECTION
+    this.DETAILS = DETAILS
+    this.PAYING = PAYING
+    this.SUCCESS = SUCCESS
+    this.FAILED = FAILED
+  },
+  head () {
+    return {
+      script: [
+        {
+          src:
+            'https://checkout.razorpay.com/v1/checkout.js'
+        }
+      ],
+    }
+  },
+  name: 'buy',
+  components: { Loading },
+  data () {
+    return {
+      currentStep: PRODUCT_SELECTION,
+      selectedCountry: '1',
+      isLoading: false,
+      moddedProducts: moddedOs['modded-os'],
+      selectedProductId: '',
+      order_id: '',
+      paymentStatus: 'Awaiting Payment...'
+    }
+  },
+  computed: {
+    get_payment_status () {
+      return this.paymentStatus
+    },
+    country_list: function () {
+      return countryList
+    },
+    get_email_of_user: function () {
+      return this.$store.getters['auth/getEmail']
+    }
+  },
+  methods: {
+    deleteSelectedProduct () {
+      this.selectedProductId = ''
+      this.currentStep = PRODUCT_SELECTION
+    },
+    async setSelectedProduct (id) {
+      this.selectedProductId = id
+      this.currentStep = DETAILS
+      this.isLoading = true
+
+      const pricingData = await getPricesTaxes(id, this.$axios)
+      this.$refs.product_price_text.innerHTML = pricingData.price
+      this.$refs.product_tax_text.innerHTML = pricingData.tax
+      this.$refs.product_total_text.innerHTML = pricingData.total
+      this.$refs.selected_product_text.innerHTML = pricingData.name
+      this.isLoading = false
+    },
+    getStateListOfSelectedCountry: function (country_id) {
+      return stateList[country_id]
+    },
+    async submitForm (data) {
+      this.isLoading = true
+      let token
+      try {
+        /* ===========CAPTCHA============= */
+        try {
+          token = await this.$recaptcha.getResponse()
+        } catch (e) {
+          alert('Are... are you a bot? Please complete the captcha.')
+          this.isLoading = false
+          return
+        }
+        await this.$axios.get(`/sec/captcha?token=${token}`)
+        /* =============================== */
+
+        /* ===========SETTING DATA============= */
+        data.uid = this.$store.getters['auth/getUserData'].uid
+        data.product_id = this.selectedProductId
+        data.product_name = getProductNameWithId(this.selectedProductId)
+        data.country = getCountryName(data.country)
+        await this.$store.dispatch('checkout/setUserBillingData', data)
+        this.currentStep = PAYING
+        // todo check if it's not empty
+        /* ============================================= */
+
+        /* ===========GENERATING ORDER============= */
+        this.paymentStatus = 'Generating Order...'
+        this.order_id = await generateOrderId(data, this.$axios)
+        this.paymentStatus = 'Awaiting Payment...'
+        /* ============================================= */
+
+        /* ===========STARTING PAYMENT FLOW============= */
+        this.startPaymentFlow(data)
+        /* ============================================= */
+        await this.$recaptcha.reset()
+        this.isLoading = false
+
+      } catch (error) {
+        this.isLoading = false
+        console.log('Login error:', error)
+      }
+    },
+    startPaymentFlow: function (data) {
+      const verificationHandler = this.verifyPurchase
+      const key = 'rzp_test_YLoi6QYb1Sq3sy'
+      let options = {
+        key,
+        'name': data.product_name,
+        'description': `Andronix App - ${data.product_name}`,
+        order_id: this.order_id,
+        'prefill': {
+          'name': data.first_name + data.last_name,
+          'email': data.email,
+        },
+        'theme': {
+          'color': '#ff8b25'
+        },
+        handler: function (response) {
+          this.paymentStatus = 'Verifying Payment'
+          const {
+            razorpay_order_id,
+            razorpay_payment_id,
+            razorpay_signature
+          } = response
+          verificationHandler({
+            rzpay_order_id: razorpay_order_id,
+            rzpay_payment_id: razorpay_payment_id,
+            rzpay_signature: razorpay_signature,
+          })
+        }
+      }
+      const rzp1 = new Razorpay(options)
+
+      rzp1.on('payment.failed', function (response) {
+        alert(response.error.reason)
+      })
+      rzp1.open()
+
+    },
+    verifyPurchase: async function (data) {
+      try {
+        const isOK = verifyPurchase(data, axios)
+        this.isLoading = false
+        if (isOK) {
+          this.currentStep = SUCCESS
+          await this.$router.push(`/checkout/success/${data.rzpay_order_id}`)
+        } else {
+          this.currentStep = FAILED
+          await this.$router.push(`/checkout/failure/verification`)
+        }
+      } catch (e) {
+        console.log(e)
+      }
+    }
+
+  },
+  beforeDestroy () {
+    this.$recaptcha.destroy()
+  }
+  ,
+  watch: {
+    selectedCountry: (val) => {
+      console.log(val)
+    }
+  }
+}
+</script>
+
+<style scoped>
+
+</style>

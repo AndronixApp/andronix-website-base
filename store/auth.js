@@ -35,7 +35,8 @@ export const getters = {
     return {
       photo_url: state.user.photo_url,
       email: state.user.email,
-      name: state.user.name
+      name: state.user.name,
+      uid: state.user.uid
     }
   },
   getEmail: (state) => {
@@ -70,6 +71,14 @@ export const actions = {
       }
     )
 
+  },
+  logoutUser ({ commit }) {
+    auth.signOut().then(() => {
+      commit('SET_LOGGED_IN_STATE', false)
+      return commit('SET_USER_INFO', null)
+    }).catch((e) => {
+      console.log(e)
+    })
   },
   loginWithGoogle ({ commit }) {
     let provider = new firebase.auth.GoogleAuthProvider()

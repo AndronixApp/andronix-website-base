@@ -1,7 +1,7 @@
 <template>
   <div class="relative bg-background w-full bg-landing-pattern bg-top px-10 md:px-20 lg:px-30 font-sans">
     <div class="flex-col items-center justify-center cont">
-      <XyzTransition appear duration="auto">
+      <XyzTransition :appear-visible="true" duration="auto">
         <div class="text-5xl md:text-6xl lg:text-7xl tracking-tight" xyz="fade small stagger ease-out-back">
           <h1 class="text-white font-bold xyz-nested">The power
             of</h1>

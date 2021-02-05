@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="mt-24 px-12 md:p-24 bg-background bg-landing-pattern bg-top">
+    <div class="mt-24 px-12 md:p-24 bg-background bg-top">
 
 
       <Heading heading="Pricing"
@@ -9,22 +9,10 @@
       />
 
       <XyzTransition appear duration="auto" mode="out-in" xyz="fade down flip-up">
-        <div v-if="showDistroSelection">
-          <DistroSelection/>
-          <!--             Close button       -->
-          <div @click="showDistroSelection = false"
-               class=" flex justify-center items-center py-5"
-          >
-            <button
-              class="bg-card_background px-3 py-2 rounded text-white font-bold text-sm"
-            >Close Selection
-            </button>
-          </div>
-        </div>
-        <div v-else xyz="fade down flip-up"
+        <div xyz="fade down flip-up"
              class="grid gap-x-16 gap-y-5 grid-cols-1 items-center lg:grid-cols-2 justify-center max-w-screen-lg mx-auto"
         >
-          <PricingCard @purchase="purchase" v-for="product in productDetails"
+          <PricingCard @purchase="purchase(product.id)" v-for="product in productDetails"
                        :id="product.id"
                        :heading="product.heading"
                        :deco_heading="product.deco_heading"
@@ -41,17 +29,21 @@
                deco_heading="ANDRONIX"
       />
 
-      <div class="grid gap-x-16 gap-y-5 grid-cols-1 items-center lg:grid-cols-2 justify-center max-w-screen-lg mx-auto">
-        <PricingCard @purchase="purchase" v-for="product in bundleDetails"
-                     :id="product.id"
-                     :heading="product.heading"
-                     :deco_heading="product.deco_heading"
-                     :price="product.price"
-                     :color="product.color"
-                     :slashedPrice="product.slashedPrice"
-                     :features="product.features"
-        />
-      </div>
+      <h3
+        class="opacity-10 pb-16 md:pb-24 text-white text-2xl flex justify-center items-center font-bold md:text-3xl lg:text-4xl"
+      >
+        COMING SOON...</h3>
+
+      <!--      <div class="grid gap-x-16 gap-y-5 grid-cols-1 items-center lg:grid-cols-2 justify-center max-w-screen-lg mx-auto">
+              <PricingCard @purchase="purchase" v-for="product in bundleDetails"
+                           :id="product.id"
+                           :heading="product.heading"
+                           :deco_heading="product.deco_heading"
+                           :price="product.price"
+                           :color="product.color"
+                           :slashedPrice="product.slashedPrice"
+                           :features="product.features"
+              />-->
     </div>
   </div>
 </template>
@@ -69,8 +61,15 @@ export default {
   },
   methods: {
     purchase: function (id) {
-      console.log(`Purchase clicked for the product ${id}`)
-      this.showDistroSelection = id === 'modded_os'
+      if (this.$store.getters['auth/isUserLoggedIn']) {
+        if (id !== 'premium') {
+          this.$router.push('checkout/buy')
+        } else {
+          this.$router.push('checkout/buy/premium')
+        }
+      } else {
+        this.$router.push('auth/login')
+      }
     }
   },
   name: 'pricing'

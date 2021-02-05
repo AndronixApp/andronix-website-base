@@ -1,0 +1,64 @@
+{
+  "info": [
+    {
+      "features": [
+        "Pre-installed apps like VS-Code, Firefox and Chromium",
+        "Themed and icon pack pre-applied.",
+        "Debugged and things streamlined.",
+        "More performant than normal Andronix distros."
+      ],
+      "name": "Ubuntu XFCE",
+      "logo_text": "UX",
+      "id": "ubuntu_xfce_modded",
+      "color": "primary-400",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi culpa ducimus et eveniet ex id illum iste magni quo quos.",
+      "version": "20.04",
+      "stability": 100
+    },
+    {
+      "name": "Manjaro XFCE",
+      "color": "green-400",
+      "logo_text": "MX",
+      "features": [
+        "Pre-installed apps like VS-Code, Firefox and Chromium",
+        "Themed and icon pack pre-applied.",
+        "Debugged and things streamlined.",
+        "More performant than normal Andronix distros."
+      ],
+      "id": "manjaro_xfce_modded",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi culpa ducimus et eveniet ex id illum iste magni quo quos.",
+      "version": "19.00",
+      "stability": 80
+    },
+    {
+      "name": "Debian XFCE",
+      "color": "pink-400",
+      "logo_text": "DX",
+      "features": [
+        "Pre-installed apps like VS-Code, Firefox and Chromium",
+        "Themed and icon pack pre-applied.",
+        "Debugged and things streamlined.",
+        "More performant than normal Andronix distros."
+      ],
+      "id": "debian_xfce_modded",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi culpa ducimus et eveniet ex id illum iste magni quo quos.",
+      "version": "10.00",
+      "stability": 100
+    },
+    {
+      "name": "Ubuntu KDE",
+      "color": "blue-400",
+      "features": [
+        "Pre-installed apps like VS-Code, Firefox and Chromium",
+        "Themed and icon pack pre-applied.",
+        "Debugged and things streamlined.",
+        "More performant than normal Andronix distros."
+      ],
+      "id": "ubuntu_kde_modded",
+      "logo_text": "UK",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi culpa ducimus et eveniet ex id illum iste magni quo quos.",
+      "version": "19.04",
+      "stability": 90
+    }
+  ]
+}

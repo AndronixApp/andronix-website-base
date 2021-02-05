@@ -1,6 +1,6 @@
 import firebase from 'firebase'
 
-let app = null
+let app
 const config = {
   apiKey: 'AIzaSyBvHOXLIFJZZsFdVCjxP3XLP_tw6n5BdW8',
   authDomain: 'andronix-techriz.firebaseapp.com',

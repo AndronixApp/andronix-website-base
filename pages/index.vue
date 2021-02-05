@@ -5,7 +5,7 @@
     <Landing class="m-0"/>
     <Testimonials class="top-section"/>
     <div
-      class="bg-rect-pattern bg-no-repeat top-section"
+      class=" bg-no-repeat top-section"
     >
       <Heading heading="What do you get?"
                sub_heading="Get a wide selection of almost all the major distributions, desktop environments and window managers."
@@ -19,7 +19,7 @@
     </div>
 
 
-    <div class="flex-col bg-circle-pattern bg-no-repeat mx-10 md:mx-20">
+    <div class="flex-col bg-no-repeat mx-10 md:mx-20">
       <!-- Features   -->
       <div class="top-section">
         <Heading heading="What can you do with this?"
@@ -87,16 +87,17 @@ export default {
 
 <style>
 *,
-html,
-body {
+html {
   margin: 0;
+  max-width: 100%;
   box-sizing: border-box;
   padding: 0;
 }
 
 body {
   background-color: #0f1535;
-  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   height: auto;
   margin: 0;
   box-sizing: border-box;
@@ -108,11 +109,11 @@ body {
 }
 
 .top-section {
-  @apply mt-32 md:mt-44 lg:mt-56
+  @apply mt-32 md:mt-44
 }
 
 .top-inner-section {
-  @apply mt-12 md:mt-24 lg:mt-36 mx-10
+  @apply mt-12 md:mt-24 mx-10
 }
 
 

@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Testimonials   -->
-    <div class="mt-24 lg:mt-48 px-12 md:px-24 pb-28 bg-circle-pattern bg-no-repeat">
+    <div class="mt-24 px-12 md:px-24 pb-28 bg-no-repeat">
       <Heading heading="Get Help Fast!"
                sub_heading=" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque culpa eius explicabo facilis fugiat maxime modi quas quos reiciendis voluptatum!"
                deco_heading="ANDRONIX"

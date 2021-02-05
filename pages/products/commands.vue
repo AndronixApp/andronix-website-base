@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-background w-full bg-landing-pattern bg-top">
+  <div class="bg-background w-full bg-top">
     <div
       class="h-screen m-0 bg-background w-full bg-landing-pattern bg-top flex items-center justify-center flex-col"
     >
@@ -30,7 +30,7 @@
       </div>
     </div>
 
-    <div class="mt-24 lg:mt-48 px-12 md:p-24">
+    <div class="mt-24 px-12 md:p-24">
       <Heading heading="Get your Commands."
                sub_heading="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores dolores illo in ipsa laudantium nihil placeat praesentium reiciendis sapiente voluptatum."
                deco_heading="COMMANDS"
@@ -61,6 +61,9 @@
 </template>
 
 <script>
+
+import features from '~/static/Data/features/commands-feature.json'
+import steps from '~/static/Data/misc/command-steps.json'
 
 export default {
   name: 'index',

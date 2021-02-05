@@ -80,7 +80,7 @@ export default {
       this.$emit('purchase', this.id)
     }
   },
-  name: 'Pricing',
+  name: 'PricingCard',
 }
 </script>
 

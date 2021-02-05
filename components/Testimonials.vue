@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-24 lg:mt-48 px-12 md:p-24">
+  <div class="mt-24 px-12 md:p-24">
     <Heading heading="What people say!" sub_heading="Listen to what our users say about us all around the internet."
              deco_heading="ANDRONIX"
     />
