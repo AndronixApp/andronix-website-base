@@ -1,19 +1,23 @@
 const colors = require('tailwindcss/colors')
 module.exports = {
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+  ],
   purge: {
     content: [
       './static/Data/*.json',
     ],
-    /*options: {
+    options: {
       safelist: [
-        'bg-primary-400', 'bg-blue-400', 'bg-purple-400', 'bg-green-400', 'bg-indigo-400', 'bg-pink-400', 'bg-red-400', 'w-10', 'w-6', 'stroke-current',
+        'bg-primary-400', 'text-teal-400', 'bg-blue-400', 'bg-purple-400', 'bg-green-400', 'bg-indigo-400', 'bg-pink-400', 'bg-red-400', 'w-10', 'w-6', 'stroke-current',
         'text-primary-400', 'text-blue-400', 'text-purple-400', 'text-green-400', 'text-indigo-400', 'text-pink-400', 'text-red-400'
       ]
-    }*/
+    }
   },
   theme: {
     extend: {
       colors: {
+        trueGray: colors.trueGray,
         teal: {
           100: '#CCFBF1',
           200: '#99F6E4',
@@ -40,6 +44,7 @@ module.exports = {
         violet2: '#9B0ABF',
         card_background: '#303653',
         card_background_accent: '#454a64',
+        card_background_dark: '#070a1a',
         card_background2: '#3E3F64'
       },
       backgroundImage: () => ({

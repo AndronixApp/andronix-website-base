@@ -11,7 +11,7 @@
       <Overlay v-show="$store.state.drawer.isDrawerOpen"/>
     </transition>
     <div
-      class="bg-background2 p-8 rounded-r-lg transform top-0 left-0 w-64 md:w-80 fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30"
+      class="bg-background2 p-8 rounded-r-lg transform top-0 left-0 w-72 fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30"
       :class="this.$store.state.drawer.isDrawerOpen ? 'translate-x-0' : '-translate-x-full'"
     >
       <div class="flex justify-between mb-10">
@@ -25,17 +25,21 @@
       </div>
 
       <!--  Account Details    -->
-      <div v-if="isLoggedIn" class="my-10 text-white">
-        <div class="flex-col bg-card_background px-4 py-4 rounded justify-center items-center">
+      <div v-if="isLoggedIn"
+           class="my-10 text-white"
+      >
+        <div @click="$store.commit('drawer/toggleDrawer');$router.push('/user/profile')"
+             class="flex-col bg-background bg-opacity-40 px-4 py-4 rounded-lg justify-center items-center cursor-pointer hover:scale-105 duration-200 transform transition"
+        >
           <div class="rounded-full mx-auto overflow-hidden w-8 h-8">
             <img class="object-cover"
-                 :src="userData.photo_url ? userData.photo_url : 'https://images.unsplash.com/photo-1610376541408-0deb8c3f1183?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80'"
+                 :src="userData.photo_url ? userData.photo_url : '/static_images/default_dp.svg'"
                  alt=""
             >
           </div>
-          <p class="font-medium mt-2 text-sm text-center overflow-ellipsis">
+          <p class="font-medium mt-2 text-sm text-center overflow-ellipsis line-clamp-1">
             {{ userData.name ? userData.name : 'Anonymous' }}</p>
-          <p class="mt-1 text-xs text-center overflow-ellipsis">{{
+          <p class="mt-1 text-xs text-center overflow-ellipsis line-clamp-1">{{
               userData.email ? userData.email : 'Not Logged In'
             }}</p>
         </div>
@@ -60,24 +64,6 @@
 
       <hr class="border-dashed border-t-1 mr-3 my-4 border-opacity-50 border-gray-700">
 
-      <!--  Download Button    -->
-
-      <div class="mt-10">
-        <div
-          class=" cursor-pointer px-3 py-2 bg-primary-500 flex items-center space-x-5 justify-center rounded hover:bg-primary-600 hover:scale-105 transition transform duration-300"
-        >
-          <svg class="text-white fill-current w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-               fill="currentColor"
-          >
-            <path fill-rule="evenodd"
-                  d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z"
-                  clip-rule="evenodd"
-            />
-          </svg>
-          <a href="https://play.andronix.app" class="text-white font-bold">Download</a>
-        </div>
-      </div>
-
       <!--  Logout Button    -->
 
       <div v-if="isLoggedIn" class="mt-10">
@@ -98,11 +84,11 @@
 
       <!--  Account Action    -->
       <div v-if="!isLoggedIn" class="flex flex-wrap space-x-3 mt-8 justify-center items-center text-white">
-        <div
-          class="rounded bg-primary-600 text-center px-4 py-2 hover:scale-105 transition transform duration-300 cursor-pointer"
+        <div @click="$store.commit('drawer/toggleDrawer');$router.push('/auth/register')"
+             class="rounded bg-primary-600 text-center px-4 py-2 hover:scale-105 transition transform duration-300 cursor-pointer"
         >Register
         </div>
-        <div @click="$router.push('/auth/login')"
+        <div @click="$store.commit('drawer/toggleDrawer');$router.push('/auth/login')"
              class="rounded bg-card_background2 text-center px-4 py-2 hover:scale-105 transition transform duration-300 cursor-pointer"
         >Login
         </div>
@@ -112,7 +98,7 @@
 </template>
 
 <script>
-import drawerMenu from 'static/Data/menu/main-drawer-menu.json'
+import drawerMenu from '~/static/Data/menu/main-drawer-menu.json'
 
 export default {
   computed: {
@@ -129,11 +115,12 @@ export default {
     }
   },
   methods: {
-    logout: function () {
+    logout: async function () {
+      this.$store.commit('drawer/toggleDrawer')
       return this.$store.dispatch('auth/logoutUser')
     }
   },
-  name: 'MenuDropdown'
+  name: 'SideBar'
 }
 </script>
 

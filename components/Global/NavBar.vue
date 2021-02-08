@@ -1,10 +1,12 @@
 <template>
   <div>
     <div class="flex pt-6 md:pt-6 lg:pt-8 px-8 items-center justify-end">
-      <div class="flex justify-self-start mr-auto cursor-pointer" @click="$router.push('/')">
-        <h3 class="text-white font-sans font-bold text-lg">andronix</h3>
-        <span class="text-primary-500 font-bold text-lg">.app</span>
-      </div>
+      <XyzTransition appear-visible xyz="fade left-100% small">
+        <div class="flex justify-self-start mr-auto cursor-pointer" @click="$router.push('/')">
+          <h3 class="text-white font-sans font-bold text-lg">andronix</h3>
+          <span class="text-primary-500 font-bold text-lg">.app</span>
+        </div>
+      </XyzTransition>
 
       <!--  Download Button    -->
       <div
@@ -21,38 +23,19 @@
         <a href="https://play.andronix.app" class="text-white font-bold">Download</a>
       </div>
 
-      <!--
-            <div class="px-4 pt-3">
-              <tasty-burger-button type="spring" v-on:toggle="$store.commit('drawer/toggleDrawer')"
-                                   :active="$store.getters['drawer/getDrawerState']" color="#fff" active-color="#fff"
-              />
-            </div>-->
-
       <div @click="$store.commit('drawer/toggleDrawer')" class="cursor-pointer ml-5">
-        <svg class="stroke-current text-white w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-             stroke="currentColor"
-        >
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        <svg class="stroke-current text-white w-8" xmlns="http://www.w3.org/2000/svg" width="31" height="21">
+          <g data-name="Group 393" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="3">
+            <path data-name="Line 9" d="M1.5 1.5h28"/>
+            <path data-name="Line 10" d="M1.5 10.5h17"/>
+            <path data-name="Line 11" d="M1.5 19.5h22"/>
+          </g>
         </svg>
       </div>
 
     </div>
   </div>
 </template>
-
-
-<!--
-
-Modded OS
-Pricing
-Docs
-Help
-Commands
-About
-
-Download
-
--->
 
 
 <script>

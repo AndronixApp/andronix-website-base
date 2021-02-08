@@ -66,7 +66,7 @@
     <!--   Details   -->
     <XyzTransition appear-visible xyz="fade left-100% delay-5">
       <div v-if="currentStep === this.DETAILS">
-        <h3 class="heading-2 md:text-left mt-16 mb-10 md:mb-16 md:mt-20">Billing Information</h3>
+        <h3 class="form heading-2 md:text-left mt-16 mb-10 md:mb-16 md:mt-20">Billing Information</h3>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-24 gap-y-8">
 
           <!--   Form     -->
@@ -108,7 +108,7 @@
                     type="email"
                     name="email"
                     v-model="get_email_of_user"
-                    disable="true"
+                    disabled="true"
                     label="Email"
                     input-class="formulate-input-class"
                     label-class="formulate-label-class"
@@ -171,7 +171,38 @@
                   />
                   <!--          </div>-->
                 </div>
-                <recaptcha/>
+
+                <!-- Coupon  -->
+                <div v-if="!couponApplied" class="flex space-x-5 mt-5 pb-1 items-center">
+                  <div>
+                    <input v-model="couponCodeEntered" placeholder="Coupon Code"
+                           class="input uppercase" type="text"
+                    >
+                  </div>
+                  <div>
+                    <button @click="validateCoupon"
+                            class="rounded text-white font-bold text-sm px-4 py-3 bg-primary-600"
+                    >APPLY
+                    </button>
+                  </div>
+                </div>
+
+                <div v-if="couponApplied" class="flex space-x-5">
+                  <p class="font-medium font-bold my-4 text-green-500"
+                  >
+                    {{ couponText }}</p>
+                  <svg class="w-5 text-red-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                       fill="currentColor"
+                  >
+                    <path fill-rule="evenodd"
+                          d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                          clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+
+
+                <recaptcha class="mt-6"/>
                 <FormulateInput
                   type="submit"
                   :input-class="`w-full rounded font-bold py-3 px-3 mt-4 text-white transition transform duration-300 ${!hasErrors ?'bg-primary-500 opacity-1':'bg-gray-600 opacity-50'}`"
@@ -180,6 +211,8 @@
                 />
               </div>
             </FormulateForm>
+
+
           </div>
 
           <!--  Billing Invoice kinda    -->
@@ -189,7 +222,7 @@
                 <div class="flex justify-between">
                   <div>
                     <h2 class="font-bold text-lg">Selected Product</h2>
-                    <h2 class="mb-2 mt-1 opacity-70 text-sm" ref="selected_product_text">Ubuntu XFCE</h2>
+                    <h2 class="mb-2 mt-1 opacity-70 text-sm" ref="selected_product_text">Loading...</h2>
                   </div>
                   <svg @click="deleteSelectedProduct"
                        class="text-red-600 cursor-pointer mr-3 stroke-current w-5 hover:scale-105 transform transition duration-100 ease-in-out"
@@ -205,16 +238,14 @@
                 </div>
                 <hr class="border-dashed border-t-1 mr-3 my-4 border-opacity-70 border-gray-600">
                 <div class="flex justify-between">
-                  <p class="">Sales tax</p>
-                  <p class="text-sm opacity-60" ref="product_tax_text">$ 0.30</p>
                 </div>
                 <div class="flex justify-between">
                   <p>Product price</p>
-                  <p class="text-sm opacity-60" ref="product_price_text">$ 2.70</p>
+                  <p class="text-sm opacity-60" ref="product_price_text">....</p>
                 </div>
                 <div class="flex justify-between mt-3">
                   <p class="font-bold text-2xl">Total</p>
-                  <h2 class="font-bold opacity-70 text-xl" ref="product_total_text">$ 3.00</h2>
+                  <h2 class="font-bold opacity-70 text-xl" ref="product_total_text">....</h2>
                 </div>
 
               </div>
@@ -258,11 +289,10 @@ import axios from 'axios'
 import Loading from 'vue-loading-overlay'
 import 'vue-loading-overlay/dist/vue-loading.css'
 import moddedOs from '~/static/Data/pricing/modded-os-products.json'
-import { getProductNameWithId } from '~/assets/js/productHelper'
+import { getProductNameWithId } from '~/lib/checkout/productHelper'
 import {
   generateOrderId,
-  getCountryName,
-  getPricesTaxes,
+  getCountryName, getPrices,
   ProductIdArray,
   verifyPurchase
 } from '~/lib/checkout/checkoutHelper'
@@ -279,10 +309,6 @@ export default {
     return { product_id }
   },
   created () {
-    if (this.$store.getters['auth/getUserData'].uid !== 'ycdFvHlr4iXIPmt0gFB9PwbINe73') {
-      console.log('Access denied!')
-      this.$router.push('/')
-    }
     if (this.product_id && ProductIdArray.includes(this.product_id)) {
       this.setSelectedProduct(this.product_id)
     }
@@ -307,11 +333,16 @@ export default {
   data () {
     return {
       currentStep: PRODUCT_SELECTION,
+
       selectedCountry: '1',
+      isCouponError: null,
       isLoading: false,
       moddedProducts: moddedOs['modded-os'],
       selectedProductId: '',
       order_id: '',
+      couponText: '',
+      couponCodeEntered: '',
+      couponApplied: null,
       paymentStatus: 'Awaiting Payment...'
     }
   },
@@ -327,34 +358,73 @@ export default {
     }
   },
   methods: {
+    removeCoupon () {
+      this.couponApplied = null
+      this.setSelectedProduct(this.selectedProductId)
+    },
+    async validateCoupon () {
+      this.isLoading = true
+      try {
+        let couponEntered = this.couponCodeEntered.toUpperCase()
+        let res = await
+          this.$axios.$get(`/coupon?coupon_code=${couponEntered}`)
+        if (res.isValid === true) {
+          this.couponApplied = couponEntered
+          this.couponCodeEntered = ''
+          this.$toast.success('Coupon applied!')
+          this.couponText = `${couponEntered} applied!`
+          this.setCouponedPrices(this.selectedProductId, res.pricing)
+        } else {
+          this.$toast.error('Coupon doesn\'t exists')
+        }
+      } catch (e) {
+        console.log(e)
+        this.$toast.error('Coupon validation failed.')
+      }
+      this.isLoading = false
+    },
     deleteSelectedProduct () {
       this.selectedProductId = ''
       this.currentStep = PRODUCT_SELECTION
     },
     async setSelectedProduct (id) {
+
       this.selectedProductId = id
       this.currentStep = DETAILS
       this.isLoading = true
 
-      const pricingData = await getPricesTaxes(id, this.$axios)
+      const pricingData = await getPrices(id, this.$axios)
       this.$refs.product_price_text.innerHTML = pricingData.price
-      this.$refs.product_tax_text.innerHTML = pricingData.tax
-      this.$refs.product_total_text.innerHTML = pricingData.total
+      this.$refs.product_total_text.innerHTML = pricingData.price
       this.$refs.selected_product_text.innerHTML = pricingData.name
+      this.scrollToTop()
       this.isLoading = false
+    },
+    setCouponedPrices (id, couponPriceObj) {
+      let price = `$ ${(parseInt(couponPriceObj[id]) / 100).toFixed(2)}`
+      this.$refs.product_price_text.innerHTML = price
+      this.$refs.product_total_text.innerHTML = price
+      this.$refs.selected_product_text.innerHTML = getProductNameWithId(id)
     },
     getStateListOfSelectedCountry: function (country_id) {
       return stateList[country_id]
     },
     async submitForm (data) {
       this.isLoading = true
+      /* ============== CHECKING FOR COUPON ===============*/
+      if (this.couponApplied) {
+        data.coupon = this.couponApplied
+      } else {
+        data.coupon = null
+      }
+      /*=================================================*/
       let token
       try {
         /* ===========CAPTCHA============= */
         try {
           token = await this.$recaptcha.getResponse()
         } catch (e) {
-          alert('Are... are you a bot? Please complete the captcha.')
+          this.$toast.error('Are... are you a bot? Please complete the captcha.')
           this.isLoading = false
           return
         }
@@ -385,11 +455,13 @@ export default {
 
       } catch (error) {
         this.isLoading = false
+        this.$toast.error('An error occurred!')
         console.log('Login error:', error)
       }
     },
     startPaymentFlow: function (data) {
       const verificationHandler = this.verifyPurchase
+      const resetIfClosed = this.resetIfClosed
       const key = 'rzp_test_YLoi6QYb1Sq3sy'
       let options = {
         key,
@@ -402,6 +474,11 @@ export default {
         },
         'theme': {
           'color': '#ff8b25'
+        },
+        modal: {
+          'ondismiss': function () {
+            resetIfClosed()
+          }
         },
         handler: function (response) {
           this.paymentStatus = 'Verifying Payment'
@@ -420,14 +497,20 @@ export default {
       const rzp1 = new Razorpay(options)
 
       rzp1.on('payment.failed', function (response) {
-        alert(response.error.reason)
+        console.log(response)
+        this.$toast.error(response.error.reason)
+        this.$toast.info('You can retry your payment if available.')
       })
       rzp1.open()
 
     },
+    resetIfClosed () {
+      this.currentStep = PRODUCT_SELECTION
+    },
     verifyPurchase: async function (data) {
       try {
-        const isOK = verifyPurchase(data, axios)
+        const isOK =
+          await verifyPurchase(data, axios)
         this.isLoading = false
         if (isOK) {
           this.currentStep = SUCCESS
@@ -439,6 +522,9 @@ export default {
       } catch (e) {
         console.log(e)
       }
+    },
+    scrollToTop () {
+      window.scrollTo(0, 0)
     }
 
   },

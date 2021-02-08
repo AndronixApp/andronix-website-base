@@ -1,8 +1,9 @@
 <template>
   <div class="bg-background">
     <NavBar/>
-    <MenuDropdown/>
+    <SideBar/>
     <Nuxt/>
+    <Footer/>
   </div>
 </template>
 
@@ -18,7 +19,6 @@ export default {
     observeAuthStateChange: function () {
       let ctx = this
       auth.onAuthStateChanged(function (user) {
-        console.log('Hola!')
         if (user) {
           let data = {
             email: user.email,
@@ -41,5 +41,15 @@ export default {
 
 
 <style>
+*,
+html {
+
+}
+
+body {
+  background-color: #0f1535;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
 </style>
 

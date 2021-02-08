@@ -12,14 +12,18 @@
           <p class="">
             {{ desc }} </p>
         </div>
-        <div class="flex items-center justify-center">
-          <button
-            class="w-1/2 px-3 py-2 rounded mt-6 text-white font-extrabold text-center transition ease-in-out duration-300 shadow-2xl transform hover:scale-105"
-            :class="buttonColor"
-            :href="buttonLink"
-          >
-            Join now!
-          </button>
+        <div class="mt-5 flex items-center justify-center">
+          <PrimaryTextButton @click="openLink(buttonLink)"
+                             :backgroundColor="buttonColor"
+                             label="Join now!" :textHoverColor="buttonColor"
+          />
+          <!--          <button
+                      class="w-1/2 px-3 py-2 rounded mt-6 text-white font-extrabold text-center transition ease-in-out duration-300 shadow-2xl transform hover:scale-105"
+                      :class="buttonColor"
+                      :href="buttonLink"
+                    >
+                      Join now!
+                    </button>-->
         </div>
       </div>
       <div class="h-1.5 rounded-b-lg" :class="color ? color : 'bg-primary'">
@@ -51,7 +55,7 @@ export default {
       required: true
     },
   },
-  name: 'CTAButton'
+  name: 'CtaCard'
 }
 </script>
 

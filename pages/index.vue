@@ -3,7 +3,7 @@
     class="flex-col bg-background mx-auto justify-center items-center"
   >
     <Landing class="m-0"/>
-    <Testimonials class="top-section"/>
+
     <div
       class=" bg-no-repeat top-section"
     >
@@ -11,13 +11,29 @@
                sub_heading="Get a wide selection of almost all the major distributions, desktop environments and window managers."
                deco_heading="ANDRONIX"
       />
-      <div class="mx-auto mx-20 md:mx-40 lg:mx-44">
+      <div class="mx-auto mx-20 md:mx-32 lg:mx-44">
         <DistroLogoGrid class="top-inner-section"/>
         <DeLogoGrid class="top-inner-section"/>
         <WmLogoGrid class="top-inner-section"/>
       </div>
     </div>
 
+    <div class="flex-col bg-no-repeat mx-10 md:mx-20">
+      <div class="top-section">
+        <Heading heading="It's easy..."
+                 sub_heading="Just a few steps to your favourite distributions. Easy to follow with an intuitive UI."
+                 deco_heading="ANDRONIX"
+        />
+
+        <div class="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-4 mt-10 text-white font-sans">
+          <StepsCard v-for="step in andronixSteps" :title="step.title"
+                     :description="step.sub_title" :step="step.step" :color="step.color"
+          >
+            <div v-html="step.icon"></div>
+          </StepsCard>
+        </div>
+      </div>
+    </div>
 
     <div class="flex-col bg-no-repeat mx-10 md:mx-20">
       <!-- Features   -->
@@ -36,23 +52,8 @@
           </div>
         </div>
       </div>
-
-      <div class="top-section">
-        <Heading heading="It's easy..."
-                 sub_heading="Just a few steps to your favourite distributions. Easy to follow with an intuitive UI."
-                 deco_heading="ANDRONIX"
-        />
-
-        <div class="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-4 mt-10 text-white font-sans">
-          <StepsCard v-for="step in andronixSteps" :title="step.title"
-                     :description="step.sub_title" :step="step.step" :color="step.color"
-          >
-            <div v-html="step.icon"></div>
-          </StepsCard>
-        </div>
-      </div>
-      <Pricing class="top-section"/>
     </div>
+    <Testimonials class="top-section"/>
   </div>
 </template>
 <script>

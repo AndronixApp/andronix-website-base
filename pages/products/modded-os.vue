@@ -11,11 +11,13 @@
           sub_heading="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, eaque iure minus pariatur quas unde!"
         />
 
-        <div @click="$router.push('/pricing')" class="-mt-6 button-1">GET NOW</div>
+        <PrimaryTextButton @click="$router.push('/pricing')"
+                           label="GET NOW"
+        />
       </div>
 
       <!--  Features   -->
-      <div class="mt-24 px-12 md:p-24">
+      <div class="mt-24 px-12 md:px-24">
         <Heading heading="What can you do with this?"
                  sub_heading="Genuine question but this cannot be answered without writing a book. There are infinite uses for Andronix. To keep it in understandable terms, you can almost do 70% of the things that you can do on an actual Linux machine."
                  deco_heading="ANDRONIX"
@@ -31,7 +33,7 @@
         </div>
       </div>
       <!-- Metrics -->
-      <div class="mt-24  lg:mt-48 px-12 md:p-24 lg:mx-24">
+      <div class="mt-24 lg:mt-48 px-12 md:px-24 lg:mx-24">
         <Heading
           heading="Modded OS Metrics"
           sub_heading="Take a look at where our Modded OS Stands."
@@ -48,7 +50,7 @@
       </div>
 
       <!-- Testimonials   -->
-      <div class="mt-24  lg:mt-48 px-12 md:p-24">
+      <div class="mt-24  lg:mt-48 px-12 md:px-24">
         <Heading heading="What people say!" sub_heading="Listen to what our users say about us all around the internet."
                  deco_heading="ANDRONIX"
         />
@@ -65,7 +67,7 @@
       </div>
 
       <!--  Previews  -->
-      <div class="mt-24 px-12 md:px-24">
+      <div class="mt-24 lg:mt-24 px-12 md:px-24">
         <Heading
           heading="Take a look"
           sub_heading="Have a sneak peak on our Modded OS."
@@ -136,22 +138,10 @@
 import { firestore } from '~/plugins/firebase'
 import moddedOsFeatures from '~/static/Data/features/modded-os-features.json'
 import moddedOsTestimonials from '~/static/Data/testimonials/modded-os-testimonials.json'
-
-const UBUNTU_XFCE_DOC = 'ubuntu_xfce_modded'
-const DEBIAN_XFCE_DOC = 'debian_xfce_modded'
-const UBUNTU_KDE_DOC = 'ubuntu_kde_modded'
-const MANJARO_XFCE_DOC = 'manjaro_xfce_modded'
-
 import metadata from '~/static/Data/misc/modded-os-metric.json'
 import moddedOsInfo from '~/static/Data/products/modded-os-info.json'
 
 export default {
-  created () {
-    this.UBUNTU_XFCE = UBUNTU_XFCE_DOC
-    this.DEBIAN_XFCE = DEBIAN_XFCE_DOC
-    this.MANJARO_XFCE = MANJARO_XFCE_DOC
-    this.UBUNTU_KDE = UBUNTU_KDE_DOC
-  },
   async mounted () {
     await this.fetchImages()
   },
@@ -164,23 +154,17 @@ export default {
       }
     },
     async fetchImages () {
-      console.log('Called')
-      let refArray = [UBUNTU_XFCE_DOC, MANJARO_XFCE_DOC, DEBIAN_XFCE_DOC, UBUNTU_KDE_DOC]
       try {
-        for (let i = 0; i < refArray.length; ++i) {
-          let ref = refArray[i]
-          let doc = await firestore.collection('osImages')
-            .doc(ref)
-            .get()
-          if (doc.exists) {
-            console.log(doc.data())
-            this.$set(this.imagesArray, ref, doc.data().images)
-          } else {
-            console.log(`NOT_FOUND ${ref}`)
+        let res = await this.$axios.get('/gen/modded-images')
+        let imagesObj = res.data
+
+        for (let osImageId in imagesObj) {
+          if (imagesObj.hasOwnProperty(osImageId)) {
+            this.$set(this.imagesArray, osImageId, imagesObj[osImageId])
           }
         }
       } catch (e) {
-        console.log(error)
+        console.log(e)
       }
     }
   },
@@ -197,9 +181,11 @@ export default {
     imagesArray: {
       handler (val) {
         console.log(val)
-      },
+      }
+      ,
       deep: true
-    },
+    }
+    ,
     name: 'index',
   }
 }

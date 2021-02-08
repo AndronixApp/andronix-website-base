@@ -1,5 +1,10 @@
 <template>
   <div>
+    <loading :active.sync="isLoading"
+             background-color="#0F1535"
+             color="#ff8b25"
+             :is-full-page="true"
+    />
     <div class="mt-24 px-12 md:p-24 bg-background bg-top">
 
 
@@ -16,7 +21,7 @@
                        :id="product.id"
                        :heading="product.heading"
                        :deco_heading="product.deco_heading"
-                       :price="product.price"
+                       :price="pricingObject[product.id] ? pricingObject[product.id] : 'Loading...'"
                        :color="product.color"
                        :slashedPrice="product.slashedPrice"
                        :features="product.features"
@@ -50,16 +55,36 @@
 
 <script>
 import productDetails from '~/static/Data/pricing/product-details.json'
+import { getPrices } from '~/lib/checkout/checkoutHelper'
+import Loading from 'vue-loading-overlay'
+import 'vue-loading-overlay/dist/vue-loading.css'
 
 export default {
+  components: { Loading },
+  mounted () {
+    this.getPricing()
+  },
   data: function () {
     return {
+      isLoading: false,
       productDetails: productDetails.products,
       bundleDetails: productDetails.bundles,
-      showDistroSelection: false
+      showDistroSelection: false,
+      pricingObject: {
+        modded_os: null,
+        premium: null
+      }
     }
   },
   methods: {
+    async getPricing () {
+      this.isLoading = true
+      let moddedRes = await getPrices('ubuntu_xfce', this.$axios)
+      this.$set(this.pricingObject, 'modded_os', moddedRes.price)
+      let premiumRes = await getPrices('premium', this.$axios)
+      this.$set(this.pricingObject, 'premium', premiumRes.price)
+      this.isLoading = false
+    },
     purchase: function (id) {
       if (this.$store.getters['auth/isUserLoggedIn']) {
         if (id !== 'premium') {

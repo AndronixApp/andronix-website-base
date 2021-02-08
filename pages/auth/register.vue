@@ -1,5 +1,4 @@
 <template>
-
   <div class="bg-background">
     <loading :active.sync="isLoading"
              background-color="#0F1535"
@@ -9,7 +8,7 @@
     <div class="mt-32 lg:mt-24 px-12 md:py-12 md:px-24 flex bg-background justify-center items-center top-section">
       <div>
         <XyzTransition appear-visible xyz="fade small">
-          <h1 class="heading tracking-tight">Welcome.</h1>
+          <h1 class="heading tracking-tight">Hello.</h1>
         </XyzTransition>
         <div>
 
@@ -17,7 +16,7 @@
             <FormulateForm
               class="login-form"
               ref="form"
-              @submit="loginWithEmail"
+              @submit="registerWithEmail"
               #default="{ hasErrors }"
             >
               <div class="w-10/12 mx-auto">
@@ -46,13 +45,26 @@
                     help-class="formulate-help-class"
                     validation="required|min:6,length"
                   />
+                  <FormulateInput
+                    type="password"
+                    name="password_confirm"
+                    input-class="formulate-input-class"
+                    label-class="formulate-label-class"
+                    placeholder="Confirm Password"
+                    error-class="formulate-error-class"
+                    outer-class="mb-4"
+                    help-class="formulate-help-class"
+                    validation="required|confirm"
+                  />
                 </div>
+
+                <recaptcha class="my-6"/>
 
                 <FormulateInput
                   type="submit"
                   :input-class="`md:w-full w-10/12 mx-auto flex justify-center items-center rounded font-bold py-3 px-3 text-white transition transform duration-300 ${!hasErrors ?'bg-primary-500 opacity-1':'bg-gray-600 opacity-50'}`"
                   :disabled="hasErrors"
-                  :label="isLoading ? 'Loading...' : 'Login'"
+                  :label="isLoading ? 'Loading...' : 'Register'"
                 />
 
               </div>
@@ -93,8 +105,8 @@
                 <p class="text-white font-semibold text-lg text-center -ml-5 mr-5">Continue with Google</p>
               </div>
             </div>
-            <p class="text-white mt-8 text-center">New here?
-              <NuxtLink to="/auth/register" class="underline font-extrabold">Register</NuxtLink>
+            <p class="text-white mt-8 text-center">Already registered?
+              <NuxtLink to="/auth/login" class="underline font-extrabold">Login</NuxtLink>
             </p>
           </div>
         </XyzTransition>
@@ -105,7 +117,6 @@
 
 <script>
 import Loading from 'vue-loading-overlay'
-import 'vue-loading-overlay/dist/vue-loading.css'
 
 export default {
   created () {
@@ -115,6 +126,11 @@ export default {
     } else {
       console.log('Not Logged in')
     }
+  },
+  computed: {
+    isLoggedIn: function () {
+      return this.$store.getters['auth/isUserLoggedIn']
+    },
   },
   components: {
     Loading
@@ -126,16 +142,33 @@ export default {
       password: '',
     }
   },
-  computed: {
-    isLoggedIn: function () {
-      return this.$store.getters['auth/isUserLoggedIn']
-    },
+  watch: {
+    isLoggedIn (val) {
+      console.log(val)
+      if (val) {
+        console.log('Logged in')
+        this.$router.push('/user/profile')
+      } else {
+        console.log('Not Logged in')
+      }
+    }
   },
+
   methods: {
-    async loginWithEmail (data) {
-      this.isLoading = true
+    async registerWithEmail (data) {
+      let token
+      /* ===========CAPTCHA============= */
       try {
-        await this.$store.dispatch('auth/loginUserWithEmailPassword', {
+        token = await this.$recaptcha.getResponse()
+      } catch (e) {
+        this.$toast.error('Are... are you a bot? Please complete the captcha.')
+        this.isLoading = false
+        return
+      }
+      this.isLoading = true
+      await this.$axios.get(`/sec/captcha?token=${token}`)
+      try {
+        await this.$store.dispatch('auth/registerUserWithEmailPassword', {
           email: data.email,
           password: data.password
         })
@@ -154,19 +187,8 @@ export default {
         this.$toast.error(e)
       }
     },
-  },
-  watch: {
-    isLoggedIn (val) {
-      console.log(val)
-      if (val) {
-        console.log('Logged in')
-        this.$router.push('/user/profile')
-      } else {
-        console.log('Not Logged in')
-      }
-    }
-  },
-  name: 'index.vue'
+    name: 'register',
+  }
 }
 </script>
 

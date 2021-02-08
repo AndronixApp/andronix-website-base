@@ -10,11 +10,13 @@
         sub_heading="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, eaque iure minus pariatur quas unde!"
       />
 
-      <div class="-mt-6 button-1">GET IT WITH PREMIUM</div>
+      <PrimaryTextButton @click="$router.push('/pricing')"
+                         label="GET IT WITH PREMIUM"
+      />
     </div>
 
     <!--  Features   -->
-    <div class="mt-24  lg:mt-48 px-12 md:p-24">
+    <div class="section-gap">
       <Heading heading="Get your Commands."
                sub_heading="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores dolores illo in ipsa laudantium nihil placeat praesentium reiciendis sapiente voluptatum."
                deco_heading="COMMANDS"
@@ -30,7 +32,7 @@
       </div>
     </div>
 
-    <div class="mt-24 px-12 md:p-24">
+    <div class="section-gap">
       <Heading heading="Get your Commands."
                sub_heading="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores dolores illo in ipsa laudantium nihil placeat praesentium reiciendis sapiente voluptatum."
                deco_heading="COMMANDS"
@@ -42,7 +44,7 @@
       </div>
     </div>
 
-    <div class="mt-24 pb-28 lg:mt-48 px-12 md:p-24">
+    <div class="section-gap">
       <Heading heading="How does it work?"
                sub_heading="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores dolores illo in ipsa laudantium nihil placeat praesentium reiciendis sapiente voluptatum."
                deco_heading="COMMANDS"
@@ -57,6 +59,18 @@
         </div>
       </div>
     </div>
+    <div class="mt-48 -mb-40">
+      <div class="bg-primary-600 bg-opacity-50 rounded-t-lg px-5 py-5">
+        <div class="flex justify-between items-center">
+          <div class="text-gray-200">
+            <h3 class="font-extrabold text-2xl">Get Andronix Premium.</h3>
+            <p class="font-medium text-gray30">You get some nice perks and you also help us maintain this project.</p>
+          </div>
+          <PrimaryTextButton @click="$router.push('/checkout/buy/premium')" label="GET NOW"/>
+        </div>
+      </div>
+    </div>
+
   </div>
 </template>
 

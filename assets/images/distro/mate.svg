@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="75" height="80" viewBox="0 0 75 80">
+  <defs>
+    <clipPath id="clip-mate_logo">
+      <rect width="75" height="80"/>
+    </clipPath>
+  </defs>
+  <g id="mate_logo" clip-path="url(#clip-mate_logo)">
+    <g id="mate_logo-2" transform="translate(-1921 -1105)">
+      <g id="Ellipse_69" transform="translate(1926.769 1110)" fill="none" stroke="#34be6b" stroke-width="6">
+        <circle cx="34.615" cy="34.615" r="34.615" stroke="none"/>
+        <circle cx="34.615" cy="34.615" r="31.615" fill="none"/>
+      </g>
+      <g id="Ellipse_70" transform="translate(1938.308 1121.538)" fill="none" stroke="#34be6b" stroke-width="6">
+        <circle cx="23.077" cy="23.077" r="23.077" stroke="none"/>
+        <circle cx="23.077" cy="23.077" r="20.077" fill="none"/>
+      </g>
+      <path id="Polygon_2" d="M20.192,0,40.385,34.172H0Z" transform="translate(1955.615 1125) rotate(90)" fill="#34be6b"/>
+    </g>
+  </g>
+</svg>

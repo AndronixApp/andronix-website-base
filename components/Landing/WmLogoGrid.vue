@@ -12,9 +12,9 @@
         </div>
       </div>
       <div class="grid grid-cols-4 mt-8 gap-8 justify-center items-center">
-        <img class="gray justify-self-center w-9 lg:w-12" src="~assets/images/wm/Awesome_logo.svg" alt="">
-        <img class="gray justify-self-center w-9 lg:w-12" src="~assets/images/wm/openbox_logo.svg" alt="">
-        <img class="gray justify-self-center w-12 lg:w-12" src="~assets/images/wm/I3_window_manager_logo.svg" alt="">
+        <img content="Awesome Window Manager" v-tippy class="gray justify-self-center w-9 lg:w-12" src="~assets/images/wm/Awesome_logo.svg" alt="">
+        <img content="Openbox Window Manage" v-tippy class="gray justify-self-center w-9 lg:w-12" src="~assets/images/wm/openbox_logo.svg" alt="">
+        <img content="i3 Window Manage" v-tippy class="gray justify-self-center w-12 lg:w-12" src="~assets/images/wm/I3_window_manager_logo.svg" alt="">
       </div>
     </div>
   </div>
@@ -22,7 +22,7 @@
 
 <script>
 export default {
-  name: 'DeLogoGrid'
+  name: 'WmLogoGrid'
 }
 </script>
 

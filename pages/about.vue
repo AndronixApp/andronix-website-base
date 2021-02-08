@@ -13,13 +13,14 @@
       </div>
 
 
-      <div class="px-12 md:px-24 lg:px-48 text-center">
+      <div class="section-gap ">
         <Heading
           heading="Our Story"
           deco_heading="ABOUT"
           sub_heading="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, eaque iure minus pariatur quas unde!"
         />
-        <p class="text-white text-lg tracking-normal">
+        <p class="text-white text-center md:px-12 lg:px-24 tracking-normal"
+        >
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquid deleniti earum, eius esse eum, illum
           itaque magni neque, nesciunt nobis quasi repudiandae rerum ullam vel velit veniam? Asperiores autem
           consectetur, dolore dolores inventore iure laboriosam, molestias, nisi odit quas quibusdam velit vitae
@@ -43,7 +44,7 @@
 
 
       <!-- Team -->
-      <div class="mt-24 px-12 md:p-24">
+      <div class="section-gap">
         <Heading
           heading="Our Team"
           deco_heading="ABOUT"
