@@ -1,8 +1,8 @@
 <template>
   <div
-    class="flex-col bg-background mx-auto justify-center items-center"
+    class="flex-col bg-background w-full justify-center items-center"
   >
-    <Landing class="m-0"/>
+    <Landing/>
 
     <div
       class=" bg-no-repeat top-section"

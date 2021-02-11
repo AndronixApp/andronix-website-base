@@ -34,6 +34,8 @@ module.exports = {
           400: '#ffa251',
           500: '#ff973b',
           600: '#ff8b25',
+          700: '#e67d21',
+          800: '#cc6f1e',
         },
         gradient1: '#fc4a1a',
         gradient2: '#f7b733',
@@ -49,6 +51,7 @@ module.exports = {
       },
       backgroundImage: () => ({
         'landing-pattern': 'url(\'~assets/images/background/landing_bg.svg\')',
+        'final-pattern': 'url(\'~assets/images/background/final_edited.svg\')',
         'triangle-pattern': 'url(\'~assets/images/background/triangle_background.svg\')',
         'circle-pattern': 'url(\'~assets/images/background/circle_background.svg\')',
         'rect-pattern': 'url(\'~assets/images/background/square_background.svg\')',

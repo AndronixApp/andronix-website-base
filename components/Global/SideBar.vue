@@ -11,7 +11,7 @@
       <Overlay v-show="$store.state.drawer.isDrawerOpen"/>
     </transition>
     <div
-      class="bg-background2 p-8 rounded-r-lg transform top-0 left-0 w-72 fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30"
+      class="bg-gray-800 p-8 rounded-r-lg transform top-0 left-0 w-72 fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30"
       :class="this.$store.state.drawer.isDrawerOpen ? 'translate-x-0' : '-translate-x-full'"
     >
       <div class="flex justify-between mb-10">
@@ -29,7 +29,7 @@
            class="my-10 text-white"
       >
         <div @click="$store.commit('drawer/toggleDrawer');$router.push('/user/profile')"
-             class="flex-col bg-background bg-opacity-40 px-4 py-4 rounded-lg justify-center items-center cursor-pointer hover:scale-105 duration-200 transform transition"
+             class="flex-col bg-gray-700 bg-opacity-40 px-4 py-4 rounded-lg justify-center items-center cursor-pointer hover:scale-105 duration-200 transform transition"
         >
           <div class="rounded-full mx-auto overflow-hidden w-8 h-8">
             <img class="object-cover"

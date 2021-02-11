@@ -1,13 +1,11 @@
 <template>
-  <div>
+  <div class="bg-background bg-top">
     <loading :active.sync="isLoading"
              background-color="#0F1535"
              color="#ff8b25"
              :is-full-page="true"
     />
-    <div class="mt-24 px-12 md:p-24 bg-background bg-top">
-
-
+    <div class="px-12 md:p-24">
       <Heading heading="Pricing"
                sub_heading="We hate subscriptions. All purchases here are one-time and life long. They sync all your devices automatically."
                deco_heading="ANDRONIX"
@@ -62,7 +60,7 @@ import 'vue-loading-overlay/dist/vue-loading.css'
 export default {
   components: { Loading },
   mounted () {
-    this.getPricing()
+    // this.getPricing()
   },
   data: function () {
     return {

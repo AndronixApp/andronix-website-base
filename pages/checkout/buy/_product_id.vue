@@ -191,7 +191,8 @@
                   <p class="font-medium font-bold my-4 text-green-500"
                   >
                     {{ couponText }}</p>
-                  <svg class="w-5 text-red-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                  <svg @click="removeCoupon" class="w-5 text-red-500 fill-current" xmlns="http://www.w3.org/2000/svg"
+                       viewBox="0 0 20 20"
                        fill="currentColor"
                   >
                     <path fill-rule="evenodd"
@@ -367,7 +368,7 @@ export default {
       try {
         let couponEntered = this.couponCodeEntered.toUpperCase()
         let res = await
-          this.$axios.$get(`/coupon?coupon_code=${couponEntered}`)
+          this.$axios.$get(`/coupon/verify?coupon_code=${couponEntered}`)
         if (res.isValid === true) {
           this.couponApplied = couponEntered
           this.couponCodeEntered = ''

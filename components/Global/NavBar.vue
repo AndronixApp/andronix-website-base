@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <div class="flex pt-6 md:pt-6 lg:pt-8 px-8 items-center justify-end">
+  <nav class="z-10 fixed w-full transition transform duration-100 ease-in-out"
+       :class="!view.atTopOfPage?'bg-gray-800 bg-opacity-80':''"
+  >
+    <div class="flex pt-4 lg:pt-6 lg:pb-6 px-8 pb-4 items-center justify-end">
       <XyzTransition appear-visible xyz="fade left-100% small">
         <div class="flex justify-self-start mr-auto cursor-pointer" @click="$router.push('/')">
           <h3 class="text-white font-sans font-bold text-lg">andronix</h3>
@@ -10,9 +12,9 @@
 
       <!--  Download Button    -->
       <div
-        class="invisible md:invisible lg:visible cursor-pointer px-3 py-1 bg-primary-500 flex items-center space-x-5 justify-center rounded hover:bg-primary-600 hover:scale-105 transition transform duration-300"
+        class="text-white invisible md:invisible lg:visible cursor-pointer px-3 py-2 bg-primary-600 flex items-center space-x-5 justify-center rounded hover:bg-white hover:text-primary-600 hover:-translate-y-1.5 transition transform duration-300"
       >
-        <svg class="text-white fill-current w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+        <svg class="text-current fill-current w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
              fill="currentColor"
         >
           <path fill-rule="evenodd"
@@ -20,7 +22,7 @@
                 clip-rule="evenodd"
           />
         </svg>
-        <a href="https://play.andronix.app" class="text-white font-bold">Download</a>
+        <a href="https://play.andronix.app" class="text-current font-bold">Download</a>
       </div>
 
       <div @click="$store.commit('drawer/toggleDrawer')" class="cursor-pointer ml-5">
@@ -34,7 +36,7 @@
       </div>
 
     </div>
-  </div>
+  </nav>
 </template>
 
 
@@ -42,9 +44,34 @@
 
 export default {
   name: 'NavBar',
+  // a beforeMount call to add a listener to the window
+  beforeMount () {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+
+  methods: {
+    // the function to call when the user scrolls, added as a method
+    handleScroll () {
+      // when the user scrolls, check the pageYOffset
+      if (window.pageYOffset > 0) {
+        // user is scrolled
+        if (this.view.atTopOfPage) {
+          this.view.atTopOfPage = false
+        }
+      } else {
+        // user is at top of page
+        if (!this.view.atTopOfPage) {
+          this.view.atTopOfPage = true
+        }
+      }
+    }
+  },
   data: function () {
     return {
-      userData: this.$store.getters['auth/getUserData']
+      userData: this.$store.getters['auth/getUserData'],
+      view: {
+        atTopOfPage: true
+      }
     }
   }
 }
