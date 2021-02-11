@@ -1,6 +1,6 @@
 <template>
   <XyzTransition :appear-visible="true" duration="auto">
-    <div class="bg-background w-full bg-landing-pattern bg-top">
+    <div class="">
       <div
         class="h-screen m-0 bg-background w-full bg-landing-pattern bg-top flex items-center justify-center flex-col"
       >

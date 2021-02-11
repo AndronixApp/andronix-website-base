@@ -2,7 +2,7 @@
   <div class="bg-background">
     <NavBar/>
     <SideBar/>
-    <Nuxt class="lg:mt-0 pt-20"/>
+    <Nuxt class="lg:max-w-screen-2xl pt-20 mx-auto"/>
     <Footer/>
   </div>
 </template>

@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "isPaid": true,
+      "product": "Andronix Modded OS",
+      "link": "/products/modded-os",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet consequatur dolore ducimus error iste nisi nulla numquam quos sit tenetur."
+    },
+    {
+      "isPaid": true,
+      "link": "/products/premium",
+      "product": "Andronix Premium",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet consequatur dolore ducimus error iste nisi nulla numquam quos sit tenetur."
+    },
+    {
+      "isPaid": true,
+      "link": "/products/commands",
+      "product": "Andronix Commands",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet consequatur dolore ducimus error iste nisi nulla numquam quos sit tenetur."
+    },
+    {
+      "isPaid": false,
+      "link": "/products/unmodded-os",
+      "product": "Andronix UnModded OS",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet consequatur dolore ducimus error iste nisi nulla numquam quos sit tenetur."
+    }
+  ]
+}
