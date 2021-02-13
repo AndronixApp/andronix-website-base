@@ -52,7 +52,3 @@ jobs:
         with:
           name: cypress-videos
           path: cypress/videos
-
-
-  /home/runner/work/andronix-website-base/andronix-website-ba   (18 seconds)
-  se/test/e2e/videos/auth.spec.js.mp4
