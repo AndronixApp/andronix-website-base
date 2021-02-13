@@ -47,13 +47,15 @@ jobs:
           wait-on: 'http://localhost:3000'
 
 
-      - name: Uploading Test Artifacts ☁
-      - uses: actions/upload-artifact@v1
+      - name: Uploading Screenshots ☁
+        uses: actions/upload-artifact@v1
         if: failure()
         with:
           name: cypress-screenshots
           path: cypress/screenshots
-      - uses: actions/upload-artifact@v1
+
+      - name: Uploading Videos ☁
+        uses: actions/upload-artifact@v1
         if: always()
         with:
           name: cypress-videos
