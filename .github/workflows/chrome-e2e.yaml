@@ -11,6 +11,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     name: E2E on Chrome
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [ 1, 2, 3 ]
     steps:
       - name: Checking out code ⚡
         uses: actions/checkout@v2
@@ -43,6 +47,7 @@ jobs:
         with:
           record: true
           start: yarn run dev
+          parallel: true
           browser: chrome
           wait-on: 'http://localhost:3000'
 
