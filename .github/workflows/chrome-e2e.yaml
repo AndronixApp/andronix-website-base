@@ -15,7 +15,6 @@ jobs:
       - name: Checking out code ⚡
         uses: actions/checkout@v2
 
-
       - name: Setting up NodeJS 📐
         uses: actions/setup-node@v1
         with:
