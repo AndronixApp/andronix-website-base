@@ -2,7 +2,7 @@
   "features": [
     {
       "title": "Discounts",
-      "sub_title": "Get upto a whooping 25% discount when purchasing any Modded OS when you're a premium supporter. **",
+      "sub_title": "Get up to a whooping 25% discount when purchasing any Modded OS when you're a premium supporter. **",
       "icon": "<svg class=\"w-10 stroke-current text-primary-400\"  xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n  <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z\" />\n</svg>",
       "color": "bg-primary-400"
     },

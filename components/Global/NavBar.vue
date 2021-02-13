@@ -25,12 +25,11 @@
         <a href="https://play.andronix.app" class="text-current font-bold">Download</a>
       </div>
 
-      <div @click="$store.commit('drawer/toggleDrawer')" class="cursor-pointer ml-5">
-        <svg class="stroke-current text-white w-8" xmlns="http://www.w3.org/2000/svg" width="31" height="21">
-          <g data-name="Group 393" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="3">
-            <path data-name="Line 9" d="M1.5 1.5h28"/>
-            <path data-name="Line 10" d="M1.5 10.5h17"/>
-            <path data-name="Line 11" d="M1.5 19.5h22"/>
+      <!--   Hamburger   -->
+      <div id="nav_hamburger" @click="$store.commit('drawer/toggleDrawer')" class="cursor-pointer ml-5">
+        <svg class="stroke-current text-white w-8" xmlns="http://www.w3.org/2000/svg" width="31" height="15">
+          <g fill="none" stroke="#fff" stroke-width="3">
+            <path d="M0 1.5h31M0 13.5h31"/>
           </g>
         </svg>
       </div>

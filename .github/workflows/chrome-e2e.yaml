@@ -1,0 +1,22 @@
+name: Chrome E2E CI
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: E2E on Chrome
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build 🏗
+        run: |
+          npm install -g yarn
+          yarn install --frozen-lockfile
+          yarn install
+      - uses: cypress-io/github-action@v2
+        with:
+          start: yarn run dev
+          wait-on: 'http://localhost:3000'

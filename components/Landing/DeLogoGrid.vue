@@ -6,8 +6,8 @@
           <div class="flex-col text-white font-sans">
             <h2 class="font-extrabold text-primary">ANDRONIX</h2>
             <h2 class="font-bold text-4xl">Desktop Environments</h2>
-            <p class="text-sm mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, hic ipsam qui
-              reprehenderit ut voluptatem.</p>
+            <p class="text-sm mt-3">Do you like to have a customizable UI? We have most reknowned Desktop Environments to choose from so that
+              you always have an option to customize your desktop according to your needs. </p>
           </div>
         </div>
       </div>

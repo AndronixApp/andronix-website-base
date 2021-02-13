@@ -12,8 +12,8 @@
       </div>
       <div class="mt-5">
         <ul class="w-2/3 mx-auto">
-          <li v-for="feature in features">
-            <div class="flex flex-wrap items-center justify-start text-white text-left ml-4">
+          <li v-for="feature in features" :key="feature">
+            <div class="flex flex-wrap mt-2 items-center justify-start text-white text-left ml-4">
               <div class="w-1/4">
                 <svg class="text-white fill-current w-5 mr-4 my-2" xmlns="http://www.w3.org/2000/svg"
                      viewBox="0 0 20 20" fill="currentColor"
@@ -29,7 +29,7 @@
           </li>
         </ul>
       </div>
-      <button @click="purchaseClicked"
+      <button :id="css_id" @click="purchaseClicked"
               class="focus:outline-none hover:scale-105 hover:bg-card_background transform transition duration-300 bg-background shadow-lg rounded text-white text-center font-bold w-3/4 px-3 py-2 mt-9"
       >Purchase
       </button>
@@ -71,6 +71,10 @@ export default {
       required: true,
     },
     id: {
+      type: String,
+      required: true
+    },
+    css_id: {
       type: String,
       required: true
     }

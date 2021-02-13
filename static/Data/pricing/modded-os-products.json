@@ -5,7 +5,7 @@
       "color_text": "text-primary-400",
       "color_bg": "bg-primary-400",
       "logo_text": "UX",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, rerum!",
+      "description": "If you're looking for a stable distro with some reasonable customization options which is also the world's most popular distribution, look no further than Ubuntu.",
       "id": "ubuntu_xfce"
     },
     {
@@ -13,7 +13,7 @@
       "logo_text": "DX",
       "color_text": "text-pink-400",
       "color_bg": "bg-pink-400",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, rerum!",
+      "description": "Debian Linux is considered one of the most stable Linux distributions out there. You can completely rely on Debian for the stability and performance that you might need for your day-to-day tasks.",
       "id": "debian_xfce"
     },
     {
@@ -21,7 +21,7 @@
       "logo_text": "MX",
       "color_text": "text-green-400",
       "color_bg": "bg-green-400",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, rerum!",
+      "description": "Manjaro is a distribution based on Arch Linux but has a separate official repository which contains more stable packages than that of Arch Linux's. You can't go wrong with Pacman and Manjaro.",
       "id": "manjaro_xfce"
     },
     {
@@ -29,7 +29,7 @@
       "logo_text": "UK",
       "color_text": "text-blue-400",
       "color_bg": "bg-blue-400",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, rerum!",
+      "description": "Ubuntu again being one of the reliable distributions of there but the star of the show is the beautiful KDE desktop environment. From smooth animations to just a better UX overall, KDE has got you covered with everything.",
       "id": "ubuntu_kde"
     }
   ]

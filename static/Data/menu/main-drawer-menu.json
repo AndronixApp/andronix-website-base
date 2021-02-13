@@ -2,42 +2,49 @@
   "menu": [
     {
       "title": "Premium",
+      "id": "drawer_main_premium",
       "icon": " <svg class=\"stroke-current text-green-400 w-5 h-5\"  xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n  <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z\" />\n</svg>",
       "color": "text-green-400",
       "to": "/products/premium"
     },
     {
       "title": "Modded OS",
+      "id": "drawer_main_modded_os",
       "icon": " <svg class=\"stroke-current text-purple-400 w-5 h-5\"  xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n  <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z\" />\n</svg>",
       "color": "text-purple-400",
       "to": "/products/modded-os"
     },
     {
       "title": "Documentation",
+      "id": "drawer_main_docs",
       "icon": " <svg class=\"stroke-current text-primary-400 w-5 h-5\"  xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n  <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253\" />\n</svg>",
       "color": "text-primary-400",
-      "to": "docs.andronix.app"
+      "to": "https://docs.andronix.app"
     },
     {
       "title": "Pricing",
+      "id": "drawer_main_pricing",
       "icon": " <svg class=\"stroke-current text-teal-400 w-5 h-5\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n  <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z\" />\n</svg>",
       "color": "text-teal-400",
       "to": "/pricing"
     },
     {
       "title": "Get Help",
+      "id": "drawer_main_help",
       "icon": " <svg class=\"stroke-current text-blue-400 w-5 h-5\"  xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n  <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z\" />\n</svg>",
       "color": "text-blue-400",
       "to": "/help"
     },
     {
       "title": "Andronix Commands",
+      "id": "drawer_main_command",
       "icon": " <svg class=\"stroke-current text-indigo-400 w-5 h-5\"  xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n  <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z\" />\n</svg>",
       "color": "text-indigo-400",
       "to": "/products/commands"
     },
     {
       "title": "About Us",
+      "id": "drawer_main_about",
       "icon": " <svg class=\"stroke-current text-pink-400 w-5 h-5\"  xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n  <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z\" />\n</svg>",
       "color": "text-pink-400",
       "to": "/about"

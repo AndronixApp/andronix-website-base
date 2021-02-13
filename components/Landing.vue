@@ -6,7 +6,7 @@
       >
         <div xyz="fade big top-100% duration-5" class="xyz-in"
         >
-          <h1 class="text-white text-4xl px-3 lg:text-5xl font-black">The Power of
+          <h1 class="text-white text-4xl pr-3 lg:text-5xl font-black">The Power of
             <strong class="text-primary-600">Linux</strong> on
             Android.</h1>
         </div>

@@ -11,10 +11,14 @@
       <h3 class="font-extrabold text-2xl lg:text-3xl pb-3">{{ product }}</h3>
       <p class="lg:px-8">{{ description }}</p>
       <div class="inline-flex mt-4 space-x-2 cursor-pointer">
-        <p @click="$router.push(link)"
+        <p v-if="!link.includes('https://')" @click="$router.push(link)"
            class="max-w-sm text-xs py-3 text-gray-400 hover:text-gray-200 transition transform duration-200 hover:underline"
         >Know
           more about {{ product }}</p>
+        <a v-else :href="link"
+           class="max-w-sm text-xs py-3 text-gray-400 hover:text-gray-200 transition transform duration-200 hover:underline"
+        >Know
+          more about {{ product }}</a>
         <svg class="w-4 text-primary-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
              fill="currentColor"
         >

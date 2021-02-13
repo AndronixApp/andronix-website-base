@@ -1,0 +1,10 @@
+{
+  "isValid": true,
+  "pricing": {
+    "manjaro_xfce": 160,
+    "premium": 160,
+    "debian_xfce": 160,
+    "ubuntu_kde": 160,
+    "ubuntu_xfce": 160
+  }
+}

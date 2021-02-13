@@ -1,6 +1,6 @@
 <template>
   <XyzTransition :appear-visible="true" duration="auto">
-    <div class="px-10 py-5 pb-16 md:pb-24"
+    <div class="px-10 py-5 pb-16 md:pb-24 lg:max-w-screen-md mx-auto"
     >
       <div class="flex-col space-y-4" xyz="fade flip-down duration-10 delay-2 stagger ease-out-back">
         <h2 class="deco-heading xyz-nested">{{ deco_heading }}</h2>

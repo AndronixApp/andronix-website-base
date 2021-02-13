@@ -25,7 +25,7 @@
         />
 
         <div class="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-4 mt-10 text-white font-sans">
-          <StepsCard v-for="step in andronixSteps" :title="step.title"
+          <StepsCard v-for="step in andronixSteps" :title="step.title" :key="step.color"
                      :description="step.sub_title" :step="step.step" :color="step.color"
           >
             <div v-html="step.icon"></div>
@@ -44,7 +44,7 @@
         <div>
           <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 mt-10 text-white font-sans text-center">
             <FeatureCard v-for="features in andronixFeatures" :title="features.title"
-                         :desc="features.sub_title" :color="features.color"
+                         :desc="features.sub_title" :color="features.color" :key="features.color"
             >
               <div v-html="features.icon"></div>
             </FeatureCard>
@@ -67,6 +67,7 @@
                              :tilt="testimonial.tilt"
                              :quote="testimonial.quote"
                              :name="testimonial.name"
+                             :key="testimonial.name"
                              :platform="testimonial.platform"
                              :bg_gradient="testimonial.bg_gradient"
 
@@ -84,7 +85,7 @@
       <div class="top-section">
         <Heading heading="Our Products"
                  sub_heading="Here's what we offer..."
-                 deco_heading="PRODUCT"
+                 deco_heading="PRODUCTS"
         />
         <div>
           <div
@@ -96,6 +97,7 @@
                               :isPaid="product.isPaid"
                               :description="product.description"
                               :product="product.product"
+                              :key="product.product"
                               :link="product.link"
             >
             </ProductComponent>

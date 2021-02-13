@@ -6,8 +6,9 @@
           <div class="flex-col text-white font-sans">
             <h2 class="font-extrabold text-primary">ANDRONIX</h2>
             <h2 class="font-bold text-4xl">Distributions</h2>
-            <p class="text-sm mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae incidunt, officiis
-              placeat provident qui similique.</p>
+            <p class="text-sm mt-3">Ever thought of trying out new distros? We provide a large variety of distros to choose from.
+               Just choose any of your favourite distro and you are ready to roll.
+            </p>
           </div>
         </div>
       </div>

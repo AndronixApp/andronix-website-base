@@ -1,7 +1,7 @@
 <template>
 
   <div
-    class="flex-col bg-background mt-24 px-12 md:px-24 pb-10 items-center"
+    class="flex-col bg-background  px-12 md:px-24 pb-10 items-center"
   >
     <loading :active.sync="isLoading"
              background-color="#0F1535"
@@ -9,7 +9,9 @@
              :is-full-page="true"
     />
     <XyzTransition appear-visible xyz="fade right-100%">
-      <div v-if="currentStep === this.PRODUCT_SELECTION" class="top-section mx-10 md:mx-20">
+      <div id="checkout_section_product_selection" v-if="currentStep === this.PRODUCT_SELECTION"
+           class="top-section mx-10 md:mx-20"
+      >
         <Heading heading="Product Selection"
                  sub_heading="Please select the product you want to purchase."
                  deco_heading="CHECKOUT"
@@ -22,7 +24,7 @@
           </h3>
         </div>
 
-        <div @click="setSelectedProduct('premium')"
+        <div id="checkout_premium_cta" @click="setSelectedProduct('premium')"
              class="cursor-pointer hover:scale-105 transition transform duration-300 flex-col justify-between max-w-screen-sm mx-auto"
         >
           <div class="rounded-t-lg md:rounded-t-lg bg-card_background text-white py-3 px-5 ">
@@ -47,7 +49,7 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 pb-16 md:pb-24 lg:grid-cols-4 justify-center items-center gap-5">
-          <div v-for="os in moddedProducts">
+          <div v-for="os in moddedProducts" :key="os.id">
             <div @click="setSelectedProduct(os.id)"
                  class="cursor-pointer hover:scale-105 transition transform duration-300 flex-col justify-between"
             >
@@ -65,7 +67,7 @@
     </XyzTransition>
     <!--   Details   -->
     <XyzTransition appear-visible xyz="fade left-100% delay-5">
-      <div v-if="currentStep === this.DETAILS">
+      <div id="checkout_section_details" v-if="currentStep === this.DETAILS">
         <h3 class="form heading-2 md:text-left mt-16 mb-10 md:mb-16 md:mt-20">Billing Information</h3>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-24 gap-y-8">
 
@@ -82,6 +84,7 @@
                   <!--   Name       -->
                   <FormulateInput
                     type="text"
+                    id="checkout_first_name_input"
                     name="first_name"
                     label="First Name"
                     placeholder="Your cool name goes here..."
@@ -96,6 +99,7 @@
                     type="text"
                     name="last_name"
                     label="Last Name"
+                    id="checkout_first_last_input"
                     input-class="formulate-input-class"
                     label-class="formulate-label-class"
                     placeholder="Surname too!"
@@ -106,6 +110,7 @@
                   />
                   <FormulateInput
                     type="email"
+                    id="checkout_email_input"
                     name="email"
                     v-model="get_email_of_user"
                     disabled="true"
@@ -119,6 +124,7 @@
                   />
                   <FormulateInput
                     type="number"
+                    id="checkout_postal_code_input"
                     name="postal_code"
                     label="Postal Code"
                     input-class="formulate-input-class"
@@ -134,6 +140,7 @@
                     type="text"
                     name="address"
                     label="Address"
+                    id="checkout_address_input"
                     input-class="formulate-input-class"
                     placeholder="Your address"
                     label-class="formulate-label-class"
@@ -146,6 +153,7 @@
                     type="select"
                     name="country"
                     label="Country"
+                    id="checkout_country_input"
                     v-model="selectedCountry"
                     :options="country_list"
                     input-class="formulate-input-class"
@@ -160,6 +168,7 @@
                     type="select"
                     name="state"
                     label="State"
+                    id="checkout_state_input"
                     :options="getStateListOfSelectedCountry(selectedCountry)"
                     input-class="formulate-input-class"
                     label-class="formulate-label-class"
@@ -175,23 +184,24 @@
                 <!-- Coupon  -->
                 <div v-if="!couponApplied" class="flex space-x-5 mt-5 pb-1 items-center">
                   <div>
-                    <input v-model="couponCodeEntered" placeholder="Coupon Code"
+                    <input id="checkout_coupon_input" v-model="couponCodeEntered" placeholder="Coupon Code"
                            class="input uppercase" type="text"
                     >
                   </div>
                   <div>
-                    <button @click="validateCoupon"
+                    <button id="checkout_coupon_validate_button" @click="validateCoupon"
                             class="rounded text-white font-bold text-sm px-4 py-3 bg-primary-600"
                     >APPLY
                     </button>
                   </div>
                 </div>
 
-                <div v-if="couponApplied" class="flex space-x-5">
-                  <p class="font-medium font-bold my-4 text-green-500"
+                <div id="checkout_coupon_success_div" v-if="couponApplied" class="flex space-x-5">
+                  <p id="checkout_coupon_success_text" class="font-medium font-bold my-4 text-green-500"
                   >
                     {{ couponText }}</p>
-                  <svg @click="removeCoupon" class="w-5 text-red-500 fill-current" xmlns="http://www.w3.org/2000/svg"
+                  <svg id="checkout_coupon_remove_button" @click="removeCoupon" class="w-5 text-red-500 fill-current"
+                       xmlns="http://www.w3.org/2000/svg"
                        viewBox="0 0 20 20"
                        fill="currentColor"
                   >
@@ -206,6 +216,7 @@
                 <recaptcha class="mt-6"/>
                 <FormulateInput
                   type="submit"
+                  id="checkout_submit"
                   :input-class="`w-full rounded font-bold py-3 px-3 mt-4 text-white transition transform duration-300 ${!hasErrors ?'bg-primary-500 opacity-1':'bg-gray-600 opacity-50'}`"
                   :disabled="hasErrors"
                   :label="isLoading ? 'Loading...' : 'Proceed'"
@@ -223,9 +234,11 @@
                 <div class="flex justify-between">
                   <div>
                     <h2 class="font-bold text-lg">Selected Product</h2>
-                    <h2 class="mb-2 mt-1 opacity-70 text-sm" ref="selected_product_text">Loading...</h2>
+                    <h2 id="checkout_billing_info_selected_product" class="mb-2 mt-1 opacity-70 text-sm"
+                        ref="selected_product_text"
+                    >Loading...</h2>
                   </div>
-                  <svg @click="deleteSelectedProduct"
+                  <svg id="checkout_billing_info_delete_select_product" @click="deleteSelectedProduct"
                        class="text-red-600 cursor-pointer mr-3 stroke-current w-5 hover:scale-105 transform transition duration-100 ease-in-out"
                        xmlns="http://www.w3.org/2000/svg"
                        fill="none"
@@ -242,11 +255,15 @@
                 </div>
                 <div class="flex justify-between">
                   <p>Product price</p>
-                  <p class="text-sm opacity-60" ref="product_price_text">....</p>
+                  <p id="checkout_billing_info_selected_product_price" class="text-sm opacity-60"
+                     ref="product_price_text"
+                  >....</p>
                 </div>
                 <div class="flex justify-between mt-3">
                   <p class="font-bold text-2xl">Total</p>
-                  <h2 class="font-bold opacity-70 text-xl" ref="product_total_text">....</h2>
+                  <h2 id="checkout_billing_info_selected_product_total" class="font-bold opacity-70 text-xl"
+                      ref="product_total_text"
+                  >....</h2>
                 </div>
 
               </div>
@@ -368,7 +385,7 @@ export default {
       try {
         let couponEntered = this.couponCodeEntered.toUpperCase()
         let res = await
-          this.$axios.$get(`/coupon/verify?coupon_code=${couponEntered}`)
+          this.$axios.$get(`/coupon/verify/?coupon_code=${couponEntered}`)
         if (res.isValid === true) {
           this.couponApplied = couponEntered
           this.couponCodeEntered = ''

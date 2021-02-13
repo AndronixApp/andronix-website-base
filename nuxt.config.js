@@ -12,7 +12,7 @@ export default {
         scr: 'https://checkout.razorpay.com/v1/checkout.js'
       }
     ],
-    title: 'andronix-website',
+    title: 'Andronix App',
     meta: [
       { charset: 'utf-8' },
       {
@@ -47,17 +47,9 @@ export default {
       mode: 'client'
     },
     {
-      src: '~/plugins/anime.js',
-      mode: 'client'
-    },
-    {
       src: '~/plugins/viewer.js',
     },
     '~/plugins/firebase.js',
-    {
-      src: '~/plugins/hamburger.js',
-      mode: 'client'
-    },
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -90,4 +82,10 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
+
+  publicRuntimeConfig: {},
+  privateRuntimeConfig: {
+    testAccountEmail: process.env.TEST_ACCOUNT_EMAIL,
+    testAccountPassword: process.env.TEST_ACCOUNT_PASSWORD
+  }
 }
