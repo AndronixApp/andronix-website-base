@@ -12,15 +12,16 @@ jobs:
     runs-on: ubuntu-latest
     name: E2E on Chrome
     steps:
-      - uses: actions/checkout@v2
+      - name: Checking out code ⚡
+        uses: actions/checkout@v2
 
 
-      - name: Setup Node
+      - name: Setting up NodeJS 📐
         uses: actions/setup-node@v1
         with:
           node-version: '14.x'
 
-      - name: Cache dependencies
+      - name: Caching Dependencies 💾
         uses: actions/cache@v1
         with:
           path: ~/.npm
@@ -28,20 +29,25 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - name: Build 🏗
+      - name: Building 🏗
         run: |
           npm install -g yarn
           yarn install --frozen-lockfile
           yarn install
-      - uses: cypress-io/github-action@v2
+
+
+      - name: E2E Testing 🤖
+        uses: cypress-io/github-action@v2
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         with:
           record: true
           start: yarn run dev
+          browser: chrome
           wait-on: 'http://localhost:3000'
 
 
+      - name: Uploading Test Artifacts ☁
       - uses: actions/upload-artifact@v1
         if: failure()
         with:
