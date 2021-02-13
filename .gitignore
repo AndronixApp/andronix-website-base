@@ -89,8 +89,4 @@ sw.*
 # Vim swap files
 *.swp
 
-/coverage
-/test/e2e/screenshots/**
-/test/e2e/videos/**
-/test/e2e/screenshots/*
-/test/e2e/videos/*
+cypress/

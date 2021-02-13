@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - master
-      - dev
   pull_request:
     branches: [ master ]
 
@@ -34,6 +33,25 @@ jobs:
           yarn install --frozen-lockfile
           yarn install
       - uses: cypress-io/github-action@v2
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         with:
+          record: true
           start: yarn run dev
           wait-on: 'http://localhost:3000'
+
+
+      - uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+      - uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: cypress-videos
+          path: cypress/videos
+
+
+  /home/runner/work/andronix-website-base/andronix-website-ba   (18 seconds)
+  se/test/e2e/videos/auth.spec.js.mp4
