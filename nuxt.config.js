@@ -83,7 +83,13 @@ export default {
       UserAgent: '*',
       Disallow: '/user'
     }],
-    '@nuxtjs/sitemap',
+    /* ['@nuxtjs/sitemap', {
+       hostname: 'https://',
+       gzip: true,
+       exclude: [
+         '/user/!**',
+       ]
+     }],*/
     'vue-scrollto/nuxt',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
