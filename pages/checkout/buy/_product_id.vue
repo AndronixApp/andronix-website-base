@@ -392,14 +392,16 @@ export default {
           this.$toast.success('Coupon applied!')
           this.couponText = `${couponEntered} applied!`
           this.setCouponedPrices(this.selectedProductId, res.pricing)
+          this.isLoading = false
         } else {
+          this.isLoading = false
           this.$toast.error('Coupon doesn\'t exists')
         }
       } catch (e) {
         console.log(e)
+        this.isLoading = false
         this.$toast.error('Coupon validation failed.')
       }
-      this.isLoading = false
     },
     deleteSelectedProduct () {
       this.selectedProductId = ''
@@ -442,8 +444,8 @@ export default {
         try {
           token = await this.$recaptcha.getResponse()
         } catch (e) {
-          this.$toast.error('Are... are you a bot? Please complete the captcha.')
           this.isLoading = false
+          this.$toast.error('Are... are you a bot? Please complete the captcha.')
           return
         }
         await this.$axios.get(`/sec/captcha?token=${token}`)

@@ -65,6 +65,25 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    [
+      'nuxt-social-meta',
+      {
+        url: 'https://next.andronix.app',
+        title: 'Andronix App',
+        site_name: 'Andronix App',
+        description: 'Install Linux distributions like Ubuntu, Debian, Manjaro and more on your un-rooted Android device.',
+        img: 'Link to image in static folder',
+        locale: 'en_US',
+        twitter: '@AndronixApp',
+        twitter_card: 'summary_large_image',
+        themeColor: '#FF8B25',
+      },
+    ],
+    ['@nuxtjs/robots', {
+      UserAgent: '*',
+      Disallow: '/user'
+    }],
+    '@nuxtjs/sitemap',
     'vue-scrollto/nuxt',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',

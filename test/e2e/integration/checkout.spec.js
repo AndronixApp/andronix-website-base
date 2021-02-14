@@ -45,7 +45,7 @@ describe('Checkout Tests', () => {
     cy.fill_out_form()
 
     cy.get('#checkout_submit').click()
-    cy.get('.v-toast__item').children().should('have.class', 'v-toast__text')
+    cy.get('.v-toast__text').should('have.text', 'Are... are you a bot? Please complete the captcha.')
   })
 
   it('should correctly switch between checkout steps', function () {
@@ -102,7 +102,8 @@ describe('Checkout Tests', () => {
     cy.get('#checkout_coupon_validate_button').click()
     cy.wait('@couponValidationRequest')
 
-    cy.get('.v-toast__item').children().should('have.class', 'v-toast__text')
+    /* We are using first because the coupon toast is triggered with the captcha toast randomly. This can lead to a flaky test. todo fix this. */
+    cy.get('.v-toast__text').first().should('have.text', 'Coupon doesn\'t exists')
     cy.get('#checkout_coupon_success_text').should('not.exist')
   })
 
@@ -137,8 +138,8 @@ describe('Checkout Tests', () => {
     cy.get('#checkout_coupon_validate_button').click()
     cy.wait('@couponValidationRequest')
 
-    /* checking for the toast */
-    cy.get('.v-toast__item').children().should('have.class', 'v-toast__text')
+    /* We are using first because the coupon toast is triggered with the captcha toast randomly. This can lead to a flaky test. todo fix this. */
+    cy.get('.v-toast__text').first().should('have.text', 'Coupon applied!')
 
     /* Post coupon validation actions */
     cy.contains('#checkout_coupon_success_text', 'TESTCOUPON applied!')
