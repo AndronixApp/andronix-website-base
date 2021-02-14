@@ -60,8 +60,11 @@
             <div>
               <div v-html="items.icon"></div>
             </div>
-            <NuxtLink :id="items.id" v-if="!items.to.includes('https://')" :to="items.to">{{ items.title }}</NuxtLink>
-            <a :id="items.id" v-else :href="items.to">{{ items.title }}</a>
+            <NuxtLink class="text-current" :id="items.id" v-if="!items.to.includes('https://')"
+                      :to="items.to"
+            >{{ items.title }}
+            </NuxtLink>
+            <a class="text-current" :id="items.id" v-else :href="items.to">{{ items.title }}</a>
           </div>
         </div>
       </div>
@@ -88,7 +91,9 @@
 
 
       <!--  Account Action    -->
-      <div id="drawer_account_action" v-if="!isLoggedIn" class="flex flex-wrap space-x-3 mt-8 justify-center items-center text-white">
+      <div id="drawer_account_action" v-if="!isLoggedIn"
+           class="flex flex-wrap space-x-3 mt-8 justify-center items-center text-white"
+      >
         <div @click="$store.commit('drawer/toggleDrawer');$router.push('/auth/register')"
              class="rounded bg-primary-600 text-center px-4 py-2 hover:scale-105 transition transform duration-300 cursor-pointer"
         >Register
