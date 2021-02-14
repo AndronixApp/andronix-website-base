@@ -1,6 +1,7 @@
 describe('Authentication Tests', () => {
   beforeEach(() => {
     cy.visit('/')
+    cy.wait(2000)
     cy.get('#nav_hamburger').click()
     cy.wait(2000)
     cy.get('body').then(($body) => {
@@ -26,6 +27,7 @@ describe('Authentication Tests', () => {
 
   it('account details and logout button should not be visible when unauthenticated', function () {
     cy.visit('/auth/login')
+    cy.wait(2000)
     cy.get('#nav_hamburger').click()
     cy.wait(2000)
     cy.get('#drawer_account').should('not.exist')
@@ -34,13 +36,18 @@ describe('Authentication Tests', () => {
     cy.get('#drawer_account_action').should('exist')
   })
 
-  it('should create an error toast', () => {
+  it.only('should create an error toast', () => {
     cy.visit('/auth/login')
     cy.get('#login_email_input').type('ok@ok.ok')
     cy.get('#login_password_input').type('okokok')
     cy.get('#login_submit_button').click()
 
-    cy.get('.v-toast__item').children().should('have.class', 'v-toast__text')
+    cy.intercept('POST', '/identitytoolkit/v3'
+    ).as('loginRequest')
+
+    cy.wait('@loginRequest')
+
+    cy.get('.v-toast__text').first().should('have.text', 'Error occurred while logging in. Try again later.')
   })
 
   it('should successfully login with email/password', () => {

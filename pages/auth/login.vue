@@ -142,18 +142,21 @@ export default {
           email: data.email,
           password: data.password
         })
+        this.isLoading = false
         await this.$router.push('/')
       } catch (e) {
+        this.isLoading = false
         this.$toast.error(e)
       }
-      this.isLoading = false
     },
     async googleLogin () {
       this.isLoading = true
       try {
         await this.$store.dispatch('auth/loginWithGoogle')
+        this.isLoading = false
         await this.$router.push('/')
       } catch (e) {
+        this.isLoading = false
         this.$toast.error(e)
       }
     },

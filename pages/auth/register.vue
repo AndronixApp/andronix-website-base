@@ -160,34 +160,37 @@ export default {
 
   methods: {
     async registerWithEmail (data) {
+      this.isLoading = true
       let token
       /* ===========CAPTCHA============= */
       try {
         token = await this.$recaptcha.getResponse()
       } catch (e) {
-        this.$toast.error('Are... are you a bot? Please complete the captcha.')
         this.isLoading = false
+        this.$toast.error('Are... are you a bot? Please complete the captcha.')
         return
       }
-      this.isLoading = true
       await this.$axios.get(`/sec/captcha?token=${token}`)
       try {
         await this.$store.dispatch('auth/registerUserWithEmailPassword', {
           email: data.email,
           password: data.password
         })
+        this.isLoading = false
         await this.$router.push('/')
       } catch (e) {
+        this.isLoading = false
         this.$toast.error(e)
       }
-      this.isLoading = false
     },
     async googleLogin () {
       this.isLoading = true
       try {
         await this.$store.dispatch('auth/loginWithGoogle')
+        this.isLoading = false
         await this.$router.push('/')
       } catch (e) {
+        this.isLoading = false
         this.$toast.error(e)
       }
     },
