@@ -10,6 +10,10 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [ 1, 2, 3 ]
     name: E2E on Chrome
     steps:
       - name: Checking out code ⚡
@@ -24,7 +28,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
 
@@ -42,7 +46,9 @@ jobs:
         with:
           record: true
           start: yarn run dev
+          parallel: true
           browser: chrome
+          wait-on-timeout: 120
           wait-on: 'http://localhost:3000'
 
 
