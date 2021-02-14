@@ -8,7 +8,9 @@
     "start": "nuxt-ts start",
     "generate": "nuxt-ts generate",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "lint": "yarn run lint:js"
+    "lint": "yarn run lint:js",
+    "e2e": "cypress run --browser chrome",
+    "e2e:open": "cypress open"
   },
   "dependencies": {
     "@animxyz/core": "^0.4.0",
@@ -18,21 +20,21 @@
     "@nuxtjs/axios": "^5.13.0",
     "@nuxtjs/firebase": "^7.3.0",
     "@nuxtjs/recaptcha": "^0.6.2",
+    "@nuxtjs/robots": "^2.4.2",
+    "@nuxtjs/sitemap": "^2.4.0",
     "@tailwindcss/line-clamp": "^0.2.0",
+    "@tailwindcss/typography": "^0.4.0",
     "autoprefixer": "^9.8.6",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "firebase": "^8.2.1",
     "nuxt": "^2.14.12",
-    "overlayscrollbars-vue": "^0.2.2",
+    "nuxt-social-meta": "^0.0.5",
     "postcss": "^7.0.35",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
     "v-viewer": "^1.5.1",
-    "vue-animejs": "^2.1.1",
-    "vue-burger": "^1.1.0",
     "vue-loading-overlay": "^3.4.2",
     "vue-scrollto": "^2.20.0",
-    "vue-tasty-burgers": "1.1.8",
     "vue-tippy": "^4.7.2",
     "vue-toast-notification": "^0.6.0"
   },
@@ -43,7 +45,10 @@
     "@nuxtjs/eslint-config-typescript": "^3.0.0",
     "@nuxtjs/eslint-module": "^2.0.0",
     "@nuxtjs/tailwindcss": "^3.4.2",
+    "@types/jest": "^26.0.20",
     "babel-eslint": "^10.1.0",
+    "chance": "^1.1.7",
+    "cypress": "^6.4.0",
     "eslint": "^7.8.1",
     "eslint-plugin-nuxt": "^1.0.0"
   }

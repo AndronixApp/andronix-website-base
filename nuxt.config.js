@@ -1,4 +1,7 @@
 export default {
+  generate: {
+    fallback: true
+  },
   vue: {
     config: {
       silent: true
@@ -12,7 +15,7 @@ export default {
         scr: 'https://checkout.razorpay.com/v1/checkout.js'
       }
     ],
-    title: 'andronix-website',
+    title: 'Andronix App',
     meta: [
       { charset: 'utf-8' },
       {
@@ -47,17 +50,9 @@ export default {
       mode: 'client'
     },
     {
-      src: '~/plugins/anime.js',
-      mode: 'client'
-    },
-    {
       src: '~/plugins/viewer.js',
     },
     '~/plugins/firebase.js',
-    {
-      src: '~/plugins/hamburger.js',
-      mode: 'client'
-    },
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -73,6 +68,31 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    [
+      'nuxt-social-meta',
+      {
+        url: 'https://next.andronix.app',
+        title: 'Andronix App',
+        site_name: 'Andronix App',
+        description: 'Install Linux distributions like Ubuntu, Debian, Manjaro and more on your un-rooted Android device.',
+        img: 'Link to image in static folder',
+        locale: 'en_US',
+        twitter: '@AndronixApp',
+        twitter_card: 'summary_large_image',
+        themeColor: '#FF8B25',
+      },
+    ],
+    ['@nuxtjs/robots', {
+      UserAgent: '*',
+      Disallow: '/user'
+    }],
+    /* ['@nuxtjs/sitemap', {
+       hostname: 'https://',
+       gzip: true,
+       exclude: [
+         '/user/!**',
+       ]
+     }],*/
     'vue-scrollto/nuxt',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
@@ -90,4 +110,10 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
+
+  publicRuntimeConfig: {},
+  privateRuntimeConfig: {
+    testAccountEmail: process.env.TEST_ACCOUNT_EMAIL,
+    testAccountPassword: process.env.TEST_ACCOUNT_PASSWORD
+  }
 }

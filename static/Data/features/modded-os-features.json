@@ -20,7 +20,7 @@
     },
     {
       "title": "Made Pretty",
-      "sub_title": "We apply good those good looking stuff before it reaches it.",
+      "sub_title": "Modded OS are pre-themed with cherry picked themes and icons to look beautiful.",
       "icon": "<svg class=\"w-10 stroke-current text-green-400\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4\"/></svg>",
       "color": "bg-green-400"
     }

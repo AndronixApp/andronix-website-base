@@ -1,9 +1,8 @@
 <template>
   <div
-    class="flex-col bg-background mx-auto justify-center items-center"
+    class="flex-col bg-background w-full justify-center items-center"
   >
-    <Landing class="m-0"/>
-
+    <Landing/>
     <div
       class=" bg-no-repeat top-section"
     >
@@ -26,7 +25,7 @@
         />
 
         <div class="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-4 mt-10 text-white font-sans">
-          <StepsCard v-for="step in andronixSteps" :title="step.title"
+          <StepsCard v-for="step in andronixSteps" :title="step.title" :key="step.color"
                      :description="step.sub_title" :step="step.step" :color="step.color"
           >
             <div v-html="step.icon"></div>
@@ -45,7 +44,7 @@
         <div>
           <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 mt-10 text-white font-sans text-center">
             <FeatureCard v-for="features in andronixFeatures" :title="features.title"
-                         :desc="features.sub_title" :color="features.color"
+                         :desc="features.sub_title" :color="features.color" :key="features.color"
             >
               <div v-html="features.icon"></div>
             </FeatureCard>
@@ -53,15 +52,74 @@
         </div>
       </div>
     </div>
-    <Testimonials class="top-section"/>
+
+
+    <div class="flex-col bg-no-repeat mx-10 md:mx-20">
+      <!-- Features   -->
+      <div class="top-section">
+        <Heading heading="What people say!"
+                 sub_heading="Listen to what our users say about us all around the internet."
+                 deco_heading="TESTIMONIALS"
+        />
+        <div>
+          <div class="grid grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-4 mt-10 text-white font-sans text-center">
+            <TestimonialCard v-for="testimonial in mainTestimonials"
+                             :tilt="testimonial.tilt"
+                             :quote="testimonial.quote"
+                             :name="testimonial.name"
+                             :key="testimonial.name"
+                             :platform="testimonial.platform"
+                             :bg_gradient="testimonial.bg_gradient"
+
+            >
+              <div v-html="testimonial.icon"></div>
+            </TestimonialCard>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="flex-col bg-no-repeat mx-10 md:mx-20">
+      <!-- Features   -->
+      <div class="top-section">
+        <Heading heading="Our Products"
+                 sub_heading="Here's what we offer..."
+                 deco_heading="PRODUCTS"
+        />
+        <div>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-y-4 md:gap-y-0 mt-10 text-white font-sans text-center mx-auto lg:max-w-screen-lg"
+          >
+            <ProductComponent v-for="(product, index) in products"
+                              :class="get_bg_color_product_cards(index)"
+                              :index="index"
+                              :isPaid="product.isPaid"
+                              :description="product.description"
+                              :product="product.product"
+                              :key="product.product"
+                              :link="product.link"
+            >
+            </ProductComponent>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
 
 import andronixFeatures from '../static/Data/features/andronix-features.json'
+import products from '../static/Data/misc/products.json'
+import mainTestimonials from '../static/Data/testimonials/main-testimonials.json'
 import andronixSteps from '../static/Data/misc/andronix-steps.json'
 
 export default {
+  methods: {
+    get_bg_color_product_cards (index) {
+      return index / 3 === 0 || index / 3 === 1 ? 'md:bg-gray-800 bg-gray-800' : 'bg-gray-800 md:bg-gray-700'
+    }
+  },
   watch: {
     isDrawerOpen: {
       immediate: true,
@@ -79,6 +137,8 @@ export default {
   data: function () {
     return {
       andronixFeatures: andronixFeatures.features,
+      products: products.products,
+      mainTestimonials: mainTestimonials.testimonials,
       andronixSteps: andronixSteps.steps,
     }
   }

@@ -2,24 +2,25 @@
   "products": [
     {
       "id": "modded_os",
+      "css_id": "pricing_table_modded_os_button",
       "heading": "Modded OS",
       "deco_heading": "ANDRONIX",
-      "price": "$ 1.99",
+      "price": "Loading...",
       "slashedPrice": "$ 6.99",
       "color": "bg-purple-600",
       "features": [
-        "Discounts on Modded OS",
-        "Andronix Commands",
-        "Offline Installation",
-        "Internal Integration",
-        "You help sustain the project"
+        "Optimized Distros for performance.",
+        "Pre-install Software like VS Code, Chromium, Firefox.",
+        "Pre-themed with themes and icons.",
+        "Very stable and reliable than the normal distros."
       ]
     },
     {
       "id": "premium",
       "heading": "Premium",
+      "css_id": "pricing_table_premium",
       "deco_heading": "ANDRONIX",
-      "price": "$ 1.99",
+      "price": "Loading...",
       "slashedPrice": "$ 4.99",
       "color": "bg-primary-600",
       "features": [
@@ -36,7 +37,7 @@
       "id": "modded_os_bundle_premium",
       "heading": "Modded OS Bundle & Premium",
       "deco_heading": "ANDRONIX",
-      "price": "$ 11.99",
+      "price": "Loading...",
       "slashedPrice": "$ 28.99",
       "color": "bg-green-600",
       "features": [
@@ -51,7 +52,7 @@
       "id": "modded_os_bundle",
       "heading": "Modded OS Bundle",
       "deco_heading": "ANDRONIX",
-      "price": "$ 9.99",
+      "price": "Loading...",
       "slashedPrice": "$ 6.99",
       "color": "bg-blue-600",
       "features": [

@@ -1,0 +1,68 @@
+name: Chrome E2E CI
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [ 1, 2, 3 ]
+    name: E2E on Chrome
+    steps:
+      - name: Checking out code ⚡
+        uses: actions/checkout@v2
+
+      - name: Setting up NodeJS 📐
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+
+      - name: Caching Dependencies 💾
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Building 🏗
+        run: |
+          npm install -g yarn
+          yarn install --frozen-lockfile
+          yarn install
+
+
+      - name: E2E Testing 🤖
+        uses: cypress-io/github-action@v2
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          record: true
+          start: yarn run dev
+          parallel: true
+          browser: chrome
+          wait-on-timeout: 120
+          wait-on: 'http://localhost:3000'
+
+
+      - name: Uploading Screenshots ☁
+        uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+
+      - name: Uploading Videos ☁
+        uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: cypress-videos
+          path: cypress/videos

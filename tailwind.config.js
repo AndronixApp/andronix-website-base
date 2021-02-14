@@ -2,6 +2,7 @@ const colors = require('tailwindcss/colors')
 module.exports = {
   plugins: [
     require('@tailwindcss/line-clamp'),
+    require('@tailwindcss/typography'),
   ],
   purge: {
     content: [
@@ -9,8 +10,10 @@ module.exports = {
     ],
     options: {
       safelist: [
-        'bg-primary-400', 'text-teal-400', 'bg-blue-400', 'bg-purple-400', 'bg-green-400', 'bg-indigo-400', 'bg-pink-400', 'bg-red-400', 'w-10', 'w-6', 'stroke-current',
+        '-rotate-3', 'rotate-2', '-rotate-3', 'rotate-3', 'from-violet', 'to-primary-500', 'bg-gradient-to-r', 'from-blue-700', 'to-blue-400', 'from-purple-700', 'to-pink-900', 'from-yellow-600', 'to-red-600',
+        'bg-primary-400', 'bg-purple-600', 'text-teal-400', 'bg-blue-400', 'bg-purple-400', 'bg-green-400', 'bg-indigo-400', 'bg-pink-400', 'bg-red-400', 'w-10', 'w-6', 'stroke-current',
         'text-primary-400', 'text-blue-400', 'text-purple-400', 'text-green-400', 'text-indigo-400', 'text-pink-400', 'text-red-400'
+        , 'text-pink-400', 'text-indigo-400', 'text-blue-400', 'text-teal-400', 'text-primary-400', 'text-purple-400', 'text-green-400'
       ]
     }
   },
@@ -34,6 +37,8 @@ module.exports = {
           400: '#ffa251',
           500: '#ff973b',
           600: '#ff8b25',
+          700: '#e67d21',
+          800: '#cc6f1e',
         },
         gradient1: '#fc4a1a',
         gradient2: '#f7b733',
@@ -49,6 +54,7 @@ module.exports = {
       },
       backgroundImage: () => ({
         'landing-pattern': 'url(\'~assets/images/background/landing_bg.svg\')',
+        'final-pattern': 'url(\'~assets/images/background/final_edited.svg\')',
         'triangle-pattern': 'url(\'~assets/images/background/triangle_background.svg\')',
         'circle-pattern': 'url(\'~assets/images/background/circle_background.svg\')',
         'rect-pattern': 'url(\'~assets/images/background/square_background.svg\')',

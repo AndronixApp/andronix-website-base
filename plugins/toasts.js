@@ -4,4 +4,6 @@ import VueToast from 'vue-toast-notification'
 //import 'vue-toast-notification/dist/theme-default.css';
 import 'vue-toast-notification/dist/theme-sugar.css'
 
-Vue.use(VueToast, { position: 'bottom' })
+Vue.use(VueToast, {
+  position: 'bottom'
+})

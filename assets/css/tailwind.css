@@ -21,7 +21,7 @@
   }
 
   .sub-heading {
-    @apply font-medium text-center text-base md:text-xl text-center text-gray-300
+    @apply font-medium text-center text-base md:text-lg text-center text-gray-400
   }
 
   .input {

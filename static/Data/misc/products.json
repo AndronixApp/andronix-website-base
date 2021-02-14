@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "isPaid": true,
+      "product": "Andronix Modded OS",
+      "link": "/products/modded-os",
+      "description": "Modded OS are optimized, beautified and super stable distros customized by us. We carefully choose what goes into these and cherry pick the best features for you."
+    },
+    {
+      "isPaid": true,
+      "link": "/products/premium",
+      "product": "Andronix Premium",
+      "description": "Andronix Premium acts as an extention to the Andronix app. It add features like Offline Distribution Installation, Andronix Commands and much more."
+    },
+    {
+      "isPaid": true,
+      "link": "/products/commands",
+      "product": "Andronix Commands",
+      "description": "Andronix Premium helps your keep all your notes and important commands always synced across all your devices with the exclusive support on Discord. "
+    },
+    {
+      "isPaid": false,
+      "link": "https://next.docs.andronix.app",
+      "product": "Andronix UnModded OS",
+      "description": "Variety of distros and desktop environment free of cost with community support channels if you are ever stuck with an issue."
+    }
+  ]
+}

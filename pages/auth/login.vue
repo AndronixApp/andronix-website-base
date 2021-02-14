@@ -27,6 +27,7 @@
                   <FormulateInput
                     type="text"
                     name="email"
+                    id="login_email_input"
                     placeholder="Email"
                     input-class="formulate-input-class"
                     label-class="formulate-label-class"
@@ -38,6 +39,7 @@
                   <FormulateInput
                     type="password"
                     name="password"
+                    id="login_password_input"
                     input-class="formulate-input-class"
                     label-class="formulate-label-class"
                     placeholder="Password"
@@ -50,6 +52,7 @@
 
                 <FormulateInput
                   type="submit"
+                  id="login_submit_button"
                   :input-class="`md:w-full w-10/12 mx-auto flex justify-center items-center rounded font-bold py-3 px-3 text-white transition transform duration-300 ${!hasErrors ?'bg-primary-500 opacity-1':'bg-gray-600 opacity-50'}`"
                   :disabled="hasErrors"
                   :label="isLoading ? 'Loading...' : 'Login'"
@@ -139,18 +142,21 @@ export default {
           email: data.email,
           password: data.password
         })
+        this.isLoading = false
         await this.$router.push('/')
       } catch (e) {
+        this.isLoading = false
         this.$toast.error(e)
       }
-      this.isLoading = false
     },
     async googleLogin () {
       this.isLoading = true
       try {
         await this.$store.dispatch('auth/loginWithGoogle')
+        this.isLoading = false
         await this.$router.push('/')
       } catch (e) {
+        this.isLoading = false
         this.$toast.error(e)
       }
     },

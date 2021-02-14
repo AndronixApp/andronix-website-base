@@ -1,4 +1,5 @@
 export const state = () => ({
+  is_billing_active: false,
   selected_product_id: '',
   user_billing_data: {
     country: '',
@@ -12,6 +13,9 @@ export const state = () => ({
 })
 
 export const mutations = {
+  SET_BILLING_STATE (state, isActive) {
+    state.is_billing_active = isActive
+  },
   SET_SELECTED_PRODUCT_ID (state, id) {
     state.selected_product_id = id
   },
@@ -25,10 +29,16 @@ export const getters = {
   },
   getUserBillingData (state) {
     return state.user_billing_data
+  },
+  getBillingState (state) {
+    return state.is_billing_active
   }
 }
 
 export const actions = {
+  setBillingState ({ commit }, billingState) {
+    return commit('SET_BILLING_STATE', billingState)
+  },
   setSelectedProductId ({ commit }, id) {
     return commit('SET_SELECTED_PRODUCT_ID', id)
   },

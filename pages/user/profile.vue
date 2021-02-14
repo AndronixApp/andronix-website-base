@@ -34,7 +34,7 @@
 
       <XyzTransition appear-visible xyz="fade small left-100% delay-15">
         <div class="max-w-screen-sm mx-auto px-6 flex-col space-y-4" xyz="inner staggered fade small">
-          <div v-for="(value, product) in purchaseObject" v-if="Object.keys(value).length>0"
+          <div v-for="(value, product) in purchaseObject" :key="product" v-if="Object.keys(value).length>0"
                class="bg-card_background rounded flex justify-center items-center"
           >
             <div class="w-2/12 bg-card_background2 py-3 rounded">

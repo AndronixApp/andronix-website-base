@@ -2,7 +2,7 @@
   <div class="bg-background">
     <NavBar/>
     <SideBar/>
-    <Nuxt/>
+    <Nuxt class="lg:max-w-screen-2xl pt-20 mx-auto"/>
     <Footer/>
   </div>
 </template>
@@ -16,7 +16,7 @@ export default {
     this.observeAuthStateChange()
   },
   methods: {
-    observeAuthStateChange: function () {
+    observeAuthStateChange () {
       let ctx = this
       auth.onAuthStateChanged(function (user) {
         if (user) {

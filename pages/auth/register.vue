@@ -26,6 +26,7 @@
                   <FormulateInput
                     type="text"
                     name="email"
+                    id="register_email_input"
                     placeholder="Email"
                     input-class="formulate-input-class"
                     label-class="formulate-label-class"
@@ -37,6 +38,7 @@
                   <FormulateInput
                     type="password"
                     name="password"
+                    id="register_password_input"
                     input-class="formulate-input-class"
                     label-class="formulate-label-class"
                     placeholder="Password"
@@ -48,6 +50,7 @@
                   <FormulateInput
                     type="password"
                     name="password_confirm"
+                    id="register_password_confirm_input"
                     input-class="formulate-input-class"
                     label-class="formulate-label-class"
                     placeholder="Confirm Password"
@@ -62,6 +65,7 @@
 
                 <FormulateInput
                   type="submit"
+                  id="register_submit_button"
                   :input-class="`md:w-full w-10/12 mx-auto flex justify-center items-center rounded font-bold py-3 px-3 text-white transition transform duration-300 ${!hasErrors ?'bg-primary-500 opacity-1':'bg-gray-600 opacity-50'}`"
                   :disabled="hasErrors"
                   :label="isLoading ? 'Loading...' : 'Register'"
@@ -156,34 +160,37 @@ export default {
 
   methods: {
     async registerWithEmail (data) {
+      this.isLoading = true
       let token
       /* ===========CAPTCHA============= */
       try {
         token = await this.$recaptcha.getResponse()
       } catch (e) {
-        this.$toast.error('Are... are you a bot? Please complete the captcha.')
         this.isLoading = false
+        this.$toast.error('Are... are you a bot? Please complete the captcha.')
         return
       }
-      this.isLoading = true
       await this.$axios.get(`/sec/captcha?token=${token}`)
       try {
         await this.$store.dispatch('auth/registerUserWithEmailPassword', {
           email: data.email,
           password: data.password
         })
+        this.isLoading = false
         await this.$router.push('/')
       } catch (e) {
+        this.isLoading = false
         this.$toast.error(e)
       }
-      this.isLoading = false
     },
     async googleLogin () {
       this.isLoading = true
       try {
         await this.$store.dispatch('auth/loginWithGoogle')
+        this.isLoading = false
         await this.$router.push('/')
       } catch (e) {
+        this.isLoading = false
         this.$toast.error(e)
       }
     },

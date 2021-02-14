@@ -1,4 +1,4 @@
-# Created by .ignore support plugin (hsz.mobi)
+# Created by .ignore support plugins (hsz.mobi)
 ### Node template
 # Logs
 /logs
@@ -88,3 +88,5 @@ sw.*
 
 # Vim swap files
 *.swp
+
+cypress/

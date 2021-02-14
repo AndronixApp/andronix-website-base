@@ -77,7 +77,7 @@ export const actions = {
           } else if (e.code === 'auth/user-disabled') {
             reject('Account disable. Please contact us.')
           } else {
-            reject('Error occurred while registering. Try again later.')
+            reject('Error occurred while logging in. Try again later.')
           }
         }
       }
