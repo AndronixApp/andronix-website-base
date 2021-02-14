@@ -75,11 +75,13 @@ import productDetails from '~/static/Data/pricing/product-details.json'
 import { getPrices } from '~/lib/checkout/checkoutHelper'
 import Loading from 'vue-loading-overlay'
 import 'vue-loading-overlay/dist/vue-loading.css'
+import { database } from '~/plugins/firebase'
 
 export default {
   components: { Loading },
   mounted () {
     //todo enable this
+    this.observeBillingStatus()
     this.getPricing()
   },
   data: function () {
@@ -100,6 +102,22 @@ export default {
     }
   },
   methods: {
+    async observeBillingStatus () {
+      try {
+        if (window.Cypress) {
+          console.log('Running in cypress')
+          await this.$store.dispatch('checkout/setBillingState', true)
+        } else {
+          await database.ref('billingStatus/isActive').on('value', async (snapshot) => {
+            let isBillingActive = snapshot.val()
+            console.log({ isBillingActive })
+            await this.$store.dispatch('checkout/setBillingState', isBillingActive)
+          })
+        }
+      } catch (e) {
+        console.log(e)
+      }
+    },
     async getPricing () {
       // this.isLoading = true
       let moddedRes = await getPrices('ubuntu_xfce', this.$axios)

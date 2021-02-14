@@ -9,24 +9,13 @@
 
 
 <script>
-import { auth, database } from '~/plugins/firebase'
+import { auth } from '~/plugins/firebase'
 
 export default {
   created () {
     this.observeAuthStateChange()
-    this.observeBillingStatus()
   },
   methods: {
-    async observeBillingStatus () {
-      try {
-        await database.ref('billingStatus').child('isActive').on('value', async (snapshot) => {
-          let isBillingActive = snapshot.val()
-          await this.$store.dispatch('checkout/setBillingState', isBillingActive)
-        })
-      } catch (e) {
-        console.log(e)
-      }
-    },
     observeAuthStateChange () {
       let ctx = this
       auth.onAuthStateChanged(function (user) {

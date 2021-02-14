@@ -6,9 +6,8 @@ describe('Checkout Tests', () => {
   /* Logout if logged in */
   beforeEach(() => {
     cy.visit('/')
-    cy.wait(2000)
     cy.get('#nav_hamburger').click()
-    cy.wait(2000)
+    cy.wait(5000)
     cy.get('body').then(($body) => {
       return !!$body.find('#drawer_logout_button').length
     })

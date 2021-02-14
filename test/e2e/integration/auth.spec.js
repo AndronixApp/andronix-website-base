@@ -1,9 +1,8 @@
 describe('Authentication Tests', () => {
   beforeEach(() => {
     cy.visit('/')
-    cy.wait(2000)
     cy.get('#nav_hamburger').click()
-    cy.wait(2000)
+    cy.wait(5000)
     cy.get('body').then(($body) => {
       return !!$body.find('#drawer_logout_button').length
     })
@@ -36,7 +35,7 @@ describe('Authentication Tests', () => {
     cy.get('#drawer_account_action').should('exist')
   })
 
-  it.only('should create an error toast', () => {
+  it('should create an error toast', () => {
     cy.visit('/auth/login')
     cy.get('#login_email_input').type('ok@ok.ok')
     cy.get('#login_password_input').type('okokok')

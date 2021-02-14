@@ -314,6 +314,7 @@ import {
   ProductIdArray,
   verifyPurchase
 } from '~/lib/checkout/checkoutHelper'
+import { database } from '~/plugins/firebase'
 
 const PRODUCT_SELECTION = 'product_selection'
 const DETAILS = 'details'
@@ -327,6 +328,7 @@ export default {
     return { product_id }
   },
   created () {
+    this.observeBillingStatus()
     if (this.is_billing_active) {
       if (this.product_id && ProductIdArray.includes(this.product_id)) {
         this.setSelectedProduct(this.product_id)
@@ -383,6 +385,22 @@ export default {
     }
   },
   methods: {
+    async observeBillingStatus () {
+      try {
+        if (window.Cypress) {
+          console.log('Running in cypress')
+          await this.$store.dispatch('checkout/setBillingState', true)
+        } else {
+          await database.ref('billingStatus/isActive').on('value', async (snapshot) => {
+            let isBillingActive = snapshot.val()
+            console.log({ isBillingActive })
+            await this.$store.dispatch('checkout/setBillingState', isBillingActive)
+          })
+        }
+      } catch (e) {
+        console.log(e)
+      }
+    },
     removeCoupon () {
       this.couponApplied = null
       this.setSelectedProduct(this.selectedProductId)
