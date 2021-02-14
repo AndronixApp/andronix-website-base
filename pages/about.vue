@@ -11,6 +11,8 @@
           mobile users to make them aware of the Linux kernel and distros, providing them a way to use desktop softwares on their Android devices.
           We are really thankful to all our users and our additional team members for supporting us and bringing us to where we are today."
         />
+
+        <PrimaryTextButton label="TALK TO US"/>
       </div>
 
       <div class="section-gap">
@@ -19,7 +21,7 @@
           deco_heading="ABOUT"
           sub_heading="It's kinda long but quite interesting. It's our story from yet another app that let's you install Linux to one of the top ones in the domain."
         />
-        <p class="text-gray-300 text-center md:px-12 lg:px-24 tracking-normal">
+        <p class="text-gray-300 text-center md:px-12 lg:px-24 tracking-wide leading-loose lg:leading-8 md:text-lg">
           Andronix started as an idea of providing a simple script which lets
           the user download and install a basic Linux filesystem on a non-rooted
           Android device. As days passed we soon realized that the apps already
@@ -27,22 +29,22 @@
           with more up-to-date features and a support platform where they can
           raise their queries.
 
-          <br /><br />
+          <br/><br/>
           We also implemented Andronix Commands with an in-depth support for
           using that offline, caching and everything handled by the app at real
           time.
-          <br /><br />
+          <br/><br/>
           This app was the idea of <b>Anurag Verma</b> who had a vision to
           provide people without computer, the power of Linux on thier Android
           devices. There were many apps for doing this, but none with a
           lucrative UI or even a considerable UX and appreciable support team.
           We designed Andronix from scratch to make it super user-friendly and
           pretty to look attached with multiple support platforms to give user a
-          place to get rid of thier issues. <br /><br />
+          place to get rid of thier issues. <br/><br/>
 
           While we really enjoyed developing for the community, we were sad to
           see that most of the already present apps were full of apps
-          <br /><br />
+          <br/><br/>
         </p>
       </div>
 
@@ -129,16 +131,16 @@
 </template>
 
 <script>
-import teams from "~/static/Data/misc/teams.json";
+import teams from '~/static/Data/misc/teams.json'
 
 export default {
-  name: "about.vue",
+  name: 'about.vue',
   data: function () {
     return {
       teams,
-    };
+    }
   },
-};
+}
 </script>
 
 <style scoped>

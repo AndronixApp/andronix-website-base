@@ -327,14 +327,18 @@ export default {
     return { product_id }
   },
   created () {
-    if (this.product_id && ProductIdArray.includes(this.product_id)) {
-      this.setSelectedProduct(this.product_id)
+    if (this.is_billing_active) {
+      if (this.product_id && ProductIdArray.includes(this.product_id)) {
+        this.setSelectedProduct(this.product_id)
+      }
+      this.PRODUCT_SELECTION = PRODUCT_SELECTION
+      this.DETAILS = DETAILS
+      this.PAYING = PAYING
+      this.SUCCESS = SUCCESS
+      this.FAILED = FAILED
+    } else {
+      this.$router.push('/pricing')
     }
-    this.PRODUCT_SELECTION = PRODUCT_SELECTION
-    this.DETAILS = DETAILS
-    this.PAYING = PAYING
-    this.SUCCESS = SUCCESS
-    this.FAILED = FAILED
   },
   head () {
     return {
@@ -365,6 +369,9 @@ export default {
     }
   },
   computed: {
+    is_billing_active () {
+      return this.$store.getters['checkout/getBillingState']
+    },
     get_payment_status () {
       return this.paymentStatus
     },

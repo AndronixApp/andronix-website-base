@@ -94,9 +94,14 @@ export default {
       },
     }
   },
+  computed: {
+    is_billing_active () {
+      return this.$store.getters['checkout/getBillingState']
+    }
+  },
   methods: {
     async getPricing () {
-     // this.isLoading = true
+      // this.isLoading = true
       let moddedRes = await getPrices('ubuntu_xfce', this.$axios)
       this.$set(this.pricingObject, 'modded_os', moddedRes.price)
       let premiumRes = await getPrices('premium', this.$axios)
@@ -104,15 +109,18 @@ export default {
       this.isLoading = false
     },
     purchase: function (id) {
-      console.log(`Pricing ${this.$store.getters['auth/isUserLoggedIn']}`)
-      if (this.$store.getters['auth/isUserLoggedIn']) {
-        if (id !== 'premium') {
-          this.$router.push('checkout/buy')
+      if (this.is_billing_active) {
+        if (this.$store.getters['auth/isUserLoggedIn']) {
+          if (id !== 'premium') {
+            this.$router.push('checkout/buy')
+          } else {
+            this.$router.push('checkout/buy/premium')
+          }
         } else {
-          this.$router.push('checkout/buy/premium')
+          this.$router.push('auth/login')
         }
       } else {
-        this.$router.push('auth/login')
+        this.$toast.info('Billing is not yet activated. We\'re working on it!')
       }
     },
   },
