@@ -53,18 +53,18 @@
       >
         <div v-for="(items, index) in menu" :key="items.color">
           <hr v-if="index !== 0" class="border-dashed border-t-1 mr-3 my-4 border-opacity-50 border-gray-700">
-          <div :class="`hover:${items.color}`"
-               class="cursor-pointer text-white flex space-x-6 items-center px-2"
-               @click="$store.commit('drawer/toggleDrawer')"
+          <div
+            class="cursor-pointer text-white flex space-x-6 items-center px-2"
+            @click="$store.commit('drawer/toggleDrawer')"
           >
             <div>
               <div v-html="items.icon"></div>
             </div>
-            <NuxtLink class="text-current" :id="items.id" v-if="!items.to.includes('https://')"
+            <NuxtLink :class="`hover:${items.color}`" :id="items.id" v-if="!items.to.includes('https://')"
                       :to="items.to"
             >{{ items.title }}
             </NuxtLink>
-            <a class="text-current" :id="items.id" v-else :href="items.to">{{ items.title }}</a>
+            <a :class="`hover:${items.color}`" :id="items.id" v-else :href="items.to">{{ items.title }}</a>
           </div>
         </div>
       </div>

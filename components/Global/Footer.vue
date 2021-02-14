@@ -78,11 +78,11 @@
         <div class="text-gray-400 text-sm text-center">
           <h3 class="font-bold text-lg text-gray-300">Policies</h3>
           <ul class="flex-col space-y-2 pt-3 ">
-            <NuxtLink class="block hover:text-white duration-200 transition hover:underline" to="/">Refund Policy
+            <NuxtLink class="block hover:text-white duration-200 transition hover:underline" to="/legal/refund-policy">Refund Policy
             </NuxtLink>
-            <NuxtLink class="block hover:text-white duration-200 transition hover:underline" to="/">T&C
+            <NuxtLink class="block hover:text-white duration-200 transition hover:underline" to="/legal/terms-condition">T&C
             </NuxtLink>
-            <NuxtLink class="block hover:text-white duration-200 transition hover:underline" to="/">Privacy policy
+            <NuxtLink class="block hover:text-white duration-200 transition hover:underline" to="/legal/privacy-policy">Privacy policy
             </NuxtLink>
           </ul>
         </div>
@@ -95,28 +95,40 @@
           >
             Products</h3>
           <ul class="flex-col space-y-2 pt-3 ">
-            <NuxtLink class="block hover:text-white duration-200 transition hover:underline" to="/">Modded OS
+            <NuxtLink class="block hover:text-white duration-200 transition hover:underline" to="/products/modded-os">
+              Modded OS
             </NuxtLink>
-            <NuxtLink class="block hover:text-white duration-200 transition hover:underline" to="/">Premium
+            <NuxtLink class="block hover:text-white duration-200 transition hover:underline" to="/products/premium">
+              Premium
             </NuxtLink>
-            <NuxtLink class="block hover:text-white duration-200 transition hover:underline" to="/">Commands
+            <NuxtLink class="block hover:text-white duration-200 transition hover:underline" to="/products/commands">
+              Commands
             </NuxtLink>
-            <NuxtLink class="block hover:text-white duration-200 transition hover:underline" to="/">Pricing
+            <NuxtLink class="block hover:text-white duration-200 transition hover:underline" to="/pricing">Pricing
             </NuxtLink>
-            <NuxtLink class="block hover:text-white duration-200 transition hover:underline" to="/">Documentation
-            </NuxtLink>
+            <li>
+              <a class="block hover:text-white duration-200 transition hover:underline"
+                 href="https://docs.andronix.app"
+              >Documentation
+              </a>
+            </li>
           </ul>
         </div>
         <!--   Policies     -->
         <div class="text-gray-400 text-sm text-center md:order-2 order-1">
           <h3 class="font-bold text-lg text-gray-300">Know us</h3>
           <ul class="flex-col space-y-2 pt-3 ">
-            <NuxtLink class="block hover:text-white duration-200 transition hover:underline" to="/">Help
+            <NuxtLink class="block hover:text-white duration-200 transition hover:underline" to="/help">Help
             </NuxtLink>
-            <NuxtLink class="block hover:text-white duration-200 transition hover:underline" to="/">About us
+            <NuxtLink class="block hover:text-white duration-200 transition hover:underline" to="/about">About us
             </NuxtLink>
-            <NuxtLink class="block hover:text-white duration-200 transition hover:underline" to="/">Translate
-            </NuxtLink>
+            <li>
+              <a
+                class="block hover:text-white duration-200 transition hover:underline"
+                href="https://translate.andronix.app"
+              >Translate
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -130,9 +142,11 @@
         <h3 class="font-extrabold text-lg">Andronix App</h3>
         <p class="text-gray-400 text-sm">©2021 Andronix | Techriz. All Rights Reserved.</p>
         <p class="mt-3 text-xs text-gray-400 w-10/12 text-center mx-auto">
-          Made with <strong class="font-bold text-gray-300">Tailwind, NuxtJS and NodeJS</strong> by <a
+          Made with <a href="https://tailwindcss.com" class="underline font-bold text-gray-200"
+        >Tailwind</a>, <a href="https://nuxtjs.org" class="underline font-bold text-gray-200"
+        >NuxtJS</a> by <a
           href="https://github.com/imprakharshukla"
-          class="font-bold text-gray-200"
+          class="underline font-bold text-gray-100"
         >imprakharshukla</a> in 🇮🇳
         </p>
       </div>
