@@ -1,8 +1,10 @@
 name: Chrome E2E CI
 on:
-  pull_request:
+  push:
     branches:
       - dev
+  pull_request:
+    branches:
       - master
 
 jobs:
