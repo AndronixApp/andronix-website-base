@@ -3,6 +3,7 @@
     <!-- Testimonials   -->
     <div class="mt-24 px-12 md:px-24 pb-28 bg-no-repeat">
       <Heading
+        class="px-10"
         heading="Get Help Fast!"
         sub_heading="We are here to help you through our community channels. Please stay patient while waiting for an answer and read the respective rules of the platform."
         deco_heading="ANDRONIX"

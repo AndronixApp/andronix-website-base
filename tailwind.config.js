@@ -5,9 +5,6 @@ module.exports = {
     require('@tailwindcss/typography'),
   ],
   purge: {
-    content: [
-      './static/Data/*.json',
-    ],
     options: {
       safelist: [
         '-rotate-3', 'rotate-2', '-rotate-3', 'rotate-3', 'from-violet', 'to-primary-500', 'bg-gradient-to-r', 'from-blue-700', 'to-blue-400', 'from-purple-700', 'to-pink-900', 'from-yellow-600', 'to-red-600',
@@ -19,6 +16,9 @@ module.exports = {
   },
   theme: {
     extend: {
+      screens: {
+        'xxs': {'max': '350px'},
+      },
       colors: {
         trueGray: colors.trueGray,
         teal: {

@@ -4,13 +4,41 @@ on:
     branches:
       - master
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         containers: [ 1, 2, 3 ]
+    name: Build
+    steps:
+      - name: Checking out code ⚡
+        uses: actions/checkout@v2
+
+      - name: Setting up NodeJS 📐
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+
+      - name: Caching Dependencies 💾
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Building 🏗
+        run: |
+          npm install -g yarn
+          yarn install --frozen-lockfile
+          yarn install
+          yarn run generate
+
+  deploy:
+    runs-on: ubuntu-latest
     name: Deploy
+    needs: build
     steps:
       - name: Deploy to Netlify ✅
         uses: nwtgck/actions-netlify@v1.1

@@ -3,12 +3,10 @@
        :class="!view.atTopOfPage?'bg-gray-800 bg-opacity-80':''"
   >
     <div class="flex pt-4 lg:pt-6 lg:pb-6 px-8 pb-4 items-center justify-end">
-      <XyzTransition appear-visible xyz="fade left-100% small">
-        <div class="flex justify-self-start mr-auto cursor-pointer" @click="$router.push('/')">
-          <h3 class="text-white font-sans font-bold text-lg">andronix</h3>
-          <span class="text-primary-500 font-bold text-lg">.app</span>
-        </div>
-      </XyzTransition>
+      <div class="xxs:hidden sm:flex justify-self-start mr-auto cursor-pointer" @click="$router.push('/')">
+        <h3 class="text-white font-sans font-bold text-lg">andronix</h3>
+        <span class="text-primary-500 font-bold text-lg">.app</span>
+      </div>
 
       <!--  Download Button    -->
       <div
@@ -26,8 +24,8 @@
       </div>
 
       <!--   Hamburger   -->
-      <div id="nav_hamburger" @click="$store.commit('drawer/toggleDrawer')" class="cursor-pointer ml-5">
-        <svg class="stroke-current text-white w-8" xmlns="http://www.w3.org/2000/svg" width="31" height="15">
+      <div id="nav_hamburger" @click="$store.commit('drawer/toggleDrawer')" class="cursor-pointer ml-5 ">
+        <svg class="stroke-current text-white" xmlns="http://www.w3.org/2000/svg" width="31" height="15">
           <g fill="none" stroke="#fff" stroke-width="3">
             <path d="M0 1.5h31M0 13.5h31"/>
           </g>
