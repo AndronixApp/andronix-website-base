@@ -21,9 +21,9 @@
           </div>
           <div class="flex-col space-y-2">
             <p class="font-bold text-sm uppercase text-gray-400">Source code?</p>
-            <p href="https://git.andronix.app"
+            <a href="https://git.andronix.app"
                class="underline text-gray-200 hover:text-blue-300 transition duration-200 cursor-pointer"
-            >Github</p>
+            >Github</a>
           </div>
           <div class="flex-col space-y-2 col-span-2">
             <p class="pb-2 font-bold text-sm uppercase text-center md:text-left text-gray-400">Reach out to us</p>
@@ -78,11 +78,15 @@
         <div class="text-gray-400 text-sm text-center">
           <h3 class="font-bold text-lg text-gray-300">Policies</h3>
           <ul class="flex-col space-y-2 pt-3 ">
-            <NuxtLink class="block hover:text-white duration-200 transition hover:underline" to="/legal/refund-policy">Refund Policy
+            <NuxtLink class="block hover:text-white duration-200 transition hover:underline" to="/legal/refund-policy">
+              Refund Policy
             </NuxtLink>
-            <NuxtLink class="block hover:text-white duration-200 transition hover:underline" to="/legal/terms-condition">T&C
+            <NuxtLink class="block hover:text-white duration-200 transition hover:underline"
+                      to="/legal/terms-conditions"
+            >T&C
             </NuxtLink>
-            <NuxtLink class="block hover:text-white duration-200 transition hover:underline" to="/legal/privacy-policy">Privacy policy
+            <NuxtLink class="block hover:text-white duration-200 transition hover:underline" to="/legal/privacy-policy">
+              Privacy policy
             </NuxtLink>
           </ul>
         </div>
