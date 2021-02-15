@@ -2,6 +2,7 @@ name: Chrome E2E CI
 on:
   pull_request:
     branches:
+      - dev
       - master
 
 jobs:
