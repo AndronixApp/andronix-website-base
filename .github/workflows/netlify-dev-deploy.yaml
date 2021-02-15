@@ -1,0 +1,47 @@
+name: Dev Deploy
+on:
+  push:
+    branches:
+      - dev
+  pull_request:
+    branches:
+      - master
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Build
+    steps:
+      - name: Checking out code ⚡
+        uses: actions/checkout@v2
+
+      - name: Setting up NodeJS 📐
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+
+      - name: Caching Dependencies 💾
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Building 🏗
+        run: |
+          npm install -g yarn
+          yarn install --frozen-lockfile
+          yarn install
+          yarn run generate
+
+      - name: Deploy to Netlify ✅
+        uses: nwtgck/actions-netlify@v1.1
+        with:
+          publish-dir: './dist'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy from GitHub Actions"
+          production-deploy: false
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
