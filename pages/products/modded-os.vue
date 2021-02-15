@@ -5,6 +5,7 @@
         class="h-screen m-0 bg-background w-full bg-landing-pattern bg-top flex items-center justify-center flex-col"
       >
         <Heading
+          class="px-10"
           heading="Take Andronix to the Next Level"
           deco_heading="MODDED OS"
           sub_heading="Modded OS are vesions of normal distros optimized, beautified and made super stable by our experienced developers. These include Ubuntu, Debian, Manjaro for now. We carefully choose what goes into these and cherry pick the best features for you."

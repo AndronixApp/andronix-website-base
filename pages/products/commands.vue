@@ -3,10 +3,10 @@
     <div
       class="h-screen m-0 bg-background w-full bg-landing-pattern bg-top flex items-center justify-center flex-col"
     >
-      <Heading
-        heading="Sync Your World"
-        deco_heading="ANDRONIX COMMANDS "
-        sub_heading="Andronix Commands is a one-stop solution for all your Terminal needs. Save and sync commands the go, just copy and paste."
+      <Heading class="px-10"
+               heading="Sync Your World"
+               deco_heading="ANDRONIX COMMANDS "
+               sub_heading="Andronix Commands is a one-stop solution for all your Terminal needs. Save and sync commands the go, just copy and paste."
       />
 
       <PrimaryTextButton
@@ -72,7 +72,7 @@
         </div>
       </a>
       <a href="https://web.andronix.app"
-        class="cursor-pointer rounded bg-gray-800 flex text-white px-4 py-3 space-x-5 hover:-translate-y-1.5 transform transition duration-200"
+         class="cursor-pointer rounded bg-gray-800 flex text-white px-4 py-3 space-x-5 hover:-translate-y-1.5 transform transition duration-200"
       >
         <div class="w-1/4 flex items-center justify-center">
           <svg class="w-10 text-blue-400 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -89,7 +89,7 @@
         </div>
       </a>
       <a href="https://www.npmjs.com/package/andronix-command-cli"
-        class="cursor-pointer rounded bg-gray-800 flex text-white px-4 py-3 space-x-5 hover:-translate-y-1.5 transform transition duration-200"
+         class="cursor-pointer rounded bg-gray-800 flex text-white px-4 py-3 space-x-5 hover:-translate-y-1.5 transform transition duration-200"
       >
         <div class="w-1/4 flex items-center justify-center">
           <svg class="w-10 text-purple-400 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none"

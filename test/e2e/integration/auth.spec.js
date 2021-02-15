@@ -1,6 +1,8 @@
 describe('Authentication Tests', () => {
   beforeEach(() => {
     cy.visit('/')
+    /* Waiting when nuxt actually builds the page */
+    cy.wait(7000)
     cy.get('#nav_hamburger').click()
     cy.wait(5000)
     cy.get('body').then(($body) => {

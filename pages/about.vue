@@ -5,6 +5,7 @@
         class="h-screen m-0 bg-background w-full bg-landing-pattern bg-top flex items-center justify-center flex-col"
       >
         <Heading
+          class="px-10"
           heading="Who we are?"
           deco_heading="ANDRONIX"
           sub_heading="We are developers from India who like to share our knowledge and try to deliver a platform to

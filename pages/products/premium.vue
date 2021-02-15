@@ -4,6 +4,7 @@
       class="h-screen m-0 bg-background w-full bg-landing-pattern bg-top flex items-center justify-center flex-col"
     >
       <Heading
+        class="px-10"
         heading="The Power of Andronix"
         deco_heading="ANDRONIX PREMIUM"
         sub_heading="Andronix Premium acts as an extention to the Andronix app. It add features like Offline Distribution Installation, Andronix Commands and much more."

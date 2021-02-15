@@ -8,6 +8,7 @@
     />
     <div class="px-12 md:p-24">
       <Heading
+        class="px-10"
         heading="Pricing"
         sub_heading="We hate subscriptions. All purchases here are one-time and life long. They sync all your devices automatically."
         deco_heading="ANDRONIX"
