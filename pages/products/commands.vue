@@ -154,7 +154,19 @@
 import features from '~/static/Data/features/commands-feature.json'
 import steps from '~/static/Data/misc/command-steps.json'
 
+import meta from '~/static/seo/meta-head.json'
+
 export default {
+  head () {
+    return {
+      title: meta.commands.title,
+      meta: [{
+        hid: meta.commands.hid,
+        name: meta.commands.name,
+        content: meta.commands.content
+      }]
+    }
+  },
   name: 'index',
   data: function () {
     return {

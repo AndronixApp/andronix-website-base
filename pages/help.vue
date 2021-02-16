@@ -63,7 +63,19 @@
 </template>
 
 <script>
+import meta from '~/static/seo/meta-head.json'
+
 export default {
+  head () {
+    return {
+      title: meta.help.title,
+      meta: [{
+        hid: meta.help.hid,
+        name: meta.help.name,
+        content: meta.help.content
+      }]
+    }
+  },
   name: "help",
 };
 </script>

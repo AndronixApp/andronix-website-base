@@ -134,7 +134,19 @@ import features from '~/static/Data/features/premium-features.json'
 import testimonials from '~/static/Data/testimonials/premium-testimonials.json'
 import metrics from '~/static/Data/misc/premium-metric.json'
 
+import meta from '~/static/seo/meta-head.json'
+
 export default {
+  head () {
+    return {
+      title: meta.premium.title,
+      meta: [{
+        hid: meta.premium.hid,
+        name: meta.premium.name,
+        content: meta.premium.content
+      }]
+    }
+  },
   name: 'index',
   data: function () {
     return {

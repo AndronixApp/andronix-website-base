@@ -77,8 +77,19 @@ import { getPrices } from '~/lib/checkout/checkoutHelper'
 import Loading from 'vue-loading-overlay'
 import 'vue-loading-overlay/dist/vue-loading.css'
 import { database } from '~/plugins/firebase'
+import meta from '~/static/seo/meta-head.json'
 
 export default {
+  head () {
+    return {
+      title: meta.pricing.title,
+      meta: [{
+        hid: meta.pricing.hid,
+        name: meta.pricing.name,
+        content: meta.pricing.content
+      }]
+    }
+  },
   components: { Loading },
   mounted () {
     //todo enable this

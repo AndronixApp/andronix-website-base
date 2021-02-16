@@ -170,7 +170,19 @@ import moddedOsTestimonials from '~/static/Data/testimonials/modded-os-testimoni
 import metadata from '~/static/Data/misc/modded-os-metric.json'
 import moddedOsInfo from '~/static/Data/products/modded-os-info.json'
 
+import meta from '~/static/seo/meta-head.json'
+
 export default {
+  head () {
+    return {
+      title: meta['modded-os'].title,
+      meta: [{
+        hid: meta['modded-os'].hid,
+        name: meta['modded-os'].name,
+        content: meta['modded-os'].content
+      }]
+    }
+  },
   async mounted () {
     await this.fetchImages()
   },

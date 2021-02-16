@@ -132,8 +132,19 @@
 
 <script>
 import teams from '~/static/Data/misc/teams.json'
+import meta from '~/static/seo/meta-head.json'
 
 export default {
+  head () {
+    return {
+      title: meta.about.title,
+      meta: [{
+        hid: meta.about.hid,
+        name: meta.about.name,
+        content: meta.about.content
+      }]
+    }
+  },
   name: 'about.vue',
   data: function () {
     return {
