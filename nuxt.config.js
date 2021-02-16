@@ -68,6 +68,10 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    ['@nuxtjs/sentry', {
+      dsn: 'https://25a36cb298bf4a9faf84ef539fe4bb20@o524509.ingest.sentry.io/5637050',
+      config: {}, // Additional config
+    }],
     [
       'nuxt-social-meta',
       {
@@ -117,3 +121,4 @@ export default {
     testAccountPassword: process.env.TEST_ACCOUNT_PASSWORD
   }
 }
+

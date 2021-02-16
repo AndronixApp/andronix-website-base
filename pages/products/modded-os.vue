@@ -8,7 +8,7 @@
           class="px-10"
           heading="Take Andronix to the Next Level"
           deco_heading="MODDED OS"
-          sub_heading="Modded OS are vesions of normal distros optimized, beautified and made super stable by our experienced developers. These include Ubuntu, Debian, Manjaro for now. We carefully choose what goes into these and cherry pick the best features for you."
+          sub_heading="Modded OS are versions of normal distros optimized, beautified and made super stable by our experienced developers. These include Ubuntu, Debian, Manjaro for now. We carefully choose what goes into these and cherry pick the best features for you."
         />
 
         <PrimaryTextButton @click="$router.push('/pricing')" label="GET NOW"/>
@@ -18,7 +18,7 @@
       <div class="mt-24 px-12 md:px-24">
         <Heading
           heading="Why Modded OS?"
-          sub_heading="We specially modded these OS after seeing people struggling with normal Distros because either they weren't comfortable with Linux or it was a hassel fixing a lot of issues on ARM chips. Modded OS negate all these things and bring you straight to a stable and pretty environment to work with."
+          sub_heading="We specially modded these OS after seeing people struggling with normal Distros because either they weren't comfortable with Linux or it was a hassle fixing a lot of issues on ARM chips. Modded OS negate all these things and bring you straight to a stable and pretty environment to work with."
           deco_heading="ANDRONIX"
         />
         <div>
@@ -68,7 +68,7 @@
           deco_heading="ANDRONIX"
         />
         <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-3 md:gap-8"
+          class="grid grid-cols-1 items-center md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-3 md:gap-8"
         >
           <TestimonialModdedOsCard
             v-for="testimonial in moddedOsTestimonials"
@@ -82,7 +82,7 @@
         </div>
       </div>
 
-      //todo add modded os recommendation link from the docs
+      <!--      //todo add modded os recommendation link from the docs-->
 
       <!--  Previews  -->
       <div class="mt-24 lg:mt-24 px-12 md:px-24">
@@ -205,16 +205,7 @@ export default {
       imagesArray: {},
       metadata: metadata.metadata,
     }
-  },
-  watch: {
-    imagesArray: {
-      handler (val) {
-        console.log(val)
-      },
-      deep: true,
-    },
-    name: 'index',
-  },
+  }
 }
 </script>
 

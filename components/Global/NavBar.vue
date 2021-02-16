@@ -3,7 +3,7 @@
        :class="!view.atTopOfPage?'bg-gray-800 bg-opacity-80':''"
   >
     <div class="flex pt-4 lg:pt-6 lg:pb-6 px-8 pb-4 items-center justify-end">
-      <div class="xxs:hidden sm:flex justify-self-start mr-auto cursor-pointer" @click="$router.push('/')">
+      <div class="xxs:hidden flex justify-self-start mr-auto cursor-pointer" @click="$router.push('/')">
         <h3 class="text-white font-sans font-bold text-lg">andronix</h3>
         <span class="text-primary-500 font-bold text-lg">.app</span>
       </div>

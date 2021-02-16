@@ -87,27 +87,27 @@
       />
     </div>
 
-    <!-- Testimonials   -->
-    <div class="section-gap">
-      <Heading
-        heading="What people say!"
-        sub_heading="Listen to what our users say about us all around the internet."
-        deco_heading="ANDRONIX"
-      />
-      <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-3 md:gap-8"
-      >
-        <TestimonialModdedOsCard
-          v-for="testimonial in testimonials"
-          :name="testimonial.name"
-          :title="testimonial.title"
-          :quote="testimonial.quote"
-          :key="testimonial.quote"
-        >
-          <div v-html="testimonial.icon"></div>
-        </TestimonialModdedOsCard>
-      </div>
-    </div>
+    <!--    &lt;!&ndash; Testimonials   &ndash;&gt;
+        <div class="section-gap">
+          <Heading
+            heading="What people say!"
+            sub_heading="Listen to what our users say about us all around the internet."
+            deco_heading="ANDRONIX"
+          />
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-3 md:gap-8"
+          >
+            <TestimonialModdedOsCard
+              v-for="testimonial in testimonials"
+              :name="testimonial.name"
+              :title="testimonial.title"
+              :quote="testimonial.quote"
+              :key="testimonial.quote"
+            >
+              <div v-html="testimonial.icon"></div>
+            </TestimonialModdedOsCard>
+          </div>
+        </div>-->
 
     <div class="mt-48 -mb-40">
       <div class="bg-primary-600 bg-opacity-50 rounded-t-lg px-5 py-5">
