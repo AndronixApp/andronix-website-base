@@ -8,7 +8,7 @@
       leave-active-class="ease-out transition-medium"
       leave-to-class="opacity-0"
     >
-      <Overlay v-show="$store.state.drawer.isDrawerOpen"/>
+      <overlay v-show="$store.state.drawer.isDrawerOpen"/>
     </transition>
     <div id="drawer_main"
          class="bg-gray-800 p-8 rounded-r-lg transform top-0 left-0 w-72 fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30"
@@ -109,8 +109,10 @@
 
 <script>
 import drawerMenu from '~/static/data/menu/main-drawer-menu.json'
+import Overlay from "~/components/global/overlay";
 
 export default {
+  components: {Overlay},
   computed: {
     isLoggedIn: function () {
       return this.$store.getters['auth/isUserLoggedIn']
