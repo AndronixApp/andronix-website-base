@@ -12,7 +12,7 @@
       <div id="checkout_section_product_selection" v-if="currentStep === this.PRODUCT_SELECTION"
            class="top-section mx-10 md:mx-20"
       >
-        <Heading heading="Product Selection"
+        <heading heading="Product Selection"
                  sub_heading="Please select the product you want to purchase."
                  deco_heading="CHECKOUT"
         />
@@ -301,12 +301,12 @@
 </template>
 
 <script>
-import countryList from '~/static/Data/misc/country.json'
-import stateList from '~/static/Data/misc/state.json'
+import countryList from '~/static/data/misc/country.json'
+import stateList from '~/static/data/misc/state.json'
 import axios from 'axios'
 import Loading from 'vue-loading-overlay'
 import 'vue-loading-overlay/dist/vue-loading.css'
-import moddedOs from '~/static/Data/pricing/modded-os-products.json'
+import moddedOs from '~/static/data/pricing/modded-os-products.json'
 import { getProductNameWithId } from '~/lib/checkout/productHelper'
 import {
   generateOrderId,
@@ -315,6 +315,7 @@ import {
   verifyPurchase
 } from '~/lib/checkout/checkoutHelper'
 import { database } from '~/plugins/firebase'
+import Heading from "~/components/global/heading";
 
 const PRODUCT_SELECTION = 'product_selection'
 const DETAILS = 'details'
@@ -353,7 +354,7 @@ export default {
     }
   },
   name: 'buy',
-  components: { Loading },
+  components: {Heading, Loading },
   data () {
     return {
       currentStep: PRODUCT_SELECTION,

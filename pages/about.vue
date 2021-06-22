@@ -13,11 +13,11 @@
           We are really thankful to all our users and our additional team members for supporting us and bringing us to where we are today."
         />
 
-        <PrimaryTextButton label="TALK TO US" link="https://chat.andronix.app"/>
+        <primary-text-button label="TALK TO US" link="https://chat.andronix.app"/>
       </div>
 
       <div class="section-gap">
-        <Heading
+        <heading
           heading="Our Story"
           deco_heading="ABOUT"
           sub_heading="It's kinda long but quite interesting. It's our story from yet another app that let's you install Linux to one of the top ones in the domain."
@@ -59,7 +59,7 @@
         <div
           class="grid-cols-1 md:grid-cols-2 grid gap-y-8 gap-x-4 justify-center items-center"
         >
-          <TeamCard
+          <team-card
             class="justify-self-center"
             :class="
               index === 0 ? 'md:justify-self-end' : 'md:justify-self-start'
@@ -98,7 +98,7 @@
           />
         </div>
 
-        <!-- Special mentions -->
+<!--        &lt;!&ndash; Special mentions &ndash;&gt;
         <XyzTransition :appear-visible="true" duration="auto">
           <div class="px-5 py-5 mt-16 pb-16">
             <div
@@ -124,17 +124,21 @@
             :quote="member.quote"
             :photo_url="member.photo_url"
           />
-        </div>
+        </div>-->
       </div>
     </div>
   </XyzTransition>
 </template>
 
 <script>
-import teams from '~/static/Data/misc/teams.json'
+import teams from '~/static/data/misc/teams.json'
 import meta from '~/static/seo/meta-head.json'
+import Heading from "~/components/global/heading";
+import PrimaryTextButton from "~/components/base/primaryTextButton";
+import TeamCard from "~/components/teamCard";
 
 export default {
+  components: {TeamCard, PrimaryTextButton, Heading},
   head () {
     return {
       title: meta.about.title,
