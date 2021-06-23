@@ -42,7 +42,8 @@ jobs:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          record: true
+          record: false
+
           start: yarn run dev
           parallel: true
           browser: chrome
