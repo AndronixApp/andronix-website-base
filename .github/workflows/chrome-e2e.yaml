@@ -49,7 +49,6 @@ jobs:
           wait-on-timeout: 120
           wait-on: 'http://localhost:3000'
 
-
       - name: Uploading Screenshots ☁
         uses: actions/upload-artifact@v1
         if: failure()
