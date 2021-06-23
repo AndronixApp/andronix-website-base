@@ -7,7 +7,6 @@
   </div>
 </template>
 
-
 <script>
 import {auth} from '~/plugins/firebase'
 import NavBar from "~/components/global/navBar";
