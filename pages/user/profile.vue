@@ -29,7 +29,7 @@
            class="my-16 text-center"
       >
         <p class="font-bold text-gray-500">We've couldn't find any purchases...</p>
-        <PrimaryTextButton class="my-6" @click="$router.push('/pricing')" label="CHECK OUR PRICING"/>
+        <primary-text-button class="my-6" @click="$router.push('/pricing')" label="CHECK OUR PRICING"/>
       </div>
 
       <XyzTransition appear-visible xyz="fade small left-100% delay-15">
@@ -62,9 +62,11 @@
 
 import Loading from 'vue-loading-overlay'
 import 'vue-loading-overlay/dist/vue-loading.css'
+import PrimaryTextButton from "~/components/base/primaryTextButton";
 
 export default {
   components: {
+    PrimaryTextButton,
     Loading
   },
   created () {

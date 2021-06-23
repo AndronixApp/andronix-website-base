@@ -7,10 +7,10 @@
         class="px-10"
         heading="The Power of Andronix"
         deco_heading="ANDRONIX PREMIUM"
-        sub_heading="Andronix Premium acts as an extention to the Andronix app. It add features like Offline Distribution Installation, Andronix Commands and much more."
+        sub_heading="Andronix Premium acts as an extension to the Andronix app. It add features like Offline Distribution Installation, Andronix Commands and much more."
       />
 
-      <PrimaryTextButton @click="$router.push('/pricing')" label="GET NOW"/>
+      <primary-text-button @click="$router.push('/pricing')" label="GET NOW"/>
     </div>
 
     <!--  Features   -->
@@ -24,7 +24,7 @@
         <div
           class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 mt-10 text-white font-sans text-center items-center"
         >
-          <FeatureCard
+          <feature-card
             v-for="features in premiumFeatures"
             :title="features.title"
             :key="features.color"
@@ -32,7 +32,7 @@
             :color="features.color"
           >
             <div v-html="features.icon"></div>
-          </FeatureCard>
+          </feature-card>
         </div>
       </div>
       <p class="text-gray-400 text-xs mt-6 text-center">
@@ -44,7 +44,7 @@
 
     <!-- Metrics -->
     <div class="section-gap">
-      <Heading
+      <heading
         heading="Premium Metrics"
         sub_heading="Take a look at where our Modded OS Stands."
         deco_heading="METRICS"
@@ -53,7 +53,7 @@
       <div
         class="grid grid-cols-2 gap-y-12 gap-x-4 md:grid-cols-2 lg:grid-cols-4 text-white font-sans text-center justify-center"
       >
-        <CounterComponent
+        <counter-component
           v-for="meta in metric"
           :value="meta.value"
           :key="meta.color"
@@ -61,7 +61,7 @@
           :color="meta.color"
         >
           <div v-html="meta.icon"></div>
-        </CounterComponent>
+        </counter-component>
       </div>
     </div>
 
@@ -97,7 +97,7 @@
       <div
         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-3 md:gap-8"
       >
-        <TestimonialModdedOsCard
+        <testimonial-modded-os-card
           v-for="testimonial in testimonials"
           :name="testimonial.name"
           :title="testimonial.title"
@@ -105,7 +105,7 @@
           :key="testimonial.quote"
         >
           <div v-html="testimonial.icon"></div>
-        </TestimonialModdedOsCard>
+        </testimonial-modded-os-card>
       </div>
     </div>
 
@@ -130,11 +130,29 @@
 </template>
 
 <script>
-import features from '~/static/Data/features/premium-features.json'
-import testimonials from '~/static/Data/testimonials/premium-testimonials.json'
-import metrics from '~/static/Data/misc/premium-metric.json'
+import features from '~/static/data/features/premium-features.json'
+import testimonials from '~/static/data/testimonials/premium-testimonials.json'
+import metrics from '~/static/data/misc/premium-metric.json'
+
+import meta from '~/static/seo/meta-head.json'
+import PrimaryTextButton from "~/components/base/primaryTextButton";
+import FeatureCard from "~/components/landing/featureCard";
+import Heading from "~/components/global/heading";
+import CounterComponent from "~/components/base/counterComponent";
+import TestimonialModdedOsCard from "~/components/testimonial/testimonialModdedOsCard";
 
 export default {
+  components: {TestimonialModdedOsCard, CounterComponent, Heading, FeatureCard, PrimaryTextButton},
+  head() {
+    return {
+      title: meta.premium.title,
+      meta: [{
+        hid: meta.premium.hid,
+        name: meta.premium.name,
+        content: meta.premium.content
+      }]
+    }
+  },
   name: 'index',
   data: function () {
     return {

@@ -3,13 +3,13 @@
     <div
       class="h-screen m-0 bg-background w-full bg-landing-pattern bg-top flex items-center justify-center flex-col"
     >
-      <Heading class="px-10"
+      <heading class="px-10"
                heading="Sync Your World"
                deco_heading="ANDRONIX COMMANDS "
                sub_heading="Andronix Commands is a one-stop solution for all your Terminal needs. Save and sync commands the go, just copy and paste."
       />
 
-      <PrimaryTextButton
+      <primary-text-button
         @click="$router.push('/pricing')"
         label="GET IT WITH PREMIUM"
       />
@@ -26,7 +26,7 @@
         <div
           class="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-3 mt-10 text-white font-sans text-center"
         >
-          <FeatureCard
+          <feature-card
             v-for="features in app"
             :title="features.title"
             :desc="features.sub_title"
@@ -34,7 +34,7 @@
             :key="features.color"
           >
             <div v-html="features.icon"></div>
-          </FeatureCard>
+          </feature-card>
         </div>
       </div>
     </div>
@@ -117,7 +117,7 @@
         <div
           class="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-4 mt-10 text-white font-sans"
         >
-          <StepsCard
+          <steps-card
             v-for="step in steps"
             :title="step.title"
             :description="step.sub_title"
@@ -126,7 +126,7 @@
             :key="step.color"
           >
             <div v-html="step.icon"></div>
-          </StepsCard>
+          </steps-card>
         </div>
       </div>
     </div>
@@ -151,10 +151,27 @@
 </template>
 
 <script>
-import features from '~/static/Data/features/commands-feature.json'
-import steps from '~/static/Data/misc/command-steps.json'
+import features from '~/static/data/features/commands-feature.json'
+import steps from '~/static/data/misc/command-steps.json'
+
+import meta from '~/static/seo/meta-head.json'
+import Heading from "~/components/global/heading";
+import PrimaryTextButton from "~/components/base/primaryTextButton";
+import FeatureCard from "~/components/landing/featureCard";
+import StepsCard from "~/components/steps/stepsCard";
 
 export default {
+  components: {StepsCard, FeatureCard, PrimaryTextButton, Heading},
+  head () {
+    return {
+      title: meta.commands.title,
+      meta: [{
+        hid: meta.commands.hid,
+        name: meta.commands.name,
+        content: meta.commands.content
+      }]
+    }
+  },
   name: 'index',
   data: function () {
     return {

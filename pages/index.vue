@@ -2,7 +2,7 @@
   <div
     class="flex-col bg-background w-full justify-center items-center"
   >
-    <Landing/>
+    <landing/>
     <div
       class=" bg-no-repeat top-section"
     >
@@ -11,9 +11,9 @@
                deco_heading="ANDRONIX"
       />
       <div class="mx-auto mx-20 md:mx-32 lg:mx-44">
-        <DistroLogoGrid class="top-inner-section"/>
-        <DeLogoGrid class="top-inner-section"/>
-        <WmLogoGrid class="top-inner-section"/>
+        <distro-logo-grid class="top-inner-section"/>
+        <de-logo-grid class="top-inner-section"/>
+        <wm-logo-grid class="top-inner-section"/>
       </div>
     </div>
 
@@ -25,11 +25,11 @@
         />
 
         <div class="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-4 mt-10 text-white font-sans">
-          <StepsCard v-for="step in andronixSteps" :title="step.title" :key="step.color"
+          <steps-card v-for="step in andronixSteps" :title="step.title" :key="step.color"
                      :description="step.sub_title" :step="step.step" :color="step.color"
           >
             <div v-html="step.icon"></div>
-          </StepsCard>
+          </steps-card>
         </div>
       </div>
     </div>
@@ -43,11 +43,11 @@
         />
         <div>
           <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 mt-10 text-white font-sans text-center">
-            <FeatureCard v-for="features in andronixFeatures" :title="features.title"
+            <feature-card v-for="features in andronixFeatures" :title="features.title"
                          :desc="features.sub_title" :color="features.color" :key="features.color"
             >
               <div v-html="features.icon"></div>
-            </FeatureCard>
+            </feature-card>
           </div>
         </div>
       </div>
@@ -63,7 +63,7 @@
         />
         <div>
           <div class="grid grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-4 mt-10 text-white font-sans text-center">
-            <TestimonialCard v-for="testimonial in mainTestimonials"
+            <testimonial-card v-for="testimonial in mainTestimonials"
                              :tilt="testimonial.tilt"
                              :quote="testimonial.quote"
                              :name="testimonial.name"
@@ -73,7 +73,7 @@
 
             >
               <div v-html="testimonial.icon"></div>
-            </TestimonialCard>
+            </testimonial-card>
           </div>
         </div>
       </div>
@@ -83,7 +83,7 @@
     <div class="flex-col bg-no-repeat mx-10 md:mx-20">
       <!-- Features   -->
       <div class="top-section">
-        <Heading heading="Our Products"
+        <heading heading="Our Products"
                  sub_heading="Here's what we offer..."
                  deco_heading="PRODUCTS"
         />
@@ -91,7 +91,7 @@
           <div
             class="grid grid-cols-1 md:grid-cols-2 gap-y-4 md:gap-y-0 mt-10 text-white font-sans text-center mx-auto lg:max-w-screen-lg"
           >
-            <ProductComponent v-for="(product, index) in products"
+            <product-component v-for="(product, index) in products"
                               :class="get_bg_color_product_cards(index)"
                               :index="index"
                               :isPaid="product.isPaid"
@@ -100,7 +100,7 @@
                               :key="product.product"
                               :link="product.link"
             >
-            </ProductComponent>
+            </product-component>
           </div>
         </div>
       </div>
@@ -109,12 +109,25 @@
 </template>
 <script>
 
-import andronixFeatures from '../static/Data/features/andronix-features.json'
-import products from '../static/Data/misc/products.json'
-import mainTestimonials from '../static/Data/testimonials/main-testimonials.json'
-import andronixSteps from '../static/Data/misc/andronix-steps.json'
+import andronixFeatures from '../static/data/features/andronix-features.json'
+import products from '../static/data/misc/products.json'
+import mainTestimonials from '../static/data/testimonials/main-testimonials.json'
+import andronixSteps from '../static/data/misc/andronix-steps.json'
+import TestimonialCard from "~/components/testimonial/testimonialCard";
+import Heading from "~/components/global/heading";
+import ProductComponent from "~/components/landing/productComponent";
+import FeatureCard from "~/components/landing/featureCard";
+import StepsCard from "~/components/steps/stepsCard";
+import DistroLogoGrid from "~/components/landing/distroLogoGrid";
+import DeLogoGrid from "~/components/landing/deLogoGrid";
+import WmLogoGrid from "~/components/landing/wmLogoGrid";
+import Landing from "~/components/landing";
 
 export default {
+  components: {
+    Landing,
+    WmLogoGrid,
+    DeLogoGrid, DistroLogoGrid, StepsCard, FeatureCard, ProductComponent, Heading, TestimonialCard},
   methods: {
     get_bg_color_product_cards (index) {
       return index / 3 === 0 || index / 3 === 1 ? 'md:bg-gray-800 bg-gray-800' : 'bg-gray-800 md:bg-gray-700'

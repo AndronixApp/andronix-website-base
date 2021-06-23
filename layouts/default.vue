@@ -1,22 +1,24 @@
 <template>
   <div class="bg-background">
-    <NavBar/>
-    <SideBar/>
+    <nav-bar/>
+    <side-bar/>
     <Nuxt class="lg:max-w-screen-2xl pt-20 mx-auto"/>
     <Footer/>
   </div>
 </template>
 
-
 <script>
-import { auth } from '~/plugins/firebase'
+import {auth} from '~/plugins/firebase'
+import NavBar from "~/components/global/navBar";
+import SideBar from "~/components/global/sideBar";
 
 export default {
-  created () {
+  components: {SideBar, NavBar},
+  created() {
     this.observeAuthStateChange()
   },
   methods: {
-    observeAuthStateChange () {
+    observeAuthStateChange() {
       let ctx = this
       auth.onAuthStateChanged(function (user) {
         if (user) {
@@ -26,7 +28,7 @@ export default {
             photo_url: user.photoURL,
             name: user.displayName
           }
-          console.log({ data })
+          console.log({data})
           ctx.$store.commit('auth/SET_USER_INFO', data)
           ctx.$store.commit('auth/SET_LOGGED_IN_STATE', true)
         } else {

@@ -13,39 +13,38 @@
           We are really thankful to all our users and our additional team members for supporting us and bringing us to where we are today."
         />
 
-        <PrimaryTextButton label="TALK TO US"/>
+        <primary-text-button label="TALK TO US" link="https://chat.andronix.app"/>
       </div>
 
       <div class="section-gap">
-        <Heading
+        <heading
           heading="Our Story"
           deco_heading="ABOUT"
           sub_heading="It's kinda long but quite interesting. It's our story from yet another app that let's you install Linux to one of the top ones in the domain."
         />
         <p class="text-gray-300 text-center md:px-12 lg:px-24 tracking-wide leading-loose lg:leading-8 md:text-lg">
-          Andronix started as an idea of providing a simple script which lets
-          the user download and install a basic Linux filesystem on a non-rooted
-          Android device. As days passed we soon realized that the apps already
-          out were out of developement phase and people wanted something new
-          with more up-to-date features and a support platform where they can
-          raise their queries.
+          The idea of Andronix incepted during in the year 2019 when we, Prakhar Shukla and Anurag Verma were riding
+          back home from our workout. It struck to us that there are people using their phones as computers either
+          because they simply cannot afford them or because it is just portable. We thought of converting that idea into
+          an app which ended up us finding that there were apps already existing that just did that but the issue was
+          firstly, they were just outdated and ugly to look at and secondly, if you're stuck, you're basically on your
+          own.
 
-          <br/><br/>
-          We also implemented Andronix Commands with an in-depth support for
-          using that offline, caching and everything handled by the app at real
-          time.
-          <br/><br/>
-          This app was the idea of <b>Anurag Verma</b> who had a vision to
-          provide people without computer, the power of Linux on thier Android
-          devices. There were many apps for doing this, but none with a
-          lucrative UI or even a considerable UX and appreciable support team.
-          We designed Andronix from scratch to make it super user-friendly and
-          pretty to look attached with multiple support platforms to give user a
-          place to get rid of thier issues. <br/><br/>
+          <br>
+          <br>
 
-          While we really enjoyed developing for the community, we were sad to
-          see that most of the already present apps were full of apps
-          <br/><br/>
+          Andronix was born. We released our first version, way different from what it currently offers. The journey
+          started and soon we released Andronix Premium, Andronix Commands and then the most anticipated product, the
+          Andronix Modded OS. We enjoyed and learnt a lot while developing for Andronix. It basically gave us a platform
+          to refine our passion for programming.
+
+          <br>
+          <br>
+
+          To say that Andronix has changed our lives, would be an understatement because of all the love that we get,
+          whether it be from the people rating us or emailing us about how much they love using Andronix to the mods
+          over at Discord helping us to keep things moving around there. We are ever so much grateful for all the love
+          and support we get, and it really makes us move forward with a confidence boost.
         </p>
       </div>
 
@@ -60,7 +59,7 @@
         <div
           class="grid-cols-1 md:grid-cols-2 grid gap-y-8 gap-x-4 justify-center items-center"
         >
-          <TeamCard
+          <team-card
             class="justify-self-center"
             :class="
               index === 0 ? 'md:justify-self-end' : 'md:justify-self-start'
@@ -86,7 +85,7 @@
           </div>
         </XyzTransition>
         <div
-          class="grid-cols-1 md:grid-cols-2 lg:grid-cols-4 grid gap-y-4 gap-x-4 justify-center items-center"
+          class="grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid gap-y-4 gap-x-4 justify-center items-center"
         >
           <TeamCard
             class="justify-self-center"
@@ -99,7 +98,7 @@
           />
         </div>
 
-        <!-- Special mentions -->
+<!--        &lt;!&ndash; Special mentions &ndash;&gt;
         <XyzTransition :appear-visible="true" duration="auto">
           <div class="px-5 py-5 mt-16 pb-16">
             <div
@@ -125,16 +124,31 @@
             :quote="member.quote"
             :photo_url="member.photo_url"
           />
-        </div>
+        </div>-->
       </div>
     </div>
   </XyzTransition>
 </template>
 
 <script>
-import teams from '~/static/Data/misc/teams.json'
+import teams from '~/static/data/misc/teams.json'
+import meta from '~/static/seo/meta-head.json'
+import Heading from "~/components/global/heading";
+import PrimaryTextButton from "~/components/base/primaryTextButton";
+import TeamCard from "~/components/teamCard";
 
 export default {
+  components: {TeamCard, PrimaryTextButton, Heading},
+  head () {
+    return {
+      title: meta.about.title,
+      meta: [{
+        hid: meta.about.hid,
+        name: meta.about.name,
+        content: meta.about.content
+      }]
+    }
+  },
   name: 'about.vue',
   data: function () {
     return {

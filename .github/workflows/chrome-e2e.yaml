@@ -25,7 +25,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn-lock.json') }}
+          key: ${{ runner.os }}-node-v2-${{ hashFiles('**/yarn-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
 
@@ -46,9 +46,8 @@ jobs:
           start: yarn run dev
           parallel: true
           browser: chrome
-          wait-on-timeout: 120
+          wait-on-timeout: 180
           wait-on: 'http://localhost:3000'
-
 
       - name: Uploading Screenshots ☁
         uses: actions/upload-artifact@v1

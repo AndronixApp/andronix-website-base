@@ -1,0 +1,44 @@
+{
+  "dev": [
+    {
+      "name": "Prakhar Shukla",
+      "position": "Developer",
+      "quote": "I work on developing the Android app, the backend, the web related stuff, app pipelines and testing.",
+      "photo_url": "https://andronix.app/wp-content/uploads/2019/11/avataaars.png"
+    },
+    {
+      "name": "Anurag Verma",
+      "position": "Linux Backend",
+      "quote": "I work on porting the Linux distributions, installation process, testing and support management.",
+      "photo_url": "https://andronix.app/wp-content/uploads/2019/11/avataaars-1.png"
+    }
+  ],
+  "support": [
+    {
+      "name": "@Kaan",
+      "position": "Discord Chief Moderator",
+      "quote": "I'm the moderator at the Andronix Discord server, where you'll see a small but friendly and helpful community willing to assist you.",
+      "photo_url": "https://i.ibb.co/KK3YPZd/avatar.png"
+    },
+    {
+      "name": "@raytracingcert07",
+      "position": "Discord Support",
+      "quote": "I'm the moderator at the Andronix Discord server, where you'll see a small but friendly and helpful community willing to assist you.",
+      "photo_url": "https://cdn.discordapp.com/avatars/472036022927097867/048f9abe7ec9ef972c83c70bd64dcc14.png"
+    }
+  ],
+  "specials": [
+    {
+      "name": "Dylan",
+      "position": "Super Member",
+      "quote": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur eveniet ipsum iure libero magni nisi!",
+      "photo_url": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairDreads01&accessoriesType=Round&hairColor=Red&facialHairType=BeardMedium&facialHairColor=Auburn&clotheType=CollarSweater&clotheColor=PastelRed&eyeType=Squint&eyebrowType=RaisedExcitedNatural&mouthType=Grimace&skinColor=Black"
+    },
+    {
+      "name": "Node",
+      "position": "Discord Support",
+      "quote": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur eveniet ipsum iure libero magni nisi!",
+      "photo_url": "https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraightStrand&accessoriesType=Prescription01&hatColor=PastelGreen&hairColor=Brown&facialHairType=BeardMagestic&facialHairColor=Red&clotheType=GraphicShirt&clotheColor=Blue01&graphicType=Skull&eyeType=Wink&eyebrowType=UnibrowNatural&mouthType=Disbelief&skinColor=Brown"
+    }
+  ]
+}

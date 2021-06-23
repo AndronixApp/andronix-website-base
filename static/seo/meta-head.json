@@ -1,0 +1,44 @@
+{
+  "home-page": {
+    "title": "Andronix App",
+    "hid": "andronix-app",
+    "name": "Home Page",
+    "content": "Install your favourite Linux distro in a few clicks on your un-rooted Android devices."
+  },
+  "modded-os": {
+    "title": "Modded OS",
+    "hid": "andronix-modded-os",
+    "name": "Modded OS",
+    "content": "Run a super stable and fast Linux distribution like Ubuntu or Debian, right on your Android device."
+  },
+  "premium": {
+    "title": "Andronix Premium",
+    "hid": "andronix-premium",
+    "name": "Premium",
+    "content": "Andronix Premium gives you so much for so little. Andronix Commands, offline access and so much more."
+  },
+  "commands": {
+    "title": "Andronix Commands",
+    "hid": "andronix-commands",
+    "name": "Commands",
+    "content": "Andronix Commands is your one-stop solution for managing your terminal commands. Boost your terminal productivity now!"
+  },
+  "about": {
+    "title": "About Us",
+    "hid": "about-us",
+    "name": "About",
+    "content": "Learn about us, our team and the people that support us."
+  },
+  "pricing": {
+    "title": "Pricing",
+    "hid": "pricing",
+    "name": "Pricing",
+    "content": "Pricing for the digital purchases that Andronix offers. One-time and cheaper than your coffee."
+  },
+  "help": {
+    "title": "Get Help",
+    "hid": "get-help",
+    "name": "Help",
+    "content": "Stuck somewhere? Our community channels are here to help you. Join us on Discord or the Andronix Forum."
+  }
+}

@@ -7,7 +7,7 @@
       :is-full-page="true"
     />
     <div class="px-12 md:p-24">
-      <Heading
+      <heading
         class="px-10"
         heading="Pricing"
         sub_heading="We hate subscriptions. All purchases here are one-time and life long. They sync all your devices automatically."
@@ -24,7 +24,7 @@
           xyz="fade down flip-up"
           class="grid gap-x-16 gap-y-5 grid-cols-1 items-center lg:grid-cols-2 justify-center max-w-screen-lg mx-auto"
         >
-          <PricingCard
+          <pricing-card
             @purchase="purchase(product.id)"
             v-for="product in productDetails"
             :id="product.id"
@@ -72,14 +72,27 @@
 </template>
 
 <script>
-import productDetails from '~/static/Data/pricing/product-details.json'
+import productDetails from '~/static/data/pricing/product-details.json'
 import { getPrices } from '~/lib/checkout/checkoutHelper'
 import Loading from 'vue-loading-overlay'
 import 'vue-loading-overlay/dist/vue-loading.css'
 import { database } from '~/plugins/firebase'
+import meta from '~/static/seo/meta-head.json'
+import Heading from "~/components/global/heading";
+import PricingCard from "~/components/pricingCard";
 
 export default {
-  components: { Loading },
+  head () {
+    return {
+      title: meta.pricing.title,
+      meta: [{
+        hid: meta.pricing.hid,
+        name: meta.pricing.name,
+        content: meta.pricing.content
+      }]
+    }
+  },
+  components: {PricingCard, Heading, Loading },
   mounted () {
     //todo enable this
     this.observeBillingStatus()

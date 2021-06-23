@@ -8,24 +8,24 @@
           class="px-10"
           heading="Take Andronix to the Next Level"
           deco_heading="MODDED OS"
-          sub_heading="Modded OS are vesions of normal distros optimized, beautified and made super stable by our experienced developers. These include Ubuntu, Debian, Manjaro for now. We carefully choose what goes into these and cherry pick the best features for you."
+          sub_heading="Modded OS are versions of normal distros optimized, beautified and made super stable by our experienced developers. These include Ubuntu, Debian, Manjaro for now. We carefully choose what goes into these and cherry pick the best features for you."
         />
 
-        <PrimaryTextButton @click="$router.push('/pricing')" label="GET NOW"/>
+        <primary-text-button @click="$router.push('/pricing')" label="GET NOW"/>
       </div>
 
       <!--  Features   -->
       <div class="mt-24 px-12 md:px-24">
         <Heading
           heading="Why Modded OS?"
-          sub_heading="We specially modded these OS after seeing people struggling with normal Distros because either they weren't comfortable with Linux or it was a hassel fixing a lot of issues on ARM chips. Modded OS negate all these things and bring you straight to a stable and pretty environment to work with."
+          sub_heading="We specially modded these OS after seeing people struggling with normal Distros because either they weren't comfortable with Linux or it was a hassle fixing a lot of issues on ARM chips. Modded OS negate all these things and bring you straight to a stable and pretty environment to work with."
           deco_heading="ANDRONIX"
         />
         <div>
           <div
             class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 mt-10 text-white font-sans text-center"
           >
-            <FeatureCard
+            <feature-card
               v-for="features in moddedOsFeaturesData"
               :title="features.title"
               :desc="features.sub_title"
@@ -33,7 +33,7 @@
               :key="features.color"
             >
               <div v-html="features.icon"></div>
-            </FeatureCard>
+            </feature-card>
           </div>
         </div>
       </div>
@@ -48,7 +48,7 @@
         <div
           class="grid grid-cols-2 gap-y-12 gap-x-4 md:grid-cols-2 lg:grid-cols-4 text-white font-sans text-center justify-center"
         >
-          <CounterComponent
+          <counter-component
             v-for="meta in metadata"
             :value="meta.value"
             :heading="meta.param"
@@ -56,7 +56,7 @@
             :key="meta.color"
           >
             <div v-html="meta.icon"></div>
-          </CounterComponent>
+          </counter-component>
         </div>
       </div>
 
@@ -68,9 +68,9 @@
           deco_heading="ANDRONIX"
         />
         <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-3 md:gap-8"
+          class="grid grid-cols-1 items-center md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-3 md:gap-8"
         >
-          <TestimonialModdedOsCard
+          <testimonial-modded-os-card
             v-for="testimonial in moddedOsTestimonials"
             :name="testimonial.name"
             :key="testimonial.name"
@@ -78,15 +78,15 @@
             :quote="testimonial.quote"
           >
             <div v-html="testimonial.icon"></div>
-          </TestimonialModdedOsCard>
+          </testimonial-modded-os-card>
         </div>
       </div>
 
-      //todo add modded os recommendation link from the docs
+      <!--      //todo add modded os recommendation link from the docs-->
 
       <!--  Previews  -->
       <div class="mt-24 lg:mt-24 px-12 md:px-24">
-        <Heading
+        <heading
           heading="Take a look"
           sub_heading="Looking for a Modded OS that will suit your needs? Here are the OS that we offer with their respective screenshots to help you find the right one."
           deco_heading="Modded OS "
@@ -164,13 +164,30 @@
   </XyzTransition>
 </template>
 <script>
-import { firestore } from '~/plugins/firebase'
-import moddedOsFeatures from '~/static/Data/features/modded-os-features.json'
-import moddedOsTestimonials from '~/static/Data/testimonials/modded-os-testimonials.json'
-import metadata from '~/static/Data/misc/modded-os-metric.json'
-import moddedOsInfo from '~/static/Data/products/modded-os-info.json'
+import moddedOsFeatures from '~/static/data/features/modded-os-features.json'
+import moddedOsTestimonials from '~/static/data/testimonials/modded-os-testimonials.json'
+import metadata from '~/static/data/misc/modded-os-metric.json'
+import moddedOsInfo from '~/static/data/products/modded-os-info.json'
+
+import meta from '~/static/seo/meta-head.json'
+import TestimonialModdedOsCard from "~/components/testimonial/testimonialModdedOsCard";
+import Heading from "~/components/global/heading";
+import CounterComponent from "~/components/base/counterComponent";
+import FeatureCard from "~/components/landing/featureCard";
+import PrimaryTextButton from "~/components/base/primaryTextButton";
 
 export default {
+  components: {PrimaryTextButton, FeatureCard, CounterComponent, Heading, TestimonialModdedOsCard},
+  head () {
+    return {
+      title: meta['modded-os'].title,
+      meta: [{
+        hid: meta['modded-os'].hid,
+        name: meta['modded-os'].name,
+        content: meta['modded-os'].content
+      }]
+    }
+  },
   async mounted () {
     await this.fetchImages()
   },
@@ -205,16 +222,7 @@ export default {
       imagesArray: {},
       metadata: metadata.metadata,
     }
-  },
-  watch: {
-    imagesArray: {
-      handler (val) {
-        console.log(val)
-      },
-      deep: true,
-    },
-    name: 'index',
-  },
+  }
 }
 </script>
 
