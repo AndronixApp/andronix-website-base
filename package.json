@@ -9,7 +9,7 @@
     "generate": "nuxt-ts generate",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint": "yarn run lint:js",
-    "e2e": "cypress run --browser chrome",
+    "e2e": "cypress run",
     "e2e:open": "cypress open"
   },
   "dependencies": {
