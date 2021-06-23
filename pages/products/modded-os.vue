@@ -164,7 +164,6 @@
   </XyzTransition>
 </template>
 <script>
-import { firestore } from '~/plugins/firebase'
 import moddedOsFeatures from '~/static/data/features/modded-os-features.json'
 import moddedOsTestimonials from '~/static/data/testimonials/modded-os-testimonials.json'
 import metadata from '~/static/data/misc/modded-os-metric.json'

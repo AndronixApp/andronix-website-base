@@ -7,7 +7,7 @@
         class="px-10"
         heading="The Power of Andronix"
         deco_heading="ANDRONIX PREMIUM"
-        sub_heading="Andronix Premium acts as an extention to the Andronix app. It add features like Offline Distribution Installation, Andronix Commands and much more."
+        sub_heading="Andronix Premium acts as an extension to the Andronix app. It add features like Offline Distribution Installation, Andronix Commands and much more."
       />
 
       <primary-text-button @click="$router.push('/pricing')" label="GET NOW"/>
