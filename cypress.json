@@ -5,6 +5,7 @@
   "pluginsFile": "test/e2e/plugins/index.js",
   "supportFile": "test/e2e/support/index.js",
   "projectId": "bt5suj",
+  "pageLoadTimeout": 60000,
   "firefoxGcInterval": {
     "runMode": null,
     "openMode": null
