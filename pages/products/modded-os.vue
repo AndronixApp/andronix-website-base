@@ -46,7 +46,7 @@
         />
 
         <div
-          class="grid grid-cols-2 gap-y-12 gap-x-4 md:grid-cols-2 lg:grid-cols-4 text-white font-sans text-center justify-center"
+          class="grid grid-cols-1 gap-y-12 gap-x-4 md:grid-cols-2 lg:grid-cols-4 text-white font-sans text-center justify-center"
         >
           <counter-component
             v-for="meta in metadata"
