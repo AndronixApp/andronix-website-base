@@ -9,8 +9,8 @@
       </div>
 
       <!--  Download Button    -->
-      <div
-        class="text-white invisible md:invisible lg:visible cursor-pointer px-3 py-2 bg-primary-600 flex items-center space-x-5 justify-center rounded hover:bg-white hover:text-primary-600 hover:-translate-y-1.5 transition transform duration-300"
+      <a href="https://play.andronix.app"
+         class="text-white invisible md:invisible lg:visible cursor-pointer px-3 py-2 bg-primary-600 flex items-center space-x-5 justify-center rounded hover:bg-white hover:text-primary-600 hover:-translate-y-1.5 transition transform duration-300"
       >
         <svg class="text-current fill-current w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
              fill="currentColor"
@@ -20,8 +20,8 @@
                 clip-rule="evenodd"
           />
         </svg>
-        <a href="https://play.andronix.app" class="text-current font-bold">Download</a>
-      </div>
+        <p class="text-current font-bold">Download</p>
+      </a>
 
       <!--   Hamburger   -->
       <div id="nav_hamburger" @click="$store.commit('drawer/toggleDrawer')" class="cursor-pointer ml-5 ">
@@ -42,13 +42,13 @@
 export default {
   name: 'NavBar',
   // a beforeMount call to add a listener to the window
-  beforeMount () {
+  beforeMount() {
     window.addEventListener('scroll', this.handleScroll)
   },
 
   methods: {
     // the function to call when the user scrolls, added as a method
-    handleScroll () {
+    handleScroll() {
       // when the user scrolls, check the pageYOffset
       if (window.pageYOffset > 0) {
         // user is scrolled
