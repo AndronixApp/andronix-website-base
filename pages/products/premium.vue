@@ -51,7 +51,7 @@
       />
 
       <div
-        class="grid grid-cols-2 gap-y-12 gap-x-4 md:grid-cols-2 lg:grid-cols-4 text-white font-sans text-center justify-center"
+        class="grid grid-cols-1 gap-y-12 gap-x-4 md:grid-cols-2 lg:grid-cols-4 text-white font-sans text-center justify-center"
       >
         <counter-component
           v-for="meta in metric"
@@ -81,7 +81,7 @@
       </div>
 
       <PrimaryTextButton
-        class="w-1/2 lg:w-1/4 mx-auto pt-24"
+        class="xxs:w-full w-1/2 lg:w-1/4 mx-auto pt-24"
         @click="$router.push('/products/commands')"
         label="GET ANDRONIX COMMANDS"
       />
