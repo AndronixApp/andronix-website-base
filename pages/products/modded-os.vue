@@ -143,7 +143,7 @@
                         d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"
                       />
                     </svg>
-                    <p class="text-white font-bold">Buy Now!</p>
+                    <p class="text-white text-center font-bold">Buy Now!</p>
                   </div>
                 </div>
               </div>
@@ -178,7 +178,7 @@ import PrimaryTextButton from "~/components/base/primaryTextButton";
 
 export default {
   components: {PrimaryTextButton, FeatureCard, CounterComponent, Heading, TestimonialModdedOsCard},
-  head () {
+  head() {
     return {
       title: meta['modded-os'].title,
       meta: [{
@@ -188,7 +188,7 @@ export default {
       }]
     }
   },
-  async mounted () {
+  async mounted() {
     await this.fetchImages()
   },
   methods: {
@@ -199,10 +199,13 @@ export default {
         this.$router.push('/auth/login')
       }
     },
-    async fetchImages () {
+    async fetchImages() {
       try {
+        console.log("Fetching images...")
         let res = await this.$axios.get('/gen/modded-images')
+        console.log("log")
         let imagesObj = res.data
+        console.log({imagesObj})
 
         for (let osImageId in imagesObj) {
           if (imagesObj.hasOwnProperty(osImageId)) {

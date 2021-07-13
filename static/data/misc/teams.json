@@ -22,9 +22,15 @@
     },
     {
       "name": "@raytracingcert07",
-      "position": "Discord Support",
-      "quote": "I'm the moderator at the Andronix Discord server, where you'll see a small but friendly and helpful community willing to assist you.",
+      "position": "Discord",
+      "quote": "The ease of using Andronix is something that I really like and it was the reason that I joined the team.  No-ads, a intuitive user interface.",
       "photo_url": "https://cdn.discordapp.com/avatars/472036022927097867/048f9abe7ec9ef972c83c70bd64dcc14.png"
+    },
+    {
+      "name": "@./start-blendy.sh",
+      "position": "Discord",
+      "quote": "Andronix is a must have for any power user of their android device, it can be a direct replacement for the now defunct Linux on Dex.",
+      "photo_url": "https://cdn.discordapp.com/avatars/386375356866887680/100de051e2f188661fba52e5c64a1341.png"
     }
   ],
   "specials": [
