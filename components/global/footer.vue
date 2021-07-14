@@ -143,8 +143,9 @@
       <div class="text-white text-center lg:justify-self-end lg:mt-8"
       >
         <h3 class="font-extrabold text-3xl pb-8">andronix<strong class="text-primary-400">.app</strong></h3>
-        <h3 class="font-extrabold text-lg">Andronix App</h3>
-        <p class="text-gray-400 text-sm">©2021 Andronix | Techriz. All Rights Reserved.</p>
+        <p class="text-gray-400 text-sm">©{{ getCurrentYear() }} All rights reserved.</p>
+        <p class="text-gray-400 text-sm">A product of <strong class="underline cursor-pointer">Devriz Technologies
+          LLP</strong></p>
         <p class="mt-3 text-xs text-gray-400 w-10/12 text-center mx-auto">
           Made with <a href="https://tailwindcss.com" class="underline font-bold text-gray-200"
         >Tailwind</a>, <a href="https://nuxtjs.org" class="underline font-bold text-gray-200"
@@ -161,7 +162,12 @@
 
 <script>
 export default {
-  name: 'Footer'
+  name: 'Footer',
+  methods: {
+    getCurrentYear() {
+      return new Date().getFullYear()
+    }
+  }
 }
 </script>
 
