@@ -1,5 +1,5 @@
 <template>
-  <div class="relative h-screen mt-8 lg:mt-0 bg-background w-full lg:px-24">
+  <div class="relative h-screen mt-8 lg:mt-0 bg-background w-full lg:px-24 px-4">
     <div class="grid grid-cols-1 ms:grid-cols-2 lg:grid-cols-3 justify-between lg:-mt-8">
       <div
         class="mt-6 self-stretch text-center lg:text-left lg:self-center lg:grid-cols-1 justify-self-center lg:justify-self-start order-2 lg:order-1"
