@@ -6,8 +6,8 @@
           <div class="flex-col text-white font-sans">
             <h2 class="font-extrabold text-primary">ANDRONIX</h2>
             <h2 class="font-bold text-4xl">Window Managers</h2>
-            <p class="text-sm mt-3">Do you like to rice your setups and want to have a minimalistic and lightweight workspace? 
-              We have most prominent Window Managers to select from so that you can flex your Linux rice on Android. </p>
+            <p class="text-sm mt-3">Do you like to rice your setups and want to have a minimalistic and lightweight workspace?
+              Then, we have the most renowned Desktop Environments to choose from so that you always have an option to customize your desktop according to your needs. </p>
           </div>
         </div>
       </div>

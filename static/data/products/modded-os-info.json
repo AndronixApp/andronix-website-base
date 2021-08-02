@@ -4,8 +4,8 @@
       "features": [
         "Pre-installed apps like VS-Code, Firefox and Chromium",
         "Themed and icon pack pre-applied.",
-        "Mitigated most of the major errors.",
-        "More performant than normal Andronix distros."
+        "Mitigated most of the significant errors.",
+        "More performant than standard Andronix distributions.formant than normal Andronix distros."
       ],
       "name": "Ubuntu XFCE",
       "logo_text": "UX",
@@ -22,11 +22,11 @@
       "features": [
         "Pre-installed apps like VS-Code, Firefox and Chromium",
         "Themed and icon pack pre-applied.",
-        "Mitigated most of the major errors.",
-        "More performant than normal Andronix distros."
+        "Mitigated most of the significant errors.",
+        "More performant than standard Andronix distributions.formant than normal Andronix distros."
       ],
       "id": "manjaro_xfce",
-      "description": "Manjaro is a distribution based on Arch Linux but has a separate official repository which contains more stable packages than that of Arch Linux's. You can't go wrong with Pacman and Manjaro.",
+      "description": "Manjaro is a distribution based on Arch Linux but has a separate official repository that contains more stable packages than Arch Linux's. You can't go wrong with Pacman and Manjaro.",
       "version": "19.00",
       "stability": 80
     },
@@ -37,11 +37,11 @@
       "features": [
         "Pre-installed apps like VS-Code, Firefox and Chromium",
         "Themed and icon pack pre-applied.",
-        "Mitigated most of the major errors.",
-        "More performant than normal Andronix distros."
+        "Mitigated most of the significant errors.",
+        "More performant than standard Andronix distributions.formant than normal Andronix distros."
       ],
       "id": "debian_xfce",
-      "description": "Debian Linux is considered one of the most stable Linux distributions out there. You can completely rely on Debian for the stability and performance that you might need for your day-to-day tasks.",
+      "description": "Debian Linux is considered one of the most stable Linux distributions out there. Therefore, you can entirely rely on Debian for the stability and performance you might need for your day-to-day tasks.",
       "version": "10.00",
       "stability": 100
     },
@@ -51,8 +51,8 @@
       "features": [
         "Pre-installed apps like VS-Code, Firefox and Chromium",
         "Themed and icon pack pre-applied.",
-        "Mitigated most of the major errors.",
-        "More performant than normal Andronix distros."
+        "Mitigated most of the significant errors.",
+        "More performant than standard Andronix distributions.formant than normal Andronix distros."
       ],
       "id": "ubuntu_kde",
       "logo_text": "UK",

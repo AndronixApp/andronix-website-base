@@ -1,4 +1,7 @@
 export default {
+  router: {
+    middleware: 'redirect'
+  },
   generate: {
     fallback: true
   },
@@ -17,7 +20,7 @@ export default {
     ],
     title: 'Andronix App',
     meta: [
-      { charset: 'utf-8' },
+      {charset: 'utf-8'},
       {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1'

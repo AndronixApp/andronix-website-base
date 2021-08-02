@@ -6,11 +6,9 @@
       >
         <Heading
           class="px-10"
-          heading="Who we are?"
+          heading="Who are we?"
           deco_heading="ANDRONIX"
-          sub_heading="We are developers from India who like to share our knowledge and try to deliver a platform to
-          mobile users to make them aware of the Linux kernel and distros, providing them a way to use desktop softwares on their Android devices.
-          We are really thankful to all our users and our additional team members for supporting us and bringing us to where we are today."
+          sub_heading="We are developers from India who like to share our knowledge and try to deliver a platform to mobile users to make them aware of the Linux kernel and distributions, providing them a way to use desktop software on their Android devices. We are really thankful to all our users and our additional team members for supporting us and bringing us to where we are today."
         />
 
         <primary-text-button label="TALK TO US" link="https://chat.andronix.app"/>
@@ -53,7 +51,7 @@
         <Heading
           heading="Our Team"
           deco_heading="MEET US"
-          sub_heading="Here's us. We have a specturm of poeple down here, from developers to community moderators to people who support us and much more."
+          sub_heading="Here we are. We have a spectrum of people down here, from developers to community moderators to people who support us and much more."
         />
 
         <div
@@ -98,33 +96,33 @@
           />
         </div>
 
-<!--        &lt;!&ndash; Special mentions &ndash;&gt;
-        <XyzTransition :appear-visible="true" duration="auto">
-          <div class="px-5 py-5 mt-16 pb-16">
-            <div
-              class="flex-col space-y-4"
-              xyz="fade flip-down duration-10 delay-2 stagger ease-out-back"
-            >
-              <h2 class="heading-2 xyz-nested">Special Mentions</h2>
-            </div>
-          </div>
-        </XyzTransition>
-        <div
-          class="grid-cols-1 md:grid-cols-2 grid gap-y-8 gap-x-4 justify-center items-center"
-        >
-          <TeamCard
-            class="justify-self-center"
-            :class="
-              index === 0 ? 'md:justify-self-end' : 'md:justify-self-start'
-            "
-            v-for="(member, index) in teams.specials"
-            :name="member.name"
-            :key="member.name"
-            :position="member.position"
-            :quote="member.quote"
-            :photo_url="member.photo_url"
-          />
-        </div>-->
+        <!--        &lt;!&ndash; Special mentions &ndash;&gt;
+                <XyzTransition :appear-visible="true" duration="auto">
+                  <div class="px-5 py-5 mt-16 pb-16">
+                    <div
+                      class="flex-col space-y-4"
+                      xyz="fade flip-down duration-10 delay-2 stagger ease-out-back"
+                    >
+                      <h2 class="heading-2 xyz-nested">Special Mentions</h2>
+                    </div>
+                  </div>
+                </XyzTransition>
+                <div
+                  class="grid-cols-1 md:grid-cols-2 grid gap-y-8 gap-x-4 justify-center items-center"
+                >
+                  <TeamCard
+                    class="justify-self-center"
+                    :class="
+                      index === 0 ? 'md:justify-self-end' : 'md:justify-self-start'
+                    "
+                    v-for="(member, index) in teams.specials"
+                    :name="member.name"
+                    :key="member.name"
+                    :position="member.position"
+                    :quote="member.quote"
+                    :photo_url="member.photo_url"
+                  />
+                </div>-->
       </div>
     </div>
   </XyzTransition>
@@ -139,7 +137,7 @@ import TeamCard from "~/components/teamCard";
 
 export default {
   components: {TeamCard, PrimaryTextButton, Heading},
-  head () {
+  head() {
     return {
       title: meta.about.title,
       meta: [{
