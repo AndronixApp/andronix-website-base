@@ -13,7 +13,7 @@
       "logo_text": "DX",
       "color_text": "text-pink-400",
       "color_bg": "bg-pink-400",
-      "description": "Debian Linux is considered one of the most stable Linux distributions out there. You can completely rely on Debian for the stability and performance that you might need for your day-to-day tasks.",
+      "description": "Debian Linux is considered one of the most stable Linux distributions out there. Therefore, you can entirely rely on Debian for the stability and performance you might need for your day-to-day tasks.",
       "id": "debian_xfce"
     },
     {
@@ -21,7 +21,7 @@
       "logo_text": "MX",
       "color_text": "text-green-400",
       "color_bg": "bg-green-400",
-      "description": "Manjaro is a distribution based on Arch Linux but has a separate official repository which contains more stable packages than that of Arch Linux's. You can't go wrong with Pacman and Manjaro.",
+      "description": "Manjaro is a distribution based on Arch Linux but has a separate official repository that contains more stable packages than Arch Linux's. You can't go wrong with Pacman and Manjaro.",
       "id": "manjaro_xfce"
     },
     {

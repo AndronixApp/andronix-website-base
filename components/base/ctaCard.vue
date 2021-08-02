@@ -13,9 +13,13 @@
             {{ desc }} </p>
         </div>
         <div class="mt-5 flex items-center justify-center">
-          <primary-text-button @click="openLink(buttonLink)"
+          <primary-text-button v-if="!buttonInternalLink" :link="buttonLink"
                                :backgroundColor="buttonColor"
-                               label="Join now!" :textHoverColor="buttonColor"
+                               :label="buttonText ? buttonText: `Join now!`" :textHoverColor="buttonColor"
+          />
+          <primary-text-button v-else @click="$router.push(buttonInternalLink)"
+                               :backgroundColor="buttonColor"
+                               :label="buttonText ? buttonText: `Join now!`" :textHoverColor="buttonColor"
           />
           <!--          <button
                       class="w-1/2 px-3 py-2 rounded mt-6 text-white font-extrabold text-center transition ease-in-out duration-300 shadow-2xl transform hover:scale-105"
@@ -55,8 +59,12 @@ export default {
     },
     buttonLink: {
       type: String,
-      required: true
     },
+    buttonInternalLink: {
+      type: String,
+    }, buttonText: {
+      type: String,
+    }
   },
   name: 'CtaCard'
 }

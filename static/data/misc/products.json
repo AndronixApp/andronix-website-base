@@ -4,7 +4,7 @@
       "isPaid": true,
       "product": "Andronix Modded OS",
       "link": "/products/modded-os",
-      "description": "Modded OS are optimized, beautified and super stable distros customized by us. We carefully choose what goes into these and cherry pick the best features for you."
+      "description": "Modded OS is optimized, beautified and super stable distros customized by us. We carefully choose what goes into these and cherry pick the best features for you."
     },
     {
       "isPaid": true,
@@ -16,7 +16,7 @@
       "isPaid": true,
       "link": "/products/commands",
       "product": "Andronix Commands",
-      "description": "Andronix Premium helps your keep all your notes and important commands always synced across all your devices with the exclusive support on Discord. "
+      "description": "Andronix commands helps your keep all your notes and essential commands always synced across all your devices."
     },
     {
       "isPaid": false,

@@ -37,8 +37,8 @@
     <div class="flex-col bg-no-repeat mx-10 md:mx-20">
       <!-- Features   -->
       <div class="top-section">
-        <Heading heading="What can you do with this?"
-                 sub_heading="Guinean question but this cannot be answered without writing a book. There are infinite uses for Andronix. To keep it in understandable terms, you can almost do 70% of the things that you can do on an actual Linux machine."
+        <Heading heading="What can I do with Andronix?"
+                 sub_heading="Genuine question, but this cannot be answered without writing a book. There are infinite uses for Andronix. To keep it in understandable terms, you can almost do 70% of what you can do on an actual Linux machine."
                  deco_heading="ANDRONIX"
         />
         <div>

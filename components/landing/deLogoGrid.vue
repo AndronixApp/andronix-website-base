@@ -6,8 +6,7 @@
           <div class="flex-col text-white font-sans">
             <h2 class="font-extrabold text-primary">ANDRONIX</h2>
             <h2 class="font-bold text-4xl">Desktop Environments</h2>
-            <p class="text-sm mt-3">Do you like to have a customizable UI? We have most reknowned Desktop Environments to choose from so that
-              you always have an option to customize your desktop according to your needs. </p>
+            <p class="text-sm mt-3">Do you like to have a customizable UI? Then, we have the most prominent Window Managers to select from so that you can flex your Linux rice on Android. </p>
           </div>
         </div>
       </div>

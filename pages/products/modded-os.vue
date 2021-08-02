@@ -8,7 +8,7 @@
           class="px-10"
           heading="Take Andronix to the Next Level"
           deco_heading="MODDED OS"
-          sub_heading="Modded OS are versions of normal distros optimized, beautified and made super stable by our experienced developers. These include Ubuntu, Debian, Manjaro for now. We carefully choose what goes into these and cherry pick the best features for you."
+          sub_heading="Modded OS are versions of standard distros optimized, beautified, and made super stable by our experienced developers. These include Ubuntu, Debian, Manjaro for now. We carefully choose what goes into these and cherry-pick the best features for you."
         />
 
         <primary-text-button @click="$router.push('/pricing')" label="GET NOW"/>
@@ -18,7 +18,7 @@
       <div class="mt-24 px-12 md:px-24">
         <Heading
           heading="Why Modded OS?"
-          sub_heading="We specially modded these OS after seeing people struggling with normal Distros because either they weren't comfortable with Linux or it was a hassle fixing a lot of issues on ARM chips. Modded OS negate all these things and bring you straight to a stable and pretty environment to work with."
+          sub_heading="We specially mod these OS after we saw people struggling with regular Distribution because either they weren't comfortable with Linux or it was a hassle fixing many issues on ARM chips. Modded OS negates all these things and brings you straight to a stable and pretty environment to work with."
           deco_heading="ANDRONIX"
         />
         <div>
@@ -193,10 +193,14 @@ export default {
   },
   methods: {
     purchase: function (id) {
-      if (this.$store.getters['auth/isUserLoggedIn']) {
-        this.$router.push(`/checkout/buy/${id.replace('_modded', '')}`)
+      if (this.is_billing_active) {
+        if (this.$store.getters['auth/isUserLoggedIn']) {
+          this.$router.push(`/checkout/buy/${id.replace('_modded', '')}`)
+        } else {
+          this.$router.push('/auth/login')
+        }
       } else {
-        this.$router.push('/auth/login')
+        this.$toast.info('Billing is not yet activated. We\'re working on it! Please buy the product from the Andronix App until then.')
       }
     },
     async fetchImages() {
@@ -225,7 +229,12 @@ export default {
       imagesArray: {},
       metadata: metadata.metadata,
     }
-  }
+  },
+  computed: {
+    is_billing_active() {
+      return this.$store.getters['checkout/getBillingState']
+    }
+  },
 }
 </script>
 

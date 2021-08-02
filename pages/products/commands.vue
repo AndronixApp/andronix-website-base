@@ -6,7 +6,7 @@
       <heading class="px-10"
                heading="Sync Your World"
                deco_heading="ANDRONIX COMMANDS "
-               sub_heading="Andronix Commands is a one-stop solution for all your Terminal needs. Save and sync commands the go, just copy and paste."
+               sub_heading="Andronix Commands is a one-stop solution for all your Terminal needs. Save and sync commands on the go; just copy and paste."
       />
 
       <primary-text-button
@@ -19,7 +19,7 @@
     <div class="section-gap">
       <Heading
         heading="What is Andronix Commands?"
-        sub_heading="Andronix Commands is a very useful and intuitive tool developed by Andronix which cures the problem of remembering all the commands while you use a Terminal or anything. AndroNix Commands let's you sync your commands and access them from anywhere in the world on any internet connected device right in a browser, phone or just your command line."
+        sub_heading="Andronix Commands is a handy and intuitive tool developed by Andronix which cures the problem of remembering all the commands while you use a Terminal or anything. AndroNix Commands lets you sync your commands and access them from anywhere in the world on any internet-connected device, right in a browser, phone, or just your command line."
         deco_heading="COMMANDS"
       />
       <div>
@@ -42,7 +42,7 @@
     <div class="section-gap">
       <Heading
         heading="Get your Commands."
-        sub_heading="Use Andronix Commands within Andronix, use our web app or just be the terminal person you are and have it right where you're working, i.e. on your terminal application."
+        sub_heading="Use Andronix Commands within Andronix, use our web app, or be the terminal person you are and have it right where you're working, i.e., on your terminal application."
         deco_heading="ANDRONIX COMMANDS"
       />
       <div>
@@ -110,7 +110,7 @@
     <div class="section-gap">
       <Heading
         heading="How does it work?"
-        sub_heading="Using Commands is as easy as it can get. You just need to enter the details and we'll handle the syncing. Everything is realtime and hence accessible on all your devices as soon as you hit enter."
+        sub_heading="Using Andronix Commands is as easy as it can get. You just need to enter the details, and we'll handle the syncing. Everything is real-time and hence accessible on all your devices."
         deco_heading="COMMANDS"
       />
       <div>

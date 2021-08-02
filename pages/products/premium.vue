@@ -7,7 +7,7 @@
         class="px-10"
         heading="The Power of Andronix"
         deco_heading="ANDRONIX PREMIUM"
-        sub_heading="Andronix Premium acts as an extension to the Andronix app. It add features like Offline Distribution Installation, Andronix Commands and much more."
+        sub_heading="Andronix Premium acts as an extension to the Andronix app. It adds features like Offline Distribution Installation, Andronix Commands, and much more."
       />
 
       <primary-text-button @click="$router.push('/pricing')" label="GET NOW"/>
@@ -17,7 +17,7 @@
     <div class="mt-24 px-12 md:px-24">
       <Heading
         heading="How can I do with Andronix Premium?"
-        sub_heading="Andronix Premium gives you discounts on other products across Andronix, it also gives you access to Andronix Commands which helps you manage your Terminal commands and much more."
+        sub_heading="Andronix Premium gives you discounts on other products across Andronix. It also gives you access to Andronix Commands, which helps you manage your Terminal commands and much more."
         deco_heading="ANDRONIX"
       />
       <div>
@@ -36,9 +36,7 @@
         </div>
       </div>
       <p class="text-gray-400 text-xs mt-6 text-center">
-        ** Modded Discounts are only available via in-app purchases as of now.
-        The eligibility of the discount can vary due to the differences in taxes
-        across the globe.
+        ** Modded Discounts are only available via in-app purchases as of now. Additionally, the eligibility of the discount can vary due to the differences in taxes across the globe.
       </p>
     </div>
 

@@ -10,7 +10,7 @@
       />
 
       <div
-        class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 lg:max-w-screen-md mx-auto"
+        class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 lg:max-w-screen-xl mx-auto"
       >
         <cta-card
           title="Discord"

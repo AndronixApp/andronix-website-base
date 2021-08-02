@@ -41,6 +41,10 @@
             :slashedPrice="product.slashedPrice"
             :features="product.features"
           />
+
+          <p class="text-gray-400 text-xs mt-6 text-center">
+            ** In-App pricing of the products might be different depending on the region you are using Andronix due to the variation in taxes.
+          </p>
         </div>
       </XyzTransition>
 
@@ -152,7 +156,7 @@ export default {
           this.$router.push('auth/login')
         }
       } else {
-        this.$toast.info('Billing is not yet activated. We\'re working on it!')
+        this.$toast.info('Billing is not yet activated. We\'re working on it! Please buy the product from the Andronix App until then.')
       }
     },
   },

@@ -142,17 +142,22 @@
       <!--  Copyright and stuff    -->
       <div class="text-white text-center lg:justify-self-end lg:mt-8"
       >
-        <h3 class="font-extrabold text-3xl pb-8">andronix<strong class="text-primary-400">.app</strong></h3>
+        <!--        <h3 class="font-extrabold text-3xl pb-8">andronix<strong class="text-primary-400">.app</strong></h3>-->
+        <img
+          class="mx-auto w-48 lg:w-56 -m-3"
+          src="~assets/images/logo_new_semi_fhd_dark.png"
+          alt=""
+        />
+        <a href="https://devriz.com"
+           class="text-gray-400  text-sm">A
+          product of
+          <strong class="underline cursor-pointer text-gray-200">Devriz Technologies
+            LLP</strong></a>
         <p class="text-gray-400 text-sm">©{{ getCurrentYear() }} All rights reserved.</p>
-        <p class="text-gray-400 text-sm">A product of <strong class="underline cursor-pointer">Devriz Technologies
-          LLP</strong></p>
         <p class="mt-3 text-xs text-gray-400 w-10/12 text-center mx-auto">
-          Made with <a href="https://tailwindcss.com" class="underline font-bold text-gray-200"
-        >Tailwind</a>, <a href="https://nuxtjs.org" class="underline font-bold text-gray-200"
-        >NuxtJS</a> by <a
-          href="https://github.com/imprakharshukla"
-          class="underline font-bold text-gray-100"
-        >imprakharshukla</a> in 🇮🇳
+          Made with <a href="https://tailwindcss.com" class="underline font-bold text-gray-400"
+        >Tailwind</a>, <a href="https://nuxtjs.org" class="underline font-bold text-gray-400"
+        >NuxtJS</a>.
         </p>
       </div>
 
