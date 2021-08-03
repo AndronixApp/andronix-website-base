@@ -9,7 +9,7 @@
       </div>
 
       <!--  Download Button    -->
-      <a href="https://play.andronix.app"
+      <a href="https://play.andronix.app" target="_blank"
          class="text-white invisible md:invisible lg:visible cursor-pointer px-3 py-2 bg-primary-600 flex items-center space-x-5 justify-center rounded hover:bg-white hover:text-primary-600 hover:-translate-y-1.5 transition transform duration-300"
       >
         <svg class="text-current fill-current w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"

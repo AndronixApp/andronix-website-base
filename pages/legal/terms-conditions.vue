@@ -28,16 +28,16 @@
 
           <ul>
             <li>
-              <a class="underline text-gray-500" href="https://policies.google.com/terms">Google Play Services</a>
+              <a  target="_blank" class="underline text-gray-500" href="https://policies.google.com/terms">Google Play Services</a>
             </li>
             <li>
-              <a href="https://firebase.google.com/terms/analytics">Google Analytics for Firebase</a>
+              <a  target="_blank" href="https://firebase.google.com/terms/analytics">Google Analytics for Firebase</a>
             </li>
             <li>
-              <a href="https://firebase.google.com/terms/crashlytics">Firebase Crashlytics</a>
+              <a target="_blank"  href="https://firebase.google.com/terms/crashlytics">Firebase Crashlytics</a>
             </li>
             <li>
-              <a href="https://onesignal.com/tos">One Signal</a>
+              <a target="_blank"  href="https://onesignal.com/tos">One Signal</a>
             </li>
           </ul>
 

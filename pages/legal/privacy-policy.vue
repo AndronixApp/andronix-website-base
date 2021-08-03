@@ -30,16 +30,16 @@
 
           <ul>
             <li>
-              <a class="underline text-gray-500" href="https://policies.google.com/terms">Google Play Services</a>
+              <a class="underline text-gray-500"  target="_blank" href="https://policies.google.com/terms">Google Play Services</a>
             </li>
             <li>
-              <a href="https://firebase.google.com/terms/analytics">Google Analytics for Firebase</a>
+              <a target="_blank"  href="https://firebase.google.com/terms/analytics">Google Analytics for Firebase</a>
             </li>
             <li>
-              <a href="https://firebase.google.com/terms/crashlytics">Firebase Crashlytics</a>
+              <a  target="_blank" href="https://firebase.google.com/terms/crashlytics">Firebase Crashlytics</a>
             </li>
             <li>
-              <a href="https://onesignal.com/tos">One Signal</a>
+              <a  target="_blank" href="https://onesignal.com/tos">One Signal</a>
             </li>
           </ul>
 
@@ -54,7 +54,7 @@
             use Google’s Firebase for the backend of the app). The email and password are all stored encrypted safely.
             We do not store your emails on a separate database, which throws the possibilities to have breach in the
             database due to poor security rules. Authentication is handled by Google’s own <a
-              href="https://firebase.google.com/products/auth"
+              target="_blank"   href="https://firebase.google.com/products/auth"
             >Firebase Authentication</a>. This
             also limits the possibility of us selling the actual data or in general spamming emails with promotional
             content.</p>
@@ -62,7 +62,7 @@
             Google sign-in/register
           </p>
           <p>When using Google sign-in, the entire OAuth process is handled by <a
-            href="https://firebase.google.com/products/auth"
+            target="_blank"  href="https://firebase.google.com/products/auth"
           >Firebase Authentication</a>. We only have
             access to your email and your profile picture and nothing else. We neither store your email or your profile
             picture on a separate database. Your picture is fetched in real-time using Google’s APIs.</p>
@@ -84,7 +84,7 @@
             Purchases made outside the app
           </p>
           <p>Andronix currently uses <a href="https://razorpay.com">Razorpay</a> as the payment provider along with <a
-            href="https://paypal.com"
+            target="_blank"   href="https://paypal.com"
           >PayPal</a> which is actually integrated within Razorpay. The present purchase flow requires users to add the
             following details as "Billing Information"</p>
           <ul>
