@@ -1,6 +1,6 @@
 <template>
   <div @click="$emit('click')">
-    <a :href="link" v-if="!!link">
+    <a  target="_blank"  :href="link" v-if="!!link">
       <div class="cursor-pointer rounded px-4 py-3 hover:-translate-y-1.5 transition transform duration-300"
            :class="`${backgroundColor?backgroundColor:'bg-primary-600'} hover:${backgroundHoverColor?backgroundHoverColor:'bg-white'}
          ${textColor?textColor:'text-white'} hover:${textHoverColor?textHoverColor:'text-primary-600'}`"

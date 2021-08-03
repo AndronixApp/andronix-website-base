@@ -64,7 +64,7 @@
                       :to="items.to"
             >{{ items.title }}
             </NuxtLink>
-            <a :class="`hover:${items.color}`" :id="items.id" v-else :href="items.to">{{ items.title }}</a>
+            <a target="_blank"  :class="`hover:${items.color}`" :id="items.id" v-else :href="items.to">{{ items.title }}</a>
           </div>
         </div>
       </div>

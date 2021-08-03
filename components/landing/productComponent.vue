@@ -15,7 +15,7 @@
            class="max-w-sm text-xs py-3 text-gray-400 hover:text-gray-200 transition transform duration-200 hover:underline"
         >Know
           more about {{ product }}</p>
-        <a v-else :href="link"
+        <a v-else :href="link" target="_blank"
            class="max-w-sm text-xs py-3 text-gray-400 hover:text-gray-200 transition transform duration-200 hover:underline"
         >Know
           more about {{ product }}</a>

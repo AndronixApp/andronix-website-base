@@ -71,7 +71,7 @@
           <p class="text-gray-400 text-sm lg:text-base">Get your commands within Andronix App.</p>
         </div>
       </a>
-      <a href="https://web.andronix.app"
+      <a target="_blank"  href="https://web.andronix.app"
          class="cursor-pointer rounded bg-gray-800 flex text-white px-4 py-3 space-x-5 hover:-translate-y-1.5 transform transition duration-200"
       >
         <div class="w-1/4 flex items-center justify-center">
@@ -88,7 +88,7 @@
           <p class="text-gray-400 text-sm lg:text-base">On the web? Get your commands right there!</p>
         </div>
       </a>
-      <a href="https://www.npmjs.com/package/andronix-command-cli"
+      <a target="_blank"  href="https://www.npmjs.com/package/andronix-command-cli"
          class="cursor-pointer rounded bg-gray-800 flex text-white px-4 py-3 space-x-5 hover:-translate-y-1.5 transform transition duration-200"
       >
         <div class="w-1/4 flex items-center justify-center">
