@@ -28,7 +28,7 @@
           <div class="flex-col space-y-2 col-span-2">
             <p class="pb-2 font-bold text-sm uppercase text-center md:text-left text-gray-400">Reach out to us</p>
             <div class="flex space-x-5 justify-self-center justify-center items-center md:justify-start">
-              <a target="_blank"  href="https://git.andronix.app">
+              <a target="_blank" href="https://git.andronix.app">
                 <svg
                   class="w-5 fill-current text-gray-400 transform transition hover:text-black duration-200 hover:scale-110"
                   viewBox="0 0 24 24"
@@ -39,7 +39,7 @@
                   />
                 </svg>
               </a>
-              <a target="_blank"  href="https://patreon.com/andronixapp">
+              <a target="_blank" href="https://patreon.com/andronixapp">
                 <svg
                   class="w-5 fill-current text-gray-400 transform transition hover:text-red-600 duration-200 hover:scale-110"
                   viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +49,7 @@
                   />
                 </svg>
               </a>
-              <a target="_blank"  href="https://forum.andronix.app">
+              <a target="_blank" href="https://forum.andronix.app">
                 <svg
                   class="w-5 fill-current text-gray-400  transform transition hover:text-yellow-500 duration-200 hover:scale-110"
                   viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +59,7 @@
                   />
                 </svg>
               </a>
-              <a target="_blank"  href="https://chat.andronix.app">
+              <a target="_blank" href="https://chat.andronix.app">
                 <svg
                   class="w-5 fill-current text-gray-400 transform transition hover:text-purple-500 duration-200 hover:scale-110"
                   viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
@@ -180,12 +180,10 @@
         <a target="_blank" href="https://status.andronix.app"
            class="mt-4 transition transform hover:-translate-y-0.5 duration-200  cursor-pointer underline font-bold text-gray-200 flex justify-center items-center space-x-3">
           <p>Services Status</p>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 fill-current" viewBox="0 0 20 20"
-               fill="currentColor">
-            <path fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"/>
-          </svg>
+          <div>
+            <p class="w-3 h-3 rounded-full bg-green-400 animate-ping"></p>
+            <p class="w-3 h-3 -mt-3 absolute z-10 rounded-full bg-green-400"></p>
+          </div>
         </a>
 
       </div>
