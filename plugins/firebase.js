@@ -16,6 +16,9 @@ app = firebase.apps.length
   ? firebase.app()
   : firebase.initializeApp(config)
 
+/* Inint firebase analytics */
+app.analytics()
+
 export const firestore = app.firestore()
 export const database = app.database()
 export const functions = app.functions()
