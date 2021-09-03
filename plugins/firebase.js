@@ -16,8 +16,11 @@ app = firebase.apps.length
   ? firebase.app()
   : firebase.initializeApp(config)
 
-/* Inint firebase analytics */
+/*/!* Inint firebase analytics *!/
+firebase.analytics.isSupported().then((isSupported) => {
+  if (isSupported) {
 app.analytics()
+    */
 
 export const firestore = app.firestore()
 export const database = app.database()

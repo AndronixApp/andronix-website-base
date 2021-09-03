@@ -132,6 +132,8 @@
           <ul class="flex-col space-y-2 pt-3 ">
             <NuxtLink class="block hover:text-white duration-200 transition hover:underline" to="/help">Help
             </NuxtLink>
+            <NuxtLink class="block hover:text-white duration-200 transition hover:underline" to="/contact">Contact us
+            </NuxtLink>
             <NuxtLink class="block hover:text-white duration-200 transition hover:underline" to="/about">About us
             </NuxtLink>
             <li>

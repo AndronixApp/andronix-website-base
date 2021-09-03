@@ -56,7 +56,7 @@
               <div class="rounded-t-lg md:rounded-t-lg bg-card_background text-white py-3 px-5">
                 <h1 class="font-extrabold text-4xl py-3" :class="os.color_text">{{ os.logo_text }}</h1>
                 <h2 class="text-lg font-bold pb-2">{{ os.name }}</h2>
-                <p class="pb-2">{{ os.description }}</p>
+                <p class="mb-2 line-clamp-4">{{ os.description }}</p>
               </div>
               <div class="h-1.5 rounded-b-lg" :class="os.color_bg">
               </div>
@@ -307,14 +307,14 @@ import axios from 'axios'
 import Loading from 'vue-loading-overlay'
 import 'vue-loading-overlay/dist/vue-loading.css'
 import moddedOs from '~/static/data/pricing/modded-os-products.json'
-import { getProductNameWithId } from '~/lib/checkout/productHelper'
+import {getProductNameWithId} from '~/lib/checkout/productHelper'
 import {
   generateOrderId,
   getCountryName, getPrices,
   ProductIdArray,
   verifyPurchase
 } from '~/lib/checkout/checkoutHelper'
-import { database } from '~/plugins/firebase'
+import {database} from '~/plugins/firebase'
 import Heading from "~/components/global/heading";
 
 const PRODUCT_SELECTION = 'product_selection'
@@ -324,11 +324,11 @@ const SUCCESS = 'success'
 const FAILED = 'failed'
 
 export default {
-  async asyncData ({ params }) {
+  async asyncData({params}) {
     const product_id = params.product_id
-    return { product_id }
+    return {product_id}
   },
-  created () {
+  created() {
     this.observeBillingStatus()
     if (this.is_billing_active) {
       if (this.product_id && ProductIdArray.includes(this.product_id)) {
@@ -343,7 +343,7 @@ export default {
       this.$router.push('/pricing')
     }
   },
-  head () {
+  head() {
     return {
       script: [
         {
@@ -354,8 +354,8 @@ export default {
     }
   },
   name: 'buy',
-  components: {Heading, Loading },
-  data () {
+  components: {Heading, Loading},
+  data() {
     return {
       currentStep: PRODUCT_SELECTION,
 
@@ -372,10 +372,10 @@ export default {
     }
   },
   computed: {
-    is_billing_active () {
+    is_billing_active() {
       return this.$store.getters['checkout/getBillingState']
     },
-    get_payment_status () {
+    get_payment_status() {
       return this.paymentStatus
     },
     country_list: function () {
@@ -386,7 +386,7 @@ export default {
     }
   },
   methods: {
-    async observeBillingStatus () {
+    async observeBillingStatus() {
       try {
         if (window.Cypress) {
           console.log('Running in cypress')
@@ -397,16 +397,17 @@ export default {
             console.log({ isBillingActive })
             await this.$store.dispatch('checkout/setBillingState', isBillingActive)
           })
+          //await this.$store.dispatch('checkout/setBillingState', true)
         }
       } catch (e) {
         console.log(e)
       }
     },
-    removeCoupon () {
+    removeCoupon() {
       this.couponApplied = null
       this.setSelectedProduct(this.selectedProductId)
     },
-    async validateCoupon () {
+    async validateCoupon() {
       this.isLoading = true
       try {
         let couponEntered = this.couponCodeEntered.toUpperCase()
@@ -429,11 +430,11 @@ export default {
         this.$toast.error('Coupon validation failed.')
       }
     },
-    deleteSelectedProduct () {
+    deleteSelectedProduct() {
       this.selectedProductId = ''
       this.currentStep = PRODUCT_SELECTION
     },
-    async setSelectedProduct (id) {
+    async setSelectedProduct(id) {
 
       this.selectedProductId = id
       this.currentStep = DETAILS
@@ -446,7 +447,7 @@ export default {
       this.scrollToTop()
       this.isLoading = false
     },
-    setCouponedPrices (id, couponPriceObj) {
+    setCouponedPrices(id, couponPriceObj) {
       let price = `$ ${(parseInt(couponPriceObj[id]) / 100).toFixed(2)}`
       this.$refs.product_price_text.innerHTML = price
       this.$refs.product_total_text.innerHTML = price
@@ -455,7 +456,7 @@ export default {
     getStateListOfSelectedCountry: function (country_id) {
       return stateList[country_id]
     },
-    async submitForm (data) {
+    async submitForm(data) {
       this.isLoading = true
       /* ============== CHECKING FOR COUPON ===============*/
       if (this.couponApplied) {
@@ -550,7 +551,7 @@ export default {
       rzp1.open()
 
     },
-    resetIfClosed () {
+    resetIfClosed() {
       this.currentStep = PRODUCT_SELECTION
     },
     verifyPurchase: async function (data) {
@@ -569,12 +570,12 @@ export default {
         console.log(e)
       }
     },
-    scrollToTop () {
+    scrollToTop() {
       window.scrollTo(0, 0)
     }
 
   },
-  beforeDestroy () {
+  beforeDestroy() {
     this.$recaptcha.destroy()
   }
   ,

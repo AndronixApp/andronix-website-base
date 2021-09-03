@@ -113,6 +113,7 @@ export default {
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
     baseURL: 'https://commerce.andronix.xyz/v1'
+   // baseURL: 'http://localhost:3030/v1'
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)

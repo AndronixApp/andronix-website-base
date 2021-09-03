@@ -16,7 +16,7 @@
           title="Discord"
           buttonColor="bg-purple-400"
           buttonLink="https://chat.andronix.app"
-          desc="Join a community of over 5500+ Andronix users on Discord."
+          desc="Join a community of over 8500+ Andronix users on Discord."
           color="bg-purple-400"
         >
           <svg

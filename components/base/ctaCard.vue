@@ -30,7 +30,7 @@
                     </button>-->
         </div>
       </div>
-      <div class="h-1.5 rounded-b-lg" :class="color ? color : 'bg-primary'">
+      <div class="h-1.5 rounded-b-lg" :class="color ? color : 'bg-primary-400'">
       </div>
     </div>
   </div>
@@ -62,7 +62,8 @@ export default {
     },
     buttonInternalLink: {
       type: String,
-    }, buttonText: {
+    },
+    buttonText: {
       type: String,
     }
   },
