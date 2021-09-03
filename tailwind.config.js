@@ -21,6 +21,7 @@ module.exports = {
       },
       colors: {
         trueGray: colors.trueGray,
+        cyan: colors.cyan,
         teal: {
           100: '#CCFBF1',
           200: '#99F6E4',

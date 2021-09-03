@@ -18,12 +18,14 @@
           <p class="text-2xl text-white mt-4 mb-3 font-bold">
             Andronix Premium
           </p>
-          <p class="text-red-400 prose font-bold md:prose-lg">We don't offer refunds on Andronix Premium</p>
+          <p class="text-red-400 prose font-bold md:prose-lg">We don't offer refunds on Andronix Premium when bought from our app.</p>
           <p class="text-gray-400 prose md:prose-lg">
             Please read carefully
             what does it
             offer and then make a
             purchase.</p>
+          <br>
+          <p class="text-green-400 prose font-bold md:prose-lg">We do offer refunds on Andronix Premium when bought from our website.</p>
           <br>
           <br>
           <p class="text-2xl text-white mt-4 mb-3 font-bold">

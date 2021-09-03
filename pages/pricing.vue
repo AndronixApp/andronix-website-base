@@ -131,6 +131,7 @@ export default {
             console.log({ isBillingActive })
             await this.$store.dispatch('checkout/setBillingState', isBillingActive)
           })
+        //  await this.$store.dispatch('checkout/setBillingState', true)
         }
       } catch (e) {
         console.log(e)
