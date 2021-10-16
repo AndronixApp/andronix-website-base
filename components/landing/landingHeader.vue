@@ -1,7 +1,7 @@
 <template>
   <div :class="!view.atTopOfPage?'hidden':''">
-    <div class="h-8 bg-blue-700 flex justify-center items-center">
-      <p class="font-bold text-gray-200 text-sm">We love open source. Star this <a href="https://github.com/AndronixApp/andronix-website-base" class="underline">website</a> and other projects @ <a
+    <div class="py-2 px-6 bg-blue-700 flex justify-center items-center">
+      <p class="px-6 text-center font-bold text-gray-200 text-sm">We love open source. Star this <a href="https://github.com/AndronixApp/andronix-website-base" class="underline">website</a> and other projects @ <a
         href="https://git.andronix.app" class="underline">Github</a></p>
     </div>
   </div>
