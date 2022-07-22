@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@animxyz/core@0.6.6":
+  version "0.6.6"
+  resolved "https://registry.yarnpkg.com/@animxyz/core/-/core-0.6.6.tgz#2c5eae54c7a6b98c3be79ae16fc1ec68991f67cc"
+  integrity sha512-NtAA/G0Gq3hzAiL6yuE/4U8IgHMPUl3MxbWUbhO443T9UCsf9rBY94P5aK79Zd+/529FeoNdDphIOcOZLsI2sA==
+
 "@animxyz/core@^0.4.0":
   version "0.4.0"
   resolved "https://registry.npmjs.org/@animxyz/core/-/core-0.4.0.tgz"
