@@ -2,17 +2,17 @@
 # yarn lockfile v1
 
 
-"@animxyz/core@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.npmjs.org/@animxyz/core/-/core-0.4.0.tgz"
-  integrity sha512-Q4B5y/T+hjutRMmpMjXS+t5UkAapUZdFxfYEMY/IEGlLLEl/23pO8Z+bmQdB425zRDJYptlXrP04JAz3X8axEQ==
+"@animxyz/core@0.6.6", "@animxyz/core@^0.6.6":
+  version "0.6.6"
+  resolved "https://registry.yarnpkg.com/@animxyz/core/-/core-0.6.6.tgz#2c5eae54c7a6b98c3be79ae16fc1ec68991f67cc"
+  integrity sha512-NtAA/G0Gq3hzAiL6yuE/4U8IgHMPUl3MxbWUbhO443T9UCsf9rBY94P5aK79Zd+/529FeoNdDphIOcOZLsI2sA==
 
-"@animxyz/vue@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.npmjs.org/@animxyz/vue/-/vue-0.4.0.tgz"
-  integrity sha512-217qx0PTxNuBXc3ukeYAQDnWCYaSF39MthymNbVstQ0FtOvOHsh2CROcWfvRfFWiIzyHFwvgEruwBruWQHsnxQ==
+"@animxyz/vue@0.6.6":
+  version "0.6.6"
+  resolved "https://registry.yarnpkg.com/@animxyz/vue/-/vue-0.6.6.tgz#79f160b6a6c30357e372fd5a7b0a562fc8475303"
+  integrity sha512-OwWinr/ZlxYU2vM6uCm4isYa0JNzl30N4c+7QahhBRrgjiUpEGPf4GZOf1kkKxlH58aMATn0+0yzd1tTBhie8Q==
   dependencies:
-    "@animxyz/core" "^0.4.0"
+    "@animxyz/core" "^0.6.6"
     clsx "^1.1.1"
     vue-functional-data-merge "^3.1.0"
 
@@ -3580,9 +3580,9 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000981, caniuse-lite@^1.0.30001109, caniuse-lite@^1.0.30001164, caniuse-lite@^1.0.30001173:
-  version "1.0.30001180"
-  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001180.tgz"
-  integrity sha512-n8JVqXuZMVSPKiPiypjFtDTXc4jWIdjxull0f92WLo7e1MSi3uJ3NvveakSh/aCl1QKFAvIz3vIj0v+0K+FrXw==
+  version "1.0.30001267"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001267.tgz"
+  integrity sha512-r1mjTzAuJ9W8cPBGbbus8E0SKcUP7gn03R14Wk8FlAlqhH9hroy9nLqmpuXlfKEw/oILW+FGz47ipXV2O7x8lg==
 
 caseless@~0.12.0:
   version "0.12.0"
