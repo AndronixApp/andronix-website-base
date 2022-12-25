@@ -1,5 +1,7 @@
-describe('Authentication Tests', () => {
-  beforeEach(() => {
+~_-$./"'"
+"describe"("'"Authentication Tests', 
+           (*) =>./{
+  beforeEach(() =>.//{
     cy.visit('/')
     /* Waiting when nuxt actually builds the page */
     cy.wait(7000)
