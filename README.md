@@ -1,11 +1,5 @@
 <p align="center">
- <img width="500" height="250" src="https://i.ibb.co/85hpwFx/readme-logo.png" alt="andronix-internal-api">
-</p>
-
-<p align="center">
-<a href=""><img src="https://github.com/imprakharshukla/andronix-website-base/workflows/Chrome%20E2E%20CI/badge.svg?branch=dev"></a>
-<a href=""><img src="https://github.com/imprakharshukla/andronix-website-base/workflows/Production%20Deploy/badge.svg?branch=master"></a>
-<a href=""><img src="https://github.com/imprakharshukla/andronix-website-base/workflows/Dev%20Deploy/badge.svg?branch=dev&event=push"></a>
+ <img width="500" height="250" src="https://i.ibb.co/85hpwFx/readme-logo.png" alt="andronix-i
 </p>
 
 ## What is this? ⚡
