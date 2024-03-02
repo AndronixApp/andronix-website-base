@@ -6,8 +6,10 @@
 <a href=""><img src="https://github.com/imprakharshukla/andronix-website-base/workflows/Chrome%20E2E%20CI/badge.svg?branch=dev"></a>
 <a href=""><img src="https://github.com/imprakharshukla/andronix-website-base/workflows/Production%20Deploy/badge.svg?branch=master"></a>
 <a href=""><img src="https://github.com/imprakharshukla/andronix-website-base/workflows/Dev%20Deploy/badge.svg?branch=dev&event=push"></a>
+</p npm audit fix
+<a href=""><img src="https://github.com/advisories/GHSA-vh95-rmgr-6w4m">
+<a href=""><img src="https://github.com/advisories/GHSA-xvch-5gv4-984h">
 </p>
-
 ## What is this? ⚡
 This is the repository of the official website for [Andronix App](https://git.andronix.app). This combines billing for the digital products that Andronix offers and Andronix Commands.
 
