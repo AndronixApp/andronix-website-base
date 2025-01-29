@@ -1,0 +1,43 @@
+https://assets.codepen.io/t-1/photo_1.jpeg?fit=cover&width=500&height=500&format=auto```python
+html_code = '''
+<div class="row">
+  <div data-size title="Original JPG"><img src="https://assets.codepen.io/t-1/photo_1.jpeg" alt="" /></div>
+  <div data-size title="Automatic WebP"><img src="https://assets.codepen.io/t-1/photo_1.jpeg?&format=auto" alt="" /></div>
+</div>
+<div class="row">
+  <div data-size><img src="https://assets.codepen.io/t-1/photo_1.jpeg?fit=cover&width=500&height=500&format=auto" alt="" /></div>
+  <div data-size><img src="https://assets.codepen.io/t-1/photo_1.jpeg?fit=cover&width=400&height=400&format=auto" alt="" /></div>
+  <div data-size><img src="https://assets.codepen.io/t-1/photo_1.jpeg?fit=cover&width=300&height=300&format=auto" alt="" /></div>
+  <div data-size><img src="https://assets.codepen.io/t-1/photo_1.jpeg?fit=cover&width=200&height=200&format=auto" alt="" /></div>
+  <div data-size><img src="https://assets.codepen.io/t-1/photo_1.jpeg?fit=cover&width=100&height=100&format=auto" alt="" /></div>
+  <div data-size><img src="https://assets.codepen.io/t-1/photo_1.jpeg?fit=cover&width=50&height=50&format=auto" alt="" /></div>
+</div>
+'''
+
+print(html_code)
+```<div class="row">
+  <div data-size title="Original JPG"><img src="https://assets.codepen.io/t-1/photo_1.jpeg" alt="" /></div>
+  <div data-size title="Automatic WebP"><img src="https://assets.codepen.io/t-1/photo_1.jpeg?&format=auto" alt="" /></div>
+</div>
+<div class="row">
+  <div data-size><img src="https://assets.codepen.io/t-1/photo_1.jpeg?fit=cover&width=500&height=500&format=auto" alt="" /></div>
+  <div data-size><img src="https://assets.codepen.io/t-1/photo_1.jpeg?fit=cover&width=400&height=400&format=auto" alt="" /></div>
+  <div data-size><img src="https://assets.codepen.io/t-1/photo_1.jpeg?fit=cover&width=300&height=300&format=auto" alt="" /></div>
+  <div data-size><img src="https://assets.codepen.io/t-1/photo_1.jpeg?fit=cover&width=200&height=200&format=auto" alt="" /></div>
+  <div data-size><img src="https://assets.codepen.io/t-1/photo_1.jpeg?fit=cover&width=100&height=100&format=auto" alt="" /></div>
+  <div data-size><img src="https://assets.codepen.io/t-1/photo_1.jpeg?fit=cover&width=50&height=50&format=auto" alt="" /></div>
+</div>
+
+
+Resources<div class="row">
+  <div data-size title="Original JPG"><img src="https://assets.codepen.io/t-1/photo_1.jpeg" alt="" /></div>
+  <div data-size title="Automatic WebP"><img src="https://assets.codepen.io/t-1/photo_1.jpeg?&format=auto" alt="" /></div>
+</div>
+<div class="row">
+  <div data-size><img src="https://assets.codepen.io/t-1/photo_1.jpeg?fit=cover&width=500&height=500&format=auto" alt="" /></div>
+  <div data-size><img src="https://assets.codepen.io/t-1/photo_1.jpeg?fit=cover&width=400&height=400&format=auto" alt="" /></div>
+  <div data-size><img src="https://assets.codepen.io/t-1/photo_1.jpeg?fit=cover&width=300&height=300&format=auto" alt="" /></div>
+  <div data-size><img src="https://assets.codepen.io/t-1/photo_1.jpeg?fit=cover&width=200&height=200&format=auto" alt="" /></div>
+  <div data-size><img src="https://assets.codepen.io/t-1/photo_1.jpeg?fit=cover&width=100&height=100&format=auto" alt="" /></div>
+  <div data-size><img src="https://assets.codepen.io/t-1/photo_1.jpeg?fit=cover&width=50&height=50&format=auto" alt="" /></div>
+</div>
