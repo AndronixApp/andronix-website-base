@@ -179,14 +179,9 @@
 
 
         <!-- Status   -->
-        <a target="_blank" href="https://status.andronix.app"
-           class="mt-4 transition transform hover:-translate-y-0.5 duration-200  cursor-pointer underline font-bold text-gray-200 flex justify-center items-center space-x-3">
-          <p>Services Status</p>
-          <div>
-            <p :class="getStatusColor() +' w-3 h-3 rounded-full animate-ping'"></p>
-            <p :class="getStatusColor() +' w-3 h-3 -mt-3 absolute z-10 rounded-full'"></p>
-          </div>
-        </a>
+        <div class="mt-4 flex justify-center items-center">
+          <iframe src="https://status.andronix.app/badge?theme=dark" width="250" height="30" frameborder="0" scrolling="no" style="color-scheme: normal"></iframe>
+        </div>
 
       </div>
 
@@ -195,45 +190,9 @@
 </template>
 
 <script>
-import {getBetterStatus} from "~/lib/checkout/productHelper";
-
 export default {
   name: 'Footer',
-  mounted() {
-    this.getCurrentBetterStatus()
-  },
-  data() {
-    return {
-      status: ''
-    }
-  },
-  watch: {
-    status: {
-      handler() {
-        console.log('Status changed to ' + this.status)
-      }
-    }
-  },
   methods: {
-    getStatusColor() {
-      switch (this.status) {
-        case 'Up':
-          return 'bg-green-400'
-        case 'Down':
-          return 'bg-red-400'
-        case 'Degraded':
-          return 'bg-yellow-400'
-        default:
-          return 'bg-gray-400'
-      }
-    },
-    async getCurrentBetterStatus() {
-      const status = await getBetterStatus(this.$axios)
-      console.log({status})
-
-      this.status = status
-      console.log({status_from_data: this.status})
-    },
     getCurrentYear() {
       return new Date().getFullYear()
     }
