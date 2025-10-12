@@ -17,7 +17,7 @@ jobs:
           node-version: '14.x'
 
       - name: Caching Dependencies 💾
-        uses: actions/cache@v1
+        uses: actions/cache@v4
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/yarn-lock.json') }}
