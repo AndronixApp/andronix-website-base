@@ -26,5 +26,9 @@ export default function ({route, redirect}) {
       return redirect('/')
     case "/modded-os-gallery":
       return redirect('/products/modded-os')
+    case "/termux":
+      return redirect('https://github.com/AndronixApp/termux-releases/releases/download/0.118/com.termux_118.apk')
+    case "/vnc":
+      return redirect('https://play.google.com/store/apps/details?id=com.realvnc.viewer.android&hl=en&gl=US&pli=1')
   }
 }

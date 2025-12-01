@@ -179,14 +179,9 @@
 
 
         <!-- Status   -->
-        <a target="_blank" href="https://status.andronix.app"
-           class="mt-4 transition transform hover:-translate-y-0.5 duration-200  cursor-pointer underline font-bold text-gray-200 flex justify-center items-center space-x-3">
-          <p>Services Status</p>
-          <div>
-            <p class="w-3 h-3 rounded-full bg-green-400 animate-ping"></p>
-            <p class="w-3 h-3 -mt-3 absolute z-10 rounded-full bg-green-400"></p>
-          </div>
-        </a>
+        <div class="mt-4 flex justify-center items-center">
+          <iframe src="https://status.andronix.app/badge?theme=dark" width="250" height="30" frameborder="0" scrolling="no" style="color-scheme: normal"></iframe>
+        </div>
 
       </div>
 

@@ -13,8 +13,8 @@
     "e2e:open": "cypress open"
   },
   "dependencies": {
-    "@animxyz/core": "^0.4.0",
-    "@animxyz/vue": "^0.4.0",
+    "@animxyz/core": "0.6.6",
+    "@animxyz/vue": "0.6.6",
     "@braid/vue-formulate": "^2.5.0",
     "@nuxt/typescript-runtime": "^2.0.0",
     "@nuxtjs/axios": "^5.13.0",
@@ -45,12 +45,16 @@
     "@nuxtjs/eslint-config": "^3.1.0",
     "@nuxtjs/eslint-config-typescript": "^3.0.0",
     "@nuxtjs/eslint-module": "^2.0.0",
-    "@nuxtjs/tailwindcss": "^3.4.2",
+    "@nuxtjs/tailwindcss": "4.2.1",
     "@types/jest": "^26.0.20",
     "babel-eslint": "^10.1.0",
     "chance": "^1.1.7",
     "cypress": "6.7.0",
     "eslint": "^7.8.1",
     "eslint-plugin-nuxt": "^1.0.0"
+  },
+  "resolutions": {
+    "cssnano": "^5.1.15",
+    "postcss-nesting": "^7.0.1"
   }
 }
