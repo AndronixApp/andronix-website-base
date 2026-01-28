@@ -11,7 +11,7 @@
           sub_heading="Facing any issues? We are here to help you with all your queries and issues."
         />
       </div>
-      <div class="grid px-12 md:px-24 grid-cols-1 md:grid-cols-2 pb-16 md:pb-24 lg:grid-cols-4 justify-center items-center gap-5">
+      <div class="grid px-12 md:px-24 grid-cols-2 pb-16 md:pb-24 justify-center items-center gap-5">
         <cta-card
           v-for="platform in contact" :key="platform.color"
           :title="platform.param"

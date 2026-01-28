@@ -54,7 +54,7 @@
         <div v-for="(items, index) in menu" :key="items.color">
           <hr v-if="index !== 0" class="border-dashed border-t-1 mr-3 my-4 border-opacity-50 border-gray-700">
           <div
-            class="cursor-pointer text-white flex space-x-6 items-center px-2"
+            class="cursor-pointer text-white flex space-x-6 items-center px-2 hover:translate-x-2 transform transition duration-200 ease-in-out"
             @click="$store.commit('drawer/toggleDrawer')"
           >
             <div>

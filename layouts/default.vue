@@ -1,5 +1,6 @@
 <template>
   <div class="bg-background">
+    <landing-header/>
     <nav-bar/>
     <side-bar/>
     <Nuxt class="lg:max-w-screen-2xl pt-20 mx-auto"/>

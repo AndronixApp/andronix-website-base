@@ -8,9 +8,9 @@ module.exports = {
     options: {
       safelist: [
         '-rotate-3', 'rotate-2', '-rotate-3', 'rotate-3', 'from-violet', 'to-primary-500', 'bg-gradient-to-r', 'from-blue-700', 'to-blue-400', 'from-purple-700', 'to-pink-900', 'from-yellow-600', 'to-red-600',
-        'bg-primary-400', 'bg-purple-600', 'text-teal-400', 'bg-blue-400', 'bg-purple-400', 'bg-green-400', 'bg-indigo-400', 'bg-pink-400', 'bg-red-400', 'w-10', 'w-6', 'stroke-current',
+        'bg-primary-400', 'bg-purple-600', 'text-teal-400', 'bg-blue-400', 'bg-purple-400', 'bg-green-400', 'bg-indigo-400', 'bg-pink-400', 'bg-yellow-400', 'bg-red-400', 'w-10', 'w-6', 'stroke-current',
         'text-primary-400', 'text-blue-400', 'text-purple-400', 'text-green-400', 'text-indigo-400', 'text-pink-400', 'text-red-400'
-        , 'text-pink-400', 'text-indigo-400', 'text-blue-400', 'text-teal-400', 'text-primary-400', 'text-purple-400', 'text-green-400'
+        , 'text-pink-400', 'text-indigo-400', 'text-blue-400', 'text-teal-400', 'text-primary-400', 'text-purple-400', 'text-green-400', 'text-cyan-400'
       ]
     }
   },
